@@ -10,7 +10,7 @@
           <div class="header-container">
             <h2>Bus Details</h2>
           </div>
-          <!-- <ion-toggle color="success" [(ngModel)]="isActive"></ion-toggle> -->
+          <!-- <ion-toggle class="success" [(ngModel)]="isActive"></ion-toggle> -->
           <ion-toggle color="dark-green" (ngModel)]="isActive"
             ><span>Active</span></ion-toggle
           >
@@ -20,20 +20,21 @@
           <ion-row>
             <!-- Bus Registration -->
             <ion-col class="align-right-field" size="12" size-md="6">
-              <ion-label
-                >Bus Registration Number
-                <ion-text
-                  color="danger"
-                  *ngIf="isInvalid('busRegistrationNumber')"
-                >
-                  Bus Registration is required
-                </ion-text>
-              </ion-label>
+              <ion-label>Bus Registration Number</ion-label>
+
               <ion-input
                 formControlName="busRegistrationNumber"
                 placeholder="Eg: TN48C238"
               >
               </ion-input>
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="isInvalid('busRegistrationNumber')"
+                >
+                  Bus Registration is required
+                </ion-text>
+              </div>
             </ion-col>
 
             <!-- Seating Capacity -->
@@ -43,28 +44,24 @@
               size="12"
               size-md="6"
             >
-              <ion-label
-                >Seating Capacity
-                <ion-text color="danger" *ngIf="isInvalid('seatingCapacity')">
-                  Minimum 1 seat required
-                </ion-text>
-              </ion-label>
+              <ion-label>Seating Capacity</ion-label>
+
               <ion-input
                 formControlName="seatingCapacity"
                 type="number"
                 placeholder="Eg: 32"
               >
               </ion-input>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('seatingCapacity')">
+                  Minimum 1 seat required
+                </ion-text>
+              </div>
             </ion-col>
 
             <!-- Fuel Type -->
             <ion-col class="align-right-field" size="12" size-md="6">
-              <ion-label
-                >Fuel Type
-                <ion-text color="danger" *ngIf="isInvalid('fuelType')">
-                  Select fuel type
-                </ion-text>
-              </ion-label>
+              <ion-label>Fuel Type</ion-label>
 
               <div class="input">
                 <ion-select
@@ -78,18 +75,19 @@
                     {{fuel}}
                   </ion-select-option>
                 </ion-select>
+
                 <ion-icon class="down" name="chevron-down-outline"></ion-icon>
+              </div>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('fuelType')">
+                  Select fuel type
+                </ion-text>
               </div>
             </ion-col>
 
             <!-- Assign School -->
             <ion-col class="align-field" size="12" size-md="6">
-              <ion-label>
-                Assign School
-                <ion-text color="danger" *ngIf="isInvalid('assignSchool')">
-                  Select school
-                </ion-text>
-              </ion-label>
+              <ion-label>Assign School</ion-label>
 
               <div class="input">
                 <ion-select
@@ -103,30 +101,32 @@
                     {{school}}
                   </ion-select-option>
                 </ion-select>
+
                 <ion-icon name="add-circle-outline"></ion-icon>
+              </div>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('assignSchool')">
+                  Select school
+                </ion-text>
               </div>
             </ion-col>
 
             <!-- Route -->
             <ion-col class="align-right-field" size="12" size-md="6">
-              <ion-label
-                >Route
-                <ion-text color="danger" *ngIf="isInvalid('route')">
-                  Route is required
-                </ion-text>
-              </ion-label>
+              <ion-label>Route</ion-label>
+
               <ion-input formControlName="route" placeholder="Eg: Triplicane">
               </ion-input>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('route')">
+                  Route is required
+                </ion-text>
+              </div>
             </ion-col>
 
             <!-- Service Start Date -->
             <ion-col class="align-field" size="12" size-md="6">
-               <ion-label>
-                Service Start Date
-                <ion-text color="danger" *ngIf="isInvalid('serviceStartDate')">
-                  Start Date is required
-                </ion-text>
-              </ion-label>
+              <ion-label>Service Start Date</ion-label>
 
               <!-- Custom Input -->
               <div class="date-box" (click)="openPicker()">
@@ -143,70 +143,74 @@
               <ion-modal [isOpen]="isOpen" (didDismiss)="isOpen = false">
                 <ng-template>
                   <ion-datetime
-                  formControlName="serviceStartDate"
+                    formControlName="serviceStartDate"
                     presentation="date"
-                    
                     (ionChange)="selectDate($event)"
                   ></ion-datetime>
                 </ng-template>
               </ion-modal>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('serviceStartDate')">
+                  Start Date is required
+                </ion-text>
+              </div>
             </ion-col>
 
             <ion-col class="align-right-field" size="6">
               <div class="input-count">
-                <ion-label position="stacked"
-                  >Active Students
-                  <ion-text color="danger" *ngIf="isInvalid('activeStudents')">
-                    Required
-                  </ion-text>
-                </ion-label>
+                <ion-label position="stacked">Active Students</ion-label>
+
                 <ion-input type="number" formControlName="activeStudents">
                 </ion-input>
+              </div>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('activeStudents')">
+                  Required
+                </ion-text>
               </div>
             </ion-col>
 
             <ion-col class="align-field" size="6">
               <div class="input-count">
-                <ion-label position="stacked"
-                  >Monthly Revenue
-                  <ion-text color="danger" *ngIf="isInvalid('monthlyRevenue')">
-                    Required
-                  </ion-text>
-                </ion-label>
+                <ion-label position="stacked">Monthly Revenue</ion-label>
+
                 <ion-input type="number" formControlName="monthlyRevenue">
                 </ion-input>
+              </div>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('monthlyRevenue')">
+                  Required
+                </ion-text>
               </div>
             </ion-col>
 
             <ion-col class="align-right-field" size="6">
               <div class="input-count">
-                <ion-label position="stacked"
-                  >Monthly Expenses
-                  <ion-text color="danger" *ngIf="isInvalid('monthlyExpenses')">
-                    Required
-                  </ion-text>
-                </ion-label>
+                <ion-label position="stacked">Monthly Expenses</ion-label>
+
                 <ion-input type="number" formControlName="monthlyExpenses">
                 </ion-input>
+              </div>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('monthlyExpenses')">
+                  Required
+                </ion-text>
               </div>
             </ion-col>
 
             <ion-col class="align-field" size="6">
               <div class="input-count">
                 <ion-label position="stacked">Net Profit</ion-label>
+
                 <ion-input type="number" formControlName="netProfit">
                 </ion-input>
               </div>
+              <div class="error-container"></div>
             </ion-col>
 
             <ion-col class="align-right-field" size="12">
               <div class="upload-container">
-                <ion-label class="upload-label"
-                  >Upload Invoice
-                  <ion-text color="danger" *ngIf="isInvalid('uploadInvoice')">
-                    File is required
-                  </ion-text>
-                </ion-label>
+                <ion-label class="upload-label">Upload Invoice</ion-label>
 
                 <div class="upload-box">
                   <!-- Hidden File Input -->
@@ -225,6 +229,7 @@
                     (click)="fileInput.click()"
                   >
                     <div class="file-name">{{ selectedFile.name }}</div>
+
                     <ion-icon
                       name="close-circle-outline"
                       (click)="removeFile($event)"
@@ -236,6 +241,11 @@
                     <ion-icon name="add-circle-outline"></ion-icon>
                   </div>
                 </div>
+              </div>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('uploadInvoice')">
+                  File is required
+                </ion-text>
               </div>
             </ion-col>
           </ion-row>

@@ -264,6 +264,18 @@ ion-button {
   right: 11%;
   top: 43%;
 }
+.error-container {
+  min-height: 18px; // validation aaye ya na aaye space reserve rahega
+  margin-top: -19px;
+}
+
+.danger {
+  color:  #dc2626;
+  font-size: 11px;
+  font-weight: 400;
+  display: block;
+  line-height: 1.2;
+}
 
 @media only screen and (min-width: 1600px) {
   .add-advance-container {
@@ -476,6 +488,10 @@ ion-button {
     width: 91%;
     margin-left: 20px;
     margin-bottom: 18px;
+  }.danger {
+    
+   position:relative;
+   left: 21px;
   }
   /* Top button (My profile) */
   .title-container {

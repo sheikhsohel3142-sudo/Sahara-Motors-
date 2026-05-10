@@ -11,67 +11,72 @@
           <h2>Add Advance</h2>
         </div>
         <ion-grid>
-          <ion-row>
-            <ion-col size="12" size-md="6">
-            <label>
-                Amount
-                <ion-text color="danger" *ngIf="isInvalid('amount')">
-                  Amount is required
-                </ion-text>
-              </label>
-              <ion-input formControlName="amount" placeholder="Eg: $ 45.00">
-              </ion-input>
-            </ion-col>
+  <ion-row>
+    <!-- Amount -->
+    <ion-col size="12" size-md="6">
+      <label>Amount</label>
 
-            <!-- Seating Capacity -->
-            <ion-col class="align-right-field" size="12" size-md="6">
-               <label>
-                Advance Date
-                <ion-text color="danger" *ngIf="isInvalid('expenseDate')">
-                  Advance Date is required
-                </ion-text>
-              </label>
+      <ion-input formControlName="amount" placeholder="Eg: $ 45.00">
+      </ion-input>
 
-              <!-- Custom Input -->
-              <div class="date-box" (click)="openPicker()">
-                <span>
-                  {{ busForm.get('expenseDate')?.value ?
-                  (busForm.get('expenseDate')?.value | date:'MM/dd/yyyy') :
-                  'mm/dd/yyyy' }}
-                </span>
+      <div class="error-container">
+        <ion-text class="danger" *ngIf="isInvalid('amount')">
+          Amount is required
+        </ion-text>
+      </div>
+    </ion-col>
 
-                <ion-icon name="calendar-clear-outline"></ion-icon>
-              </div>
+    <!-- Advance Date -->
+    <ion-col class="align-right-field" size="12" size-md="6">
+      <label>Advance Date</label>
 
-              <!-- Date Picker -->
-              <ion-modal [isOpen]="isOpen" (didDismiss)="isOpen = false">
-                <ng-template>
-                  <ion-datetime
-                   formControlName="expenseDate"
-                    presentation="date"
-                   
-                    
-                    (ionChange)="selectDate($event)"
-                  ></ion-datetime>
-                </ng-template>
-              </ion-modal>
-            </ion-col>
+      <!-- Custom Input -->
+      <div class="date-box" (click)="openPicker()">
+        <span>
+          {{ busForm.get('expenseDate')?.value ?
+          (busForm.get('expenseDate')?.value | date:'MM/dd/yyyy') :
+          'mm/dd/yyyy' }}
+        </span>
 
-            <!-- Service Start Date -->
-            <ion-col class="align-right-field" size="12" size-md="6">
-              <label>Reason
-                 <ion-text color="danger" *ngIf="isInvalid('expenseDate')">
-                  reason is required
-                </ion-text>
-              </label>
-              <ion-input
-                formControlName="notesOptional"
-                placeholder="Eg: New Tyre has been changed"
-              >
-              </ion-input>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <ion-icon name="calendar-clear-outline"></ion-icon>
+      </div>
+
+      <div class="error-container">
+        <ion-text class="danger" *ngIf="isInvalid('expenseDate')">
+          Advance Date is required
+        </ion-text>
+      </div>
+
+      <!-- Date Picker -->
+      <ion-modal [isOpen]="isOpen" (didDismiss)="isOpen = false">
+        <ng-template>
+          <ion-datetime
+            formControlName="expenseDate"
+            presentation="date"
+            (ionChange)="selectDate($event)"
+          ></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-col>
+
+    <!-- Reason -->
+    <ion-col class="align-right-field" size="12" size-md="6">
+      <label>Reason</label>
+
+      <ion-input
+        formControlName="notesOptional"
+        placeholder="Eg: New Tyre has been changed"
+      >
+      </ion-input>
+
+      <div class="error-container">
+        <ion-text class="danger" *ngIf="isInvalid('notesOptional')">
+          Reason is required
+        </ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
         <!-- Confirm Button -->
         <ion-button

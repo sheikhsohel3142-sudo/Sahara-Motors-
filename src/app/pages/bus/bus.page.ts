@@ -6,8 +6,7 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
-  IonButton,
-} from '@ionic/angular/standalone';
+  IonButton, IonIcon } from '@ionic/angular/standalone';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -15,7 +14,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './bus.page.html',
   styleUrls: ['./bus.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonIcon, 
     IonButton,
     IonContent,
     IonHeader,

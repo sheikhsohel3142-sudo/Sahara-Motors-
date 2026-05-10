@@ -12,17 +12,9 @@
         </div>
         <ion-grid>
           <ion-row>
-            <!-- Bus Registration -->
+            <!-- Expense Category -->
             <ion-col size="12" size-md="6">
-              <label
-                >Expense Category
-                <ion-text
-                  color="danger"
-                  *ngIf="addExpense.get('expenseCategory')?.touched && addExpense.get('expenseCategory')?.invalid"
-                >
-                  Category is required
-                </ion-text>
-              </label>
+              <label>Expense Category</label>
 
               <div class="input">
                 <ion-select
@@ -38,53 +30,58 @@
                 </ion-select>
                 <ion-icon class="down" name="chevron-down-outline"></ion-icon>
               </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="addExpense.get('expenseCategory')?.touched && addExpense.get('expenseCategory')?.invalid"
+                >
+                  Category is required
+                </ion-text>
+              </div>
             </ion-col>
 
-            <!-- Seating Capacity -->
+            <!-- Expense Date -->
             <ion-col class="align-right-field" size="12" size-md="6">
-              <label
-                >Expense Date
+              <label>Expense Date</label>
+
+              <ion-input
+                formControlName="expenseDate"
+                type="date"
+                placeholder="Eg: 30/12/2025"
+              >
+              </ion-input>
+
+              <div class="error-container">
                 <ion-text
-                  color="danger"
+                  class="danger"
                   *ngIf="addExpense.get('expenseDate')?.touched && addExpense.get('expenseDate')?.invalid"
                 >
                   Date is required
                 </ion-text>
-              </label>
-              <ion-input
-                formControlName="expenseDate"
-                type="data"
-                placeholder="Eg: 30/12/2025"
-              >
-              </ion-input>
+              </div>
             </ion-col>
 
-            <!-- Fuel Type -->
+            <!-- Amount -->
             <ion-col size="12" size-md="6">
-              <label
-                >Amount
+              <label>Amount</label>
+
+              <ion-input formControlName="amount" placeholder="Eg: $ 45.00">
+              </ion-input>
+
+              <div class="error-container">
                 <ion-text
-                  color="danger"
+                  class="danger"
                   *ngIf="addExpense.get('amount')?.touched && addExpense.get('amount')?.invalid"
                 >
                   Amount is required
                 </ion-text>
-              </label>
-              <ion-input formControlName="amount" placeholder="Eg: $ 45.00">
-              </ion-input>
+              </div>
             </ion-col>
 
-            <!-- Assign School -->
+            <!-- Paid By -->
             <ion-col class="align-right-field" size="12" size-md="6">
-              <label
-                >Paid by
-                <ion-text
-                  color="danger"
-                  *ngIf="addExpense.get('paidBy')?.touched && addExpense.get('paidBy')?.invalid"
-                >
-                  Paid By is required
-                </ion-text>
-              </label>
+              <label>Paid by</label>
 
               <div class="input">
                 <ion-select formControlName="paidBy" placeholder="Eg:vender...">
@@ -97,34 +94,21 @@
                 </ion-select>
                 <ion-icon class="down" name="chevron-down-outline"></ion-icon>
               </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="addExpense.get('paidBy')?.touched && addExpense.get('paidBy')?.invalid"
+                >
+                  Paid By is required
+                </ion-text>
+              </div>
             </ion-col>
 
-            <!-- Route -->
+            <!-- Upload Invoice -->
             <ion-col size="12" size-md="6">
-              <!-- <label> Upload Invoice </label>
-
-              <div>
-                <ion-input
-                  class="input"
-                  formControlName="uploadInvoice"
-                  type="file"
-                  #fileInputhidden
-                >
-                  <ion-icon name="add-circle-outline"></ion-icon>
-                </ion-input>
-              </div> -->
-
               <div class="upload-container">
-                <label class="upload-label"
-                  >Upload Invoice
-
-                  <ion-text
-                    color="danger"
-                    *ngIf="addExpense.get('uploadInvoice')?.touched && addExpense.get('uploadInvoice')?.invalid"
-                  >
-                    Invoice is required
-                  </ion-text>
-                </label>
+                <label class="upload-label">Upload Invoice</label>
 
                 <div class="upload-box">
                   <!-- Hidden File Input -->
@@ -138,11 +122,12 @@
 
                   <!-- Left Side File Name -->
                   <div
-                    color="file-pill"
+                    class="file-pill"
                     *ngIf="selectedFile"
                     (click)="fileInput.click()"
                   >
                     <div class="file-name">{{ selectedFile.name }}</div>
+
                     <ion-icon
                       name="close-circle-outline"
                       (click)="removeFile($event)"
@@ -154,17 +139,28 @@
                     <ion-icon name="add-circle-outline"></ion-icon>
                   </div>
                 </div>
+
+                <div class="error-container">
+                  <ion-text
+                    class="danger"
+                    *ngIf="addExpense.get('uploadInvoice')?.touched && addExpense.get('uploadInvoice')?.invalid"
+                  >
+                    Invoice is required
+                  </ion-text>
+                </div>
               </div>
             </ion-col>
 
-            <!-- Service Start Date -->
+            <!-- Notes -->
             <ion-col class="align-right-field" size="12" size-md="6">
               <label>Notes [Optional]</label>
+
               <ion-input
                 formControlName="notesOptional"
                 placeholder="Eg: New Tyre has been changed"
               >
               </ion-input>
+              <div class="error-container"></div>
             </ion-col>
           </ion-row>
         </ion-grid>

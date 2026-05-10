@@ -19,15 +19,20 @@
               placeholder="Enter your email or mobile number"
             >
             </ion-input>
+           
           </ion-item>
+       
 
-          <small
-            *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
-          >
-            Email or Mobile is required
-          </small>
         </div>
-
+              <div class="error-container">
+              <small
+                class="danger"
+                *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+              >
+                Email or Mobile is required
+              </small>
+            </div>
+      
         <!-- Password -->
         <div class="field">
           <label>Password</label>
@@ -40,13 +45,16 @@
             >
             </ion-input>
           </ion-item>
-
-          <small
-            *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
-          >
-            Password is required
-          </small>
+       
         </div>
+           <div class="error-container">
+            <small
+              class="danger"
+              *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+            >
+              Password is required
+            </small>
+          </div>
 
         <a class="forgot">Forgot Password?</a>
 
@@ -55,11 +63,11 @@
           class="login-btn"
           type="submit"
           [disabled]="loginForm.invalid"
+          fill="clear"
         >
-          Log-In
+          <div class="btn-text">Log-In</div>
         </ion-button>
       </div>
     </form>
-   
   </div>
 </ion-content>

@@ -15,95 +15,124 @@
           <!-- Row 1 -->
           <ion-row>
             <ion-col size="6">
-              <ion-label
-                >Student Name
-                <ion-text
-                  color="danger"
-                  *ngIf="enrollForm.get('studentName')?.touched && enrollForm.get('studentName')?.invalid"
-                >
-                  Student name is required
-                </ion-text>
-              </ion-label>
+              <ion-label>Student Name</ion-label>
+
               <ion-input
                 fill="outline"
                 formControlName="studentName"
                 placeholder="Eg: Michael"
               ></ion-input>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="enrollForm.get('studentName')?.touched &&
+                 enrollForm.get('studentName')?.invalid"
+                >
+                  Student name is required
+                </ion-text>
+              </div>
             </ion-col>
 
             <ion-col size="6" class="align-right-field">
               <ion-label>Admission Number (optional)</ion-label>
+
               <ion-input
                 fill="outline"
                 formControlName="admissionNumber"
                 placeholder="Eg: AD574985"
               ></ion-input>
+
+              <div class="error-container"></div>
             </ion-col>
           </ion-row>
 
           <!-- Row 2 -->
           <ion-row>
             <ion-col size="6">
-              <ion-label
-                >Grade / Class
-                <ion-text
-                  color="danger"
-                  *ngIf="enrollForm.get('gradeClass')?.touched && enrollForm.get('gradeClass')?.invalid"
-                >
-                  Class is required
-                </ion-text>
-              </ion-label>
+              <ion-label>Grade / Class</ion-label>
+
               <div class="input">
                 <ion-select
                   fill="outline"
                   formControlName="gradeClass"
                   placeholder="Eg: 10th"
                 ></ion-select>
+
                 <ion-icon class="down" name="chevron-down-outline"></ion-icon>
+              </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="enrollForm.get('gradeClass')?.touched &&
+                 enrollForm.get('gradeClass')?.invalid"
+                >
+                  Class is required
+                </ion-text>
               </div>
             </ion-col>
 
             <ion-col size="6" class="align-right-field">
               <ion-label>Section (optional)</ion-label>
+
               <ion-input
                 fill="outline"
                 formControlName="section"
                 placeholder="Eg: A,B,C,D"
               ></ion-input>
+
+              <div class="error-container"></div>
             </ion-col>
           </ion-row>
 
           <!-- Row 3 -->
           <ion-row>
             <ion-col size="6">
-              <ion-label
-                >School
-                <ion-text
-                  color="danger"
-                  *ngIf="enrollForm.get('school')?.touched && enrollForm.get('school')?.invalid"
-                >
-                  School is required
-                </ion-text>
-              </ion-label>
+              <ion-label>School</ion-label>
+
               <div class="input">
                 <ion-select
                   fill="outline"
                   formControlName="school"
                   placeholder="Eg: A,B,C,D"
                 ></ion-select>
+
                 <ion-icon class="down" name="chevron-down-outline"></ion-icon>
+              </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="enrollForm.get('school')?.touched &&
+                 enrollForm.get('school')?.invalid"
+                >
+                  School is required
+                </ion-text>
               </div>
             </ion-col>
 
             <ion-col size="6" class="align-right-field">
               <ion-label>Route</ion-label>
+
               <div class="input">
                 <ion-select
                   fill="outline"
                   formControlName="route"
                   placeholder="Eg: Route 51"
                 ></ion-select>
+
                 <ion-icon class="down" name="chevron-down-outline"></ion-icon>
+              </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="enrollForm.get('route')?.touched &&
+                 enrollForm.get('route')?.invalid"
+                >
+                  Route is required
+                </ion-text>
               </div>
             </ion-col>
           </ion-row>
@@ -112,25 +141,49 @@
           <ion-row>
             <ion-col size="6">
               <ion-label>Pickup / Drop Stop</ion-label>
+
               <div class="input">
                 <ion-select
                   fill="outline"
                   formControlName="pickupStop"
                   placeholder="Eg: Triplicane"
                 ></ion-select>
+
                 <ion-icon class="down" name="chevron-down-outline"></ion-icon>
+              </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="enrollForm.get('pickupStop')?.touched &&
+                 enrollForm.get('pickupStop')?.invalid"
+                >
+                  Pickup / Drop Stop is required
+                </ion-text>
               </div>
             </ion-col>
 
             <ion-col size="6" class="align-right-field">
               <ion-label>Assign Bus</ion-label>
+
               <div class="input">
                 <ion-select
                   fill="outline"
                   formControlName="assignBus"
                   placeholder="Eg: TN31BF8236"
                 ></ion-select>
+
                 <ion-icon class="down" name="chevron-down-outline"></ion-icon>
+              </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="enrollForm.get('assignBus')?.touched &&
+                 enrollForm.get('assignBus')?.invalid"
+                >
+                  Assign Bus is required
+                </ion-text>
               </div>
             </ion-col>
           </ion-row>
@@ -138,87 +191,95 @@
           <!-- Row 5 -->
           <ion-row>
             <ion-col size="6">
-              <ion-label
-                >Parent Name
-                <ion-text
-                  color="danger"
-                  *ngIf="enrollForm.get('parentName')?.touched && enrollForm.get('parentName')?.invalid"
-                >
-                  Parent name is required
-                </ion-text>
-              </ion-label>
+              <ion-label>Parent Name</ion-label>
+
               <ion-input
                 fill="outline"
                 formControlName="parentName"
                 placeholder="Eg: Grace"
               ></ion-input>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="enrollForm.get('parentName')?.touched &&
+                 enrollForm.get('parentName')?.invalid"
+                >
+                  Parent name is required
+                </ion-text>
+              </div>
             </ion-col>
 
             <ion-col size="6" class="align-right-field">
               <ion-label>Relationship</ion-label>
+
               <ion-input
                 fill="outline"
                 formControlName="relationship"
                 placeholder="Eg: Mother"
               ></ion-input>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="enrollForm.get('relationship')?.touched &&
+                 enrollForm.get('relationship')?.invalid"
+                >
+                  Relationship is required
+                </ion-text>
+              </div>
             </ion-col>
           </ion-row>
 
           <!-- Row 6 -->
           <ion-row>
             <ion-col size="6">
-              <ion-label
-                >Phone Number
-                <ion-text
-                  color="danger"
-                  *ngIf="enrollForm.get('phoneNumber')?.touched && enrollForm.get('phoneNumber')?.errors"
-                >
-                  <span
-                    *ngIf="enrollForm.get('phoneNumber')?.errors?.['required']"
-                    >Phone number is required</span
-                  >
-                  <span
-                    *ngIf="enrollForm.get('phoneNumber')?.errors?.['minlength']"
-                    >Minimum 10 digits required</span
-                  >
-                </ion-text>
-              </ion-label>
+              <ion-label>Phone Number</ion-label>
+
               <ion-input
                 fill="outline"
                 formControlName="phoneNumber"
                 placeholder="Eg: 9876537***"
               ></ion-input>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="enrollForm.get('phoneNumber')?.touched &&
+                 enrollForm.get('phoneNumber')?.errors"
+                >
+                  <span
+                    *ngIf="enrollForm.get('phoneNumber')?.errors?.['required']"
+                  >
+                    Phone number is required
+                  </span>
+
+                  <span
+                    *ngIf="enrollForm.get('phoneNumber')?.errors?.['minlength']"
+                  >
+                    Minimum 10 digits required
+                  </span>
+                </ion-text>
+              </div>
             </ion-col>
 
             <ion-col size="6" class="align-right-field">
               <ion-label>Email Address (optional)</ion-label>
+
               <ion-input
                 fill="outline"
                 formControlName="email"
                 placeholder="Eg: abc@gmail.com"
               ></ion-input>
+
+              <div class="error-container"></div>
             </ion-col>
           </ion-row>
 
           <!-- Row 7 -->
           <ion-row>
             <ion-col size="6">
-              <!-- <ion-label>Billing Start Date</ion-label>
-              <ion-input
-                type="date"
-                formControlName="billingStartDate"
-                fill="outline"
-              ></ion-input> -->
-
-              <ion-label>
-                Billing Start Date
-                <ion-text
-                  color="danger"
-                  *ngIf="enrollForm.get('billingStartDate')?.touched && enrollForm.get('billingStartDate')?.errors"
-                >
-                  is required
-                </ion-text>
-              </ion-label>
+              <ion-label>Billing Start Date</ion-label>
 
               <!-- Custom Input -->
               <div class="date-box" (click)="openPicker()">
@@ -227,9 +288,20 @@
                   (enrollForm.get('billingStartDate')?.value |
                   date:'MM/dd/yyyy') : 'mm/dd/yyyy' }}
                 </span>
+
                 <div class="icon-container">
                   <ion-icon name="calendar-clear-outline"></ion-icon>
                 </div>
+              </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="enrollForm.get('billingStartDate')?.touched &&
+                 enrollForm.get('billingStartDate')?.errors"
+                >
+                  Billing Start Date is required
+                </ion-text>
               </div>
 
               <!-- Date Picker -->
@@ -244,11 +316,13 @@
               </ion-modal>
             </ion-col>
 
-            <ion-col size="6" class="toggle-row" class="align-right-field">
+            <ion-col size="6" class="align-right-field">
               <ion-label>Recieve Notice</ion-label>
+
               <div class="setting-box">
                 <div class="toggle">
                   <span>{{enrollForm.value.receiveNotice}}</span>
+
                   <ion-toggle
                     [checked]="isChecked('receiveNotice')"
                     (ionChange)="toggleChange($event,'receiveNotice')"
@@ -256,6 +330,8 @@
                   </ion-toggle>
                 </div>
               </div>
+
+              <div class="error-container"></div>
             </ion-col>
           </ion-row>
 
@@ -263,9 +339,11 @@
           <ion-row>
             <ion-col size="6" class="toggle-row">
               <ion-label>Complimentary Student</ion-label>
+
               <div class="setting-box">
                 <div class="toggle">
                   <span>{{enrollForm.value.complimentaryStudent}}</span>
+
                   <ion-toggle
                     [checked]="isChecked('complimentaryStudent')"
                     (ionChange)="toggleChange($event,'complimentaryStudent')"
@@ -273,13 +351,17 @@
                   </ion-toggle>
                 </div>
               </div>
+
+              <div class="error-container"></div>
             </ion-col>
 
-            <ion-col size="6" class="toggle-row" class="align-right-field">
+            <ion-col size="6" class="align-right-field">
               <ion-label>Maintenance Alerts</ion-label>
+
               <div class="setting-box">
                 <div class="toggle">
                   <span>{{enrollForm.value.disableNotice}}</span>
+
                   <ion-toggle
                     [checked]="isChecked('disableNotice')"
                     (ionChange)="toggleChange($event,'disableNotice')"
@@ -287,6 +369,8 @@
                   </ion-toggle>
                 </div>
               </div>
+
+              <div class="error-container"></div>
             </ion-col>
           </ion-row>
         </ion-grid>

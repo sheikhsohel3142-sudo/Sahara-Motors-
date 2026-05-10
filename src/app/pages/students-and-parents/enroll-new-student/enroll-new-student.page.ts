@@ -27,13 +27,13 @@ export class EnrollNewStudentPage implements OnInit {
       section: [''],
 
       school: ['', Validators.required],
-      route: [''],
+      route: ['',Validators.required],
 
-      pickupStop: [''],
-      assignBus: [''],
+      pickupStop: ['',Validators.required],
+      assignBus: ['',Validators.required],
 
       parentName: ['', Validators.required],
-      relationship: [''],
+      relationship: ['', Validators.required],
 
       phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
       email: ['', Validators.email],

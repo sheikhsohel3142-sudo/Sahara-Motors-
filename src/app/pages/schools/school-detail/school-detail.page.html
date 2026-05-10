@@ -14,7 +14,7 @@
         </div>
 
         <div class="status-container">
-          <!-- <ion-toggle color="success" [(ngModel)]="isActive"></ion-toggle> -->
+          <!-- <ion-toggle class="success" [(ngModel)]="isActive"></ion-toggle> -->
           <ion-toggle color="dark-green" [(ngModel)]="isActive"
             ><span>Active</span></ion-toggle
           >
@@ -26,28 +26,21 @@
                 <!-- LEFT COLUMN -->
                 <ion-col size="12" size="6">
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >School Name
-                      <ion-text color="danger" *ngIf="isInvalid('schoolName')">
-                        School Name is required
-                      </ion-text>
-                    </ion-label>
+                    <ion-label position="stacked">School Name</ion-label>
                     <ion-input
                       formControlName="schoolName"
                       placeholder="Eg: SRV Marticulation Higher Sec School"
                     ></ion-input>
+                    <div class="error-container">
+                      <ion-text class="danger" *ngIf="isInvalid('schoolName')">
+                        School Name is required
+                      </ion-text>
+                    </div>
                   </ion-item>
 
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >Affiliation Board
-                      <ion-text
-                        color="danger"
-                        *ngIf="isInvalid('affiliationBoard')"
-                      >
-                        Board is required
-                      </ion-text>
-                    </ion-label>
+                    <ion-label position="stacked">Affiliation Board</ion-label>
+
                     <div class="input">
                       <ion-icon
                         class="down"
@@ -56,10 +49,18 @@
                       <ion-select formControlName="affiliationBoard">
                         <ion-select-option value="CBSE">CBSE</ion-select-option>
                         <ion-select-option value="ICSE">ICSE</ion-select-option>
-                        <ion-select-option value="State Board"
-                          >State Board</ion-select-option
-                        >
+                        <ion-select-option value="State Board">
+                          State Board
+                        </ion-select-option>
                       </ion-select>
+                    </div>
+                    <div class="error-container">
+                      <ion-text
+                        class="danger"
+                        *ngIf="isInvalid('affiliationBoard')"
+                      >
+                        Board is required
+                      </ion-text>
                     </div>
                   </ion-item>
 
@@ -69,36 +70,42 @@
                       placeholder="Eg:Triplicane,Opp LIC Bus Stop"
                       formControlName="address2"
                     ></ion-input>
+                    <div class="error-container">
+                      
+                    </div>
                   </ion-item>
 
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >State
-                      <ion-text color="danger" *ngIf="isInvalid('state')">
+                    <ion-label position="stacked">State</ion-label>
+                    <ion-input formControlName="state"></ion-input>
+                    <div class="error-container">
+                      <ion-text class="danger" *ngIf="isInvalid('state')">
                         State is required
                       </ion-text>
-                    </ion-label>
-                    <ion-input formControlName="state"></ion-input>
+                    </div>
                   </ion-item>
 
                   <ion-item lines="none">
                     <ion-label position="stacked"
-                      >Primary Contact Name
+                      >Primary Contact Name</ion-label
+                    >
+                    <ion-input formControlName="primaryContactName"></ion-input>
+                    <div class="error-container">
                       <ion-text
-                        color="danger"
+                        class="danger"
                         *ngIf="isInvalid('primaryContactName')"
                       >
                         Contact name is required
-                      </ion-text></ion-label
-                    >
-                    <ion-input formControlName="primaryContactName"></ion-input>
+                      </ion-text>
+                    </div>
                   </ion-item>
 
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >Email
+                    <ion-label position="stacked">Email</ion-label>
+                    <ion-input type="email" formControlName="email"></ion-input>
+                    <div class="error-container">
                       <ion-text
-                        color="danger"
+                        class="danger"
                         *ngIf="schoolForm.get('email')?.touched"
                       >
                         <span
@@ -106,27 +113,19 @@
                         >
                           Email is required
                         </span>
+
                         <span
                           *ngIf="schoolForm.get('email')?.hasError('email')"
                         >
                           Enter valid email
                         </span>
                       </ion-text>
-                    </ion-label>
-                    <ion-input type="email" formControlName="email"></ion-input>
+                    </div>
                   </ion-item>
 
                   <ion-item lines="none">
-                    <ion-label position="stacked">
-                      School Timings
+                    <ion-label position="stacked"> School Timings </ion-label>
 
-                      <ion-text
-                        color="danger"
-                        *ngIf="(isInvalid('startTime') || isInvalid('endTime'))"
-                      >
-                        Time is required
-                      </ion-text>
-                    </ion-label>
                     <div class="date-box" (click)="openTimePicker()">
                       <span>
                         {{ schoolForm.value.startTime &&
@@ -137,100 +136,154 @@
 
                       <ion-icon name="time-outline"></ion-icon>
                     </div>
-
-                    <!-- 🔥 REMOVE formControlName from here -->
                     <ion-modal
+  [isOpen]="isTimeOpen"
+  (didDismiss)="onModalClose()"
+  class="time-modal"
+>
+  <ng-template>
+    <div class="time-modal-content">
+
+      <!-- Start Time -->
+      <div class="time-section">
+        <ion-label class="time-label">Start Time</ion-label>
+
+        <div class="time-picker-wrapper">
+          <ion-datetime
+            presentation="time"
+            (ionChange)="selectStartTime($event)"
+          ></ion-datetime>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="time-divider"></div>
+
+      <!-- End Time -->
+      <div class="time-section">
+        <ion-label class="time-label">End Time</ion-label>
+
+        <div class="time-picker-wrapper">
+          <ion-datetime
+            presentation="time"
+            (ionChange)="selectEndTime($event)"
+          ></ion-datetime>
+        </div>
+      </div>
+
+    </div>
+  </ng-template>
+</ion-modal>
+
+                    <!-- <ion-modal
                       [isOpen]="isTimeOpen"
                       (didDismiss)="onModalClose()"
                     >
                       <ng-template>
                         <ion-label>Start Time</ion-label>
+
                         <ion-datetime
                           presentation="time"
                           (ionChange)="selectStartTime($event)"
                         ></ion-datetime>
 
                         <ion-label>End Time</ion-label>
+
                         <ion-datetime
                           presentation="time"
                           (ionChange)="selectEndTime($event)"
                         ></ion-datetime>
                       </ng-template>
-                    </ion-modal>
+                    </ion-modal> -->
+                    <div
+                      class="error-container"
+                      *ngIf="(isInvalid('startTime') || isInvalid('endTime'))"
+                    >
+                      <ion-text class="danger"> Time is required </ion-text>
+                    </div>
                   </ion-item>
 
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >Active Drivers
-                      <ion-text
-                        color="danger"
-                        *ngIf="isInvalid('activeDrivers')"
-                      >
-                        Active Drivers is required
-                      </ion-text>
-                    </ion-label>
+                    <ion-label position="stacked">Active Drivers</ion-label>
+
                     <input
                       type="number"
                       class="input-count"
                       formControlName="activeDrivers"
                     />
+                    <div class="error-container">
+                      <ion-text
+                        class="danger"
+                        *ngIf="isInvalid('activeDrivers')"
+                      >
+                        Active Drivers is required
+                      </ion-text>
+                    </div>
                   </ion-item>
                 </ion-col>
 
                 <!-- RIGHT COLUMN -->
                 <ion-col size="12" size="6" class="right-side-column">
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >School Type
-                      <ion-text color="danger" *ngIf="isInvalid('schoolType')">
-                        School Type is required
-                      </ion-text>
-                    </ion-label>
+                    <ion-label position="stacked">School Type</ion-label>
+
                     <div class="input">
                       <ion-icon
                         class="down"
                         name="chevron-down-outline"
                       ></ion-icon>
+
                       <ion-select formControlName="schoolType">
-                        <ion-select-option value="Primary"
-                          >Primary</ion-select-option
-                        >
-                        <ion-select-option value="Secondary"
-                          >Secondary</ion-select-option
-                        >
-                        <ion-select-option value="Higher Secondary"
-                          >Higher Secondary</ion-select-option
-                        >
+                        <ion-select-option value="Primary">
+                          Primary
+                        </ion-select-option>
+
+                        <ion-select-option value="Secondary">
+                          Secondary
+                        </ion-select-option>
+
+                        <ion-select-option value="Higher Secondary">
+                          Higher Secondary
+                        </ion-select-option>
                       </ion-select>
+                    </div>
+                    <div class="error-container">
+                      <ion-text class="danger" *ngIf="isInvalid('schoolType')">
+                        School Type is required
+                      </ion-text>
                     </div>
                   </ion-item>
 
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >Address Line 1
-                      <ion-text color="danger" *ngIf="isInvalid('address1')">
+                    <ion-label position="stacked">Address Line 1</ion-label>
+                    <ion-input formControlName="address1"></ion-input>
+                    <div class="error-container">
+                      <ion-text class="danger" *ngIf="isInvalid('address1')">
                         Address is required
                       </ion-text>
-                    </ion-label>
-                    <ion-input formControlName="address1"></ion-input>
+                    </div>
                   </ion-item>
 
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >City
-                      <ion-text color="danger" *ngIf="isInvalid('city')">
+                    <ion-label position="stacked">City</ion-label>
+                    <ion-input formControlName="city"></ion-input>
+                    <div class="error-container">
+                      <ion-text class="danger" *ngIf="isInvalid('city')">
                         City is required
                       </ion-text>
-                    </ion-label>
-                    <ion-input formControlName="city"></ion-input>
+                    </div>
                   </ion-item>
 
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >Postal Code
+                    <ion-label position="stacked">Postal Code</ion-label>
 
+                    <ion-input
+                      type="number"
+                      formControlName="postalCode"
+                    ></ion-input>
+                    <div class="error-container">
                       <ion-text
-                        color="danger"
+                        class="danger"
                         *ngIf="schoolForm.get('postalCode')?.touched"
                       >
                         <span
@@ -238,24 +291,26 @@
                         >
                           Postal Code is required
                         </span>
+
                         <span
                           *ngIf="schoolForm.get('postalCode')?.hasError('pattern')"
                         >
                           Enter 6 digit Postal Code
                         </span>
                       </ion-text>
-                    </ion-label>
-                    <ion-input
-                      type="number"
-                      formControlName="postalCode"
-                    ></ion-input>
+                    </div>
                   </ion-item>
 
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >Contact Phone
+                    <ion-label position="stacked">Contact Phone</ion-label>
+
+                    <ion-input
+                      type="tel"
+                      formControlName="contactPhone"
+                    ></ion-input>
+                    <div class="error-container">
                       <ion-text
-                        color="danger"
+                        class="danger"
                         *ngIf="schoolForm.get('contactPhone')?.touched"
                       >
                         <span
@@ -263,61 +318,61 @@
                         >
                           Phone is required
                         </span>
+
                         <span
                           *ngIf="schoolForm.get('contactPhone')?.hasError('pattern')"
                         >
                           Enter 10 digit phone number
                         </span>
                       </ion-text>
-                    </ion-label>
-                    <ion-input
-                      type="tel"
-                      formControlName="contactPhone"
-                    ></ion-input>
+                    </div>
                   </ion-item>
 
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >Operating Days
-                      <ion-text
-                        color="danger"
-                        *ngIf="isInvalid('operatingDays')"
-                      >
-                        Operating days are required
-                      </ion-text>
-                    </ion-label>
+                    <ion-label position="stacked">Operating Days</ion-label>
+
                     <div class="input">
                       <ion-icon
                         class="down"
                         name="chevron-down-outline"
                       ></ion-icon>
+
                       <ion-select formControlName="operatingDays">
-                        <ion-select-option value="Mon-Fri"
-                          >Monday - Friday</ion-select-option
-                        >
-                        <ion-select-option value="Mon-Sat"
-                          >Monday - Saturday</ion-select-option
-                        >
+                        <ion-select-option value="Mon-Fri">
+                          Monday - Friday
+                        </ion-select-option>
+
+                        <ion-select-option value="Mon-Sat">
+                          Monday - Saturday
+                        </ion-select-option>
                       </ion-select>
+                    </div>
+                    <div class="error-container">
+                      <ion-text
+                        class="danger"
+                        *ngIf="isInvalid('operatingDays')"
+                      >
+                        Operating days are required
+                      </ion-text>
                     </div>
                   </ion-item>
 
                   <ion-item lines="none">
-                    <ion-label position="stacked"
-                      >Routes Assigned
-                      <ion-text
-                        color="danger"
-                        *ngIf="isInvalid('routesAssigned')"
-                      >
-                        Routes Assigned is required
-                      </ion-text>
-                    </ion-label>
+                    <ion-label position="stacked">Routes Assigned</ion-label>
 
                     <input
                       type="number"
                       class="input-count"
                       formControlName="routesAssigned"
                     />
+                    <div class="error-container">
+                      <ion-text
+                        class="danger"
+                        *ngIf="isInvalid('routesAssigned')"
+                      >
+                        Routes Assigned is required
+                      </ion-text>
+                    </div>
                   </ion-item>
                 </ion-col>
               </ion-row>

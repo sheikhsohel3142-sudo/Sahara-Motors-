@@ -2,7 +2,7 @@
   background: #f2f2f2;
   width: 100%;
   max-width: 1910px;
-  height: 1150px;
+  height: 1100px;
   position: relative;
   top: 10px;
 
@@ -217,6 +217,97 @@ ion-icon {
     display: none;
   }
 }
+.error-container {
+  min-height: 28px; // validation aaye ya na aaye space reserve rahega
+  margin-top: -18px;
+}
+
+.danger {
+  color:  #dc2626;
+  font-size: 11px;
+  font-weight: 400;
+  display: block;
+  line-height: 1.2;
+}
+.time-modal {
+  --width: 90%;
+  --max-width: 500px;
+  --height: auto;
+  --border-radius: 20px;
+  --backdrop-opacity: 0.45;
+  --box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+.time-modal::part(content) {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* ===== Inner Content ===== */
+
+.time-modal-content {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #fff;
+}
+
+/* ===== Section ===== */
+
+.time-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Label ===== */
+
+.time-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12px;
+  letter-spacing: 0.2px;
+}
+
+/* ===== Picker Wrapper ===== */
+
+.time-picker-wrapper {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 10px;
+  transition: 0.25s ease;
+}
+
+.time-picker-wrapper:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ===== Datetime ===== */
+
+.time-picker-wrapper ion-datetime {
+  width: 100%;
+
+  --background: transparent;
+  --background-rgb: transparent;
+
+  --wheel-highlight-background: rgba(37, 99, 235, 0.08);
+
+  --wheel-fade-background-rgb: 248, 250, 252;
+
+  color: #0f172a;
+  border-radius: 14px;
+}
+
+/* ===== Divider ===== */
+
+.time-divider {
+  height: 1px;
+  background: #e2e8f0;
+}
 
 @media only screen and (min-width: 1600px) {
   .add-new-schools {
@@ -232,13 +323,16 @@ ion-icon {
   .input {
     width: 91%;
   }
+  .date-box {
+    width: 91%;
+  }
   .add-new-schools ion-input {
     width: 91%;
   }
 
   ion-card {
     width: 105%;
-    height: 1050px;
+    height: 1000px;
   }
 
   ion-button {
@@ -269,7 +363,7 @@ ion-icon {
   ion-card {
     width: 107%;
 
-    height: 1050px;
+    height: 1000px;
   }
 
   .add-new-schools ion-input {
@@ -301,7 +395,7 @@ ion-icon {
 
   ion-card {
     width: 110%;
-    height: 1050px;
+    height: 1000px;
 
     // right: 0;
     // top: 60px;
@@ -344,7 +438,7 @@ ion-icon {
 
   ion-card {
     width: 106%;
-    height: 1050px;
+    height: 1000px;
 
     // right: 0;
     // top: 60px;
@@ -374,7 +468,7 @@ ion-icon {
   /* Outer container */
   .add-new-schools {
     width: 99%;
-    height: 1550px;
+    height: 1690px;
     // padding: 10px;
     background: #f2f2f2;
     padding: 8px 10px;
@@ -387,12 +481,16 @@ ion-icon {
     width: 91%;
     margin-left: 21px;
  
+  }.danger {
+    
+   position:relative;
+   left: 21px;
   }
 
   /* Card */
   ion-card {
     min-width: 300px;
-    height: 1400px;
+    height: 1550px;
     margin: 5px;
     padding: 16px;
     border-radius: 12px;

@@ -1,13 +1,13 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 .profile-container {
-  background: #f2f2f2;
+  background: #F2F2F2;
 
   width: 1500px;
   // max-width: 1920px;   /* maximum desktop width */
 
   height: 880px;
 
-   margin: auto;        /* center */
+  margin: auto; /* center */
   border-radius: 14px;
 
   padding-left: 100px;
@@ -15,7 +15,6 @@
   top: 10px;
 
   overflow: hidden;
-
 }
 // .profile-container{
 //   width: calc(100% - 10px);  /* left + right margin */
@@ -23,11 +22,15 @@
 //   margin: auto;
 // }
 .icon-container {
-  height: 600px;
-  width: 500px;
+  height: 550px;
+  width: 700px;
   position: relative;
-  top: 156px;
-  left: -5px;
+  top: 196px;
+  left: 20px;
+
+  img{
+    transform: scale(1.1);
+  }
 }
 
 .login-bg {
@@ -40,20 +43,29 @@
   width: 400px;
   position: absolute;
   right: 5%;
- top: 12%;
+  top: 12%;
 }
 
 .company {
   text-align: center;
   font-size: 14px;
+  font-weight: 400;
   color: #444;
   margin-top: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  font-family: "Manrope", sans-serif;
 }
 
 .title {
+  font-family: "Urbanist", sans-serif;
   text-align: center;
   margin-bottom: 40px;
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 145%;
+  letter-spacing: 0%;
 }
 
 .field {
@@ -61,19 +73,39 @@
 }
 
 label {
+  font-family: "Space Grotesk", sans-serif;
   display: block;
   margin-bottom: 6px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 145%;
+  letter-spacing: 0%;
   position: relative;
-
 }
 
-.input-box {
-  --background: #ffffff;
-  border-radius: 12px;
-  padding-left: 10px; 
-  position: relative;
-  right: 10px;
+// .input-box {
+//    font-family: "Space Grotesk", sans-serif;
+//   --background: #ffffff;
+//   //   font-size: 12px;
+//   // font-weight: 400;
+//   // line-height:100%;
+//   // letter-spacing: 0%;
+//   height: 55px;
+//   border-radius: 12px;
+//   padding-left: 10px;
+//   position: relative;
+//   right: 10px;
+// }
+ion-input {
+  --placeholder-color: #888;
+  --placeholder-opacity: 1;
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  height: 55px;
 }
 
 ion-icon {
@@ -82,40 +114,79 @@ ion-icon {
 }
 
 .forgot {
-  font-size: 13px;
-  color: #5a6b7c;
-  text-decoration: underline;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  color: #484E5C;
+  position: relative;
+  bottom: 20px;
+
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+
   cursor: pointer;
 }
 
 .login-btn {
-  margin-top: 30px;
+  margin-top: 25px;
   --border-radius: 12px;
-  --background: #375677;
+  height: 52px;
+  --background: #5B82F6;
+}
+.login-btn.button-disabled {
+  --background: #CCE0F6;
+  --color: rgba(255, 255, 255, 0.75);
 
+  opacity: 1; /* ionic default opacity remove */
+  filter: saturate(70%);
+
+  box-shadow: none;
+
+  cursor: not-allowed;
+}
+.btn-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 145%;
+  letter-spacing: 0;
+  text-align: center;
+  color: #FFFFFF;
 }
 
-small {
-  color: red;
-  margin-left: 5px;
+.error-container {
+  min-height: 28px; // validation aaye ya na aaye space reserve rahega
+  margin-top: -18px;
 }
-.vertical-line{
- width: 0;
-  height: 700px;
-  border-left: 1px solid #C7C9CC;
+
+.danger {
+  color:  #dc2626;
+  font-size: 11px;
+  font-weight: 400;
+  display: block;
+  line-height: 1.2;
+}
+.vertical-line {
+  width: 0;
+  height: 780px;
+  border-left: 1px solid #c7c9cc;
   position: absolute;
   left: 50%;
-  bottom: 10%;
-
+  bottom: 6%;
 }
-
 
 // @media only screen and (min-width: 1024px) {
 //   .profile-container {
 //     width: 98%;
 //     height: auto;
 //   }
-  
+
 //   .login-container {
 //     left: 750px;
 //     bottom: 520px;
@@ -239,6 +310,14 @@ small {
   //   left: 900px;
   //   bottom: 690px;
   // }
+  
+  .login-container {
+    bottom: 0;
+     width: 39%;
+  }
+  ion-input {
+    width: 127%;
+  }
 
   // .icon-container {
   //   left: 20px;
@@ -258,15 +337,19 @@ small {
   //   bottom: 690px;
   // }
 
-  .icon-container {
-    width: 450px;
+  // .icon-container {
+  //   width: 450px;
+  // }
+ 
+  .login-container {
+    bottom: 0;
+     width: 39.5%;
   }
-    .input-box {
-    width: 105%;
+  ion-input {
+    width: 127%;
   }
-    .login-btn {
-     width: 105%;
-
+  .login-btn {
+    width: 100%;
   }
 }
 
@@ -279,21 +362,18 @@ small {
   }
 
   .login-container {
-   
     bottom: 0;
+     width: 38%;
   }
-  .input-box {
-    width: 107%;
+  ion-input {
+    width: 127%;
   }
- 
-
 
   .icon-container {
     width: 450px;
   }
   .login-btn {
-     width: 105%;
-
+    width: 100%;
   }
 }
 
@@ -309,15 +389,14 @@ small {
   .icon-container {
     display: none;
   }
- .vertical-line{
+  .vertical-line {
     display: none;
   }
-   .input-box {
+  ion-input {
     width: 107%;
   }
-    .login-btn {
-     width: 105%;
-
+  .login-btn {
+    width: 105%;
   }
 
   .login-container {
@@ -342,15 +421,14 @@ small {
   .icon-container {
     display: none;
   }
-  .vertical-line{
+  .vertical-line {
     display: none;
   }
-    .input-box {
+  ion-input {
     width: 102%;
   }
-    .login-btn {
-     width: 100%;
-
+  .login-btn {
+    width: 100%;
   }
 
   .login-container {
@@ -378,13 +456,12 @@ small {
   .icon-container {
     display: none;
   }
-  .vertical-line{
+  .vertical-line {
     display: none;
   }
-    .input-box {
+  ion-input {
     width: 102%;
   }
-
 
   .login-container {
     position: relative;
@@ -402,7 +479,3 @@ small {
     width: 100%;
   }
 }
-
-
-
-

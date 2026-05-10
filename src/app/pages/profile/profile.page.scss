@@ -106,7 +106,7 @@ ion-grid {
   // width: 100%;
   // min-width: 372px;
   height: 50px;
-  margin-bottom: 9px;
+  margin-bottom: -7px;
   line-height: 150%;
   font-size: 16px;
   color: #333;
@@ -166,9 +166,20 @@ ion-content {
   --padding-end: 0;
   --background: #0f172a;
 }
-.danger {
-  color: red;
+
+.error-container {
+  min-height: 18px; // validation aaye ya na aaye space reserve rahega
+  margin-top: 6px;
 }
+
+.danger {
+  color:  #dc2626;
+  font-size: 11px;
+  font-weight: 400;
+  display: block;
+  line-height: 1.2;
+}
+
 
 @media only screen and (min-width: 1600px) {
   .profile-container {
@@ -254,7 +265,7 @@ ion-content {
   ion-button {
     width: 100%;
     min-width: 400px;
-    top: 60px;
+    top: 40px;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 995px) {
@@ -370,7 +381,6 @@ ion-content {
     margin-top: 16px;
     border-radius: 10px;
     font-size: 15px;
-    
   }
 
   /* Remove extra spacing issue */

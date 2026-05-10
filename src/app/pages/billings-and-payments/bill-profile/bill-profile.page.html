@@ -11,32 +11,16 @@
           <h2>Bill Details</h2>
         </div>
         <div class="status-container">
-          <!-- <ion-toggle color="success" [(ngModel)]="isActive"></ion-toggle> -->
+          <!-- <ion-toggle class="success" [(ngModel)]="isActive"></ion-toggle> -->
           <!-- [(ngModel)]="isActive" -->
-          <ion-toggle color="dark-green"><span>Active</span></ion-toggle>
+          <ion-toggle class="dark-green"><span>Active</span></ion-toggle>
         </div>
         <ion-grid>
           <ion-row>
-            <!-- Bus Registration -->
+            <!-- Student Name -->
             <ion-col size="12" size-md="6">
-              <label
-                >Student Name
-                <ion-text
-                  color="danger"
-                  *ngIf="billDetailsForm.get('studentName')?.touched && billDetailsForm.get('studentName')?.invalid"
-                >
-                  <small
-                    *ngIf="billDetailsForm.get('studentName')?.errors?.['required']"
-                  >
-                    Student name is required
-                  </small>
-                  <small
-                    *ngIf="billDetailsForm.get('studentName')?.errors?.['pattern']"
-                  >
-                    Only letters allowed
-                  </small>
-                </ion-text>
-              </label>
+              <label>Student Name</label>
+
               <div class="input-count">
                 <ion-input
                   placeholder="Eg: New Tyre has been changed"
@@ -44,28 +28,31 @@
                 >
                 </ion-input>
               </div>
-            </ion-col>
 
-            <!-- Seating Capacity -->
-            <ion-col class="align-right-field" size="12" size-md="6">
-              <label
-                >Parents Name
+              <div class="error-container">
                 <ion-text
-                  color="danger"
-                  *ngIf="billDetailsForm.get('parentsName')?.touched && billDetailsForm.get('parentsName')?.invalid"
+                  class="danger"
+                  *ngIf="billDetailsForm.get('studentName')?.touched && billDetailsForm.get('studentName')?.invalid"
                 >
                   <small
-                    *ngIf="billDetailsForm.get('parentsName')?.errors?.['required']"
+                    *ngIf="billDetailsForm.get('studentName')?.errors?.['required']"
                   >
-                    Parents name is required
+                    Student name is required
                   </small>
+
                   <small
-                    *ngIf="billDetailsForm.get('parentsName')?.errors?.['pattern']"
+                    *ngIf="billDetailsForm.get('studentName')?.errors?.['pattern']"
                   >
                     Only letters allowed
                   </small>
                 </ion-text>
-              </label>
+              </div>
+            </ion-col>
+
+            <!-- Parents Name -->
+            <ion-col class="align-right-field" size="12" size-md="6">
+              <label>Parents Name</label>
+
               <div class="input-count">
                 <ion-input
                   type="data"
@@ -74,28 +61,31 @@
                 >
                 </ion-input>
               </div>
-            </ion-col>
 
-            <!-- Fuel Type -->
-            <ion-col size="12" size-md="6">
-              <label
-                >Phone Number
+              <div class="error-container">
                 <ion-text
-                  color="danger"
-                  *ngIf="billDetailsForm.get('phoneNumber')?.touched && billDetailsForm.get('phoneNumber')?.invalid"
+                  class="danger"
+                  *ngIf="billDetailsForm.get('parentsName')?.touched && billDetailsForm.get('parentsName')?.invalid"
                 >
                   <small
-                    *ngIf="billDetailsForm.get('phoneNumber')?.errors?.['required']"
+                    *ngIf="billDetailsForm.get('parentsName')?.errors?.['required']"
                   >
-                    Phone number is required
+                    Parents name is required
                   </small>
+
                   <small
-                    *ngIf="billDetailsForm.get('phoneNumber')?.errors?.['pattern']"
+                    *ngIf="billDetailsForm.get('parentsName')?.errors?.['pattern']"
                   >
-                    Enter valid 10 digit number
+                    Only letters allowed
                   </small>
                 </ion-text>
-              </label>
+              </div>
+            </ion-col>
+
+            <!-- Phone Number -->
+            <ion-col size="12" size-md="6">
+              <label>Phone Number</label>
+
               <div class="input-count">
                 <ion-input
                   placeholder="Eg: $ 45.00"
@@ -103,19 +93,31 @@
                 >
                 </ion-input>
               </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="billDetailsForm.get('phoneNumber')?.touched && billDetailsForm.get('phoneNumber')?.invalid"
+                >
+                  <small
+                    *ngIf="billDetailsForm.get('phoneNumber')?.errors?.['required']"
+                  >
+                    Phone number is required
+                  </small>
+
+                  <small
+                    *ngIf="billDetailsForm.get('phoneNumber')?.errors?.['pattern']"
+                  >
+                    Enter valid 10 digit number
+                  </small>
+                </ion-text>
+              </div>
             </ion-col>
 
-            <!-- Assign School -->
+            <!-- School -->
             <ion-col class="align-right-field" size="12" size-md="6">
-              <label
-                >School
-                <ion-text
-                  color="danger"
-                  *ngIf="billDetailsForm.get('school')?.touched && billDetailsForm.get('school')?.invalid"
-                >
-                  <small>School is required</small>
-                </ion-text>
-              </label>
+              <label>School</label>
+
               <div class="input-count">
                 <ion-input
                   placeholder="Eg: New Tyre has been changed"
@@ -123,19 +125,21 @@
                 >
                 </ion-input>
               </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="billDetailsForm.get('school')?.touched && billDetailsForm.get('school')?.invalid"
+                >
+                  <small>School is required</small>
+                </ion-text>
+              </div>
             </ion-col>
 
-            <!-- Route -->
+            <!-- Route / School -->
             <ion-col size="12" size-md="6">
-              <label
-                >School
-                <ion-text
-                  color="danger"
-                  *ngIf="billDetailsForm.get('school')?.touched && billDetailsForm.get('school')?.invalid"
-                >
-                  <small>School is required</small>
-                </ion-text>
-              </label>
+              <label>School</label>
+
               <div class="input-count">
                 <ion-input
                   placeholder="Eg: New Tyre has been changed"
@@ -143,25 +147,36 @@
                 >
                 </ion-input>
               </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="billDetailsForm.get('school')?.touched && billDetailsForm.get('school')?.invalid"
+                >
+                  <small>School is required</small>
+                </ion-text>
+              </div>
             </ion-col>
 
-            <!-- Service Start Date -->
+            <!-- Billing Month -->
             <ion-col class="align-right-field" size="12" size-md="6">
-              <label
-                >Billing Month
-                <ion-text
-                  color="danger"
-                  *ngIf="billDetailsForm.get('billingMonth')?.touched && billDetailsForm.get('billingMonth')?.invalid"
-                >
-                  <small>Billing month is required</small>
-                </ion-text>
-              </label>
+              <label>Billing Month</label>
+
               <div class="input-count">
                 <ion-input
                   placeholder="Eg: New Tyre has been changed"
                   formControlName="billingMonth"
                 >
                 </ion-input>
+              </div>
+
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="billDetailsForm.get('billingMonth')?.touched && billDetailsForm.get('billingMonth')?.invalid"
+                >
+                  <small>Billing month is required</small>
+                </ion-text>
               </div>
             </ion-col>
           </ion-row>
@@ -195,7 +210,7 @@
                 <label
                   >Transport Fare
                   <ion-text
-                    color="danger"
+                    class="danger"
                     *ngIf="billingForm.get('transportFare')?.touched && billingForm.get('transportFare')?.invalid"
                   >
                     <small
@@ -232,7 +247,7 @@
                 <label
                   >Previous Due
                   <ion-text
-                    color="danger"
+                    class="danger"
                     *ngIf="billingForm.get('previousDue')?.touched && billingForm.get('previousDue')?.invalid"
                   >
                     <small
@@ -265,7 +280,7 @@
                 <label
                   >Late Fee
                   <ion-text
-                    color="danger"
+                    class="danger"
                     *ngIf="billingForm.get('lateFee')?.touched && billingForm.get('lateFee')?.invalid"
                   >
                     <small *ngIf="billingForm.get('lateFee')?.errors?.['min']">
@@ -291,7 +306,7 @@
                 <label
                   >Total Amount
                   <ion-text
-                    color="danger"
+                    class="danger"
                     *ngIf="billingForm.get('totalAmount')?.touched && billingForm.get('totalAmount')?.invalid"
                   >
                     <small
@@ -344,7 +359,7 @@
                 <ion-label
                   >Payment Amount
                   <ion-text
-                    color="danger"
+                    class="danger"
                     *ngIf="paymentForm.get('amount')?.touched && paymentForm.get('amount')?.invalid"
                   >
                     <small
@@ -366,7 +381,7 @@
                 <ion-label
                   >Payment Mode
                   <ion-text
-                    color="danger"
+                    class="danger"
                     *ngIf="paymentForm.get('mode')?.touched && paymentForm.get('mode')?.invalid"
                   >
                     <small>Payment mode is required</small>
@@ -386,10 +401,10 @@
             <!-- Row 2 -->
             <ion-row>
               <ion-col size="6">
-                   <ion-label>
+                <ion-label>
                   Payments Date
                   <ion-text
-                    color="danger"
+                    class="danger"
                     *ngIf="paymentForm.get('date')?.touched && paymentForm.get('date')?.errors"
                   >
                     Payments Date is required
@@ -400,21 +415,20 @@
                 <div class="date-box" (click)="openPicker()">
                   <span>
                     {{ paymentForm.get('date')?.value ?
-                    (paymentForm.get('date')?.value | date:'MM/dd/yyyy')
-                    : 'mm/dd/yyyy' }}
+                    (paymentForm.get('date')?.value | date:'MM/dd/yyyy') :
+                    'mm/dd/yyyy' }}
                   </span>
-                   <div class="icon-container">
-                  <ion-icon name="calendar-clear-outline"></ion-icon></div>
-                 
+                  <div class="icon-container">
+                    <ion-icon name="calendar-clear-outline"></ion-icon>
+                  </div>
                 </div>
 
                 <!-- Date Picker -->
                 <ion-modal [isOpen]="isOpen" (didDismiss)="isOpen = false">
                   <ng-template>
                     <ion-datetime
-                    formControlName="date"
+                      formControlName="date"
                       presentation="date"
-                      
                       (ionChange)="selectDate($event)"
                     ></ion-datetime>
                   </ng-template>
@@ -429,7 +443,7 @@
             </ion-row>
 
             <!-- Row 3 -->
-            <ion-row >
+            <ion-row>
               <ion-col size="12">
                 <ion-label>Notes (optional)</ion-label>
                 <div class="input">
@@ -505,28 +519,26 @@
           <h2>Payment History</h2>
         </div>
         <div class="table-profit-container">
-        <div class="head-container">
-          <!-- <div class="table-head-wrap">
+          <div class="head-container">
+            <!-- <div class="table-head-wrap">
             <div class="table-head"> -->
-          <span><div class="date">Date</div></span>
+            <span><div class="date">Date</div></span>
 
-          <span><div class="catagory">Amount</div></span>
-          <span><div class="mode">Mode</div></span>
-          <span ><div class="status">Reference</div></span>
-          <!-- </div>
+            <span><div class="catagory">Amount</div></span>
+            <span><div class="mode">Mode</div></span>
+            <span><div class="status">Reference</div></span>
+            <!-- </div>
           </div> -->
-        </div>
-
-        <div class="table-card">
-          <div class="table-row" *ngFor="let e of advanceList">
-            <span><div class="date">{{ e.date }}</div></span>
-            <span
-              ><div class="catagory">{{ e.reason }}</div></span
-            >
-            <span ><div class="mode">{{ e.amount }}</div></span>
-            <span ><div class="status">{{ e.status }}</div></span>
           </div>
-        </div>
+
+          <div class="table-card">
+            <div class="table-row" *ngFor="let e of advanceList">
+              <span><div class="date">{{ e.date }}</div></span>
+              <span><div class="catagory">{{ e.reason }}</div></span>
+              <span><div class="mode">{{ e.amount }}</div></span>
+              <span><div class="status">{{ e.status }}</div></span>
+            </div>
+          </div>
         </div>
       </ion-card>
     </div>
@@ -536,18 +548,18 @@
         <div class="header-container">
           <h2>Payment Recording</h2>
           <div class="btn-container">
-          <div class="button">
-            <ion-button (click)="sendWhatsapp()" fill="clear">
-              <div>WhatsApp</div>
-              <ion-icon name="share-social-outline"></ion-icon>
-            </ion-button>
-          </div>
-          <div class="button2">
-            <ion-button (click)="downloadReceipt()" fill="clear">
-              <div>download</div>
-              <img src="assets/img/download (1).png" alt="" />
-            </ion-button>
-          </div>
+            <div class="button">
+              <ion-button (click)="sendWhatsapp()" fill="clear">
+                <div>WhatsApp</div>
+                <ion-icon name="share-social-outline"></ion-icon>
+              </ion-button>
+            </div>
+            <div class="button2">
+              <ion-button (click)="downloadReceipt()" fill="clear">
+                <div>download</div>
+                <img src="assets/img/download (1).png" alt="" />
+              </ion-button>
+            </div>
           </div>
         </div>
         <form [formGroup]="paymentForm">
@@ -650,23 +662,8 @@
           <ion-row>
             <!-- Current Due -->
             <ion-col size="6">
-              <label
-                >Current Due
-                <ion-text
-                  color="danger"
-                  *ngIf="dueForm.get('currentDue')?.touched && dueForm.get('currentDue')?.invalid"
-                >
-                  <small
-                    *ngIf="dueForm.get('currentDue')?.errors?.['required']"
-                  >
-                    Current due is required
-                  </small>
+              <label>Current Due</label>
 
-                  <small *ngIf="dueForm.get('currentDue')?.errors?.['min']">
-                    Value cannot be negative
-                  </small>
-                </ion-text>
-              </label>
               <div class="input-count">
                 <ion-input
                   type="number"
@@ -675,50 +672,69 @@
                 >
                 </ion-input>
               </div>
+
+              <!-- Error Container -->
+              <div
+                class="error-container"
+                *ngIf="dueForm.get('currentDue')?.touched && dueForm.get('currentDue')?.invalid"
+              >
+                <small
+                  class="danger"
+                  *ngIf="dueForm.get('currentDue')?.errors?.['required']"
+                >
+                  Current due is required
+                </small>
+
+                <small
+                  class="danger"
+                  *ngIf="dueForm.get('currentDue')?.errors?.['min']"
+                >
+                  Value cannot be negative
+                </small>
+              </div>
             </ion-col>
 
             <!-- Due Since -->
             <ion-col size="6" class="align-right-field">
-              <label
-                >Due Since
-                <ion-text
-                  color="danger"
-                  *ngIf="dueForm.get('dueSince')?.touched && dueForm.get('dueSince')?.invalid"
-                >
-                  <small *ngIf="dueForm.get('dueSince')?.errors?.['required']">
-                    Date is required
-                  </small>
+              <label>Due Since</label>
 
-                  <small
-                    *ngIf="dueForm.get('dueSince')?.errors?.['futureDate']"
-                  >
-                    Future date not allowed
-                  </small>
-                </ion-text>
-              </label>
-                <!-- Custom Input -->
-                <div class="date-box2" (click)="openPicker2()">
-                  <span>
-                    {{dueForm.get('dueSince')?.value ?
-                    (dueForm.get('dueSince')?.value | date:'MM/dd/yyyy')
-                    : 'mm/dd/yyyy' }}
-                  </span>
-                   <div class="icon-container">
-                  <ion-icon name="calendar-clear-outline"></ion-icon></div>
-                 
+              <!-- Custom Input -->
+              <div class="date-box2" (click)="openPicker2()">
+                <span>
+                  {{dueForm.get('dueSince')?.value ?
+                  (dueForm.get('dueSince')?.value | date:'MM/dd/yyyy') :
+                  'mm/dd/yyyy' }}
+                </span>
+
+                <div class="icon-container">
+                  <ion-icon name="calendar-clear-outline"></ion-icon>
                 </div>
+              </div>
 
-                <!-- Date Picker -->
-                <ion-modal [isOpen]="isOpen2" (didDismiss)="isOpen2 = false">
-                  <ng-template>
-                    <ion-datetime
+              <!-- Error Container -->
+              <div
+                class="error-container"
+                *ngIf="dueForm.get('dueSince')?.touched && dueForm.get('dueSince')?.invalid"
+              >
+                <small class="danger" *ngIf="dueForm.get('dueSince')?.errors?.['required']">
+                  Date is required
+                </small>
+
+                <small class="danger" *ngIf="dueForm.get('dueSince')?.errors?.['futureDate']">
+                  Future date not allowed
+                </small>
+              </div>
+
+              <!-- Date Picker -->
+              <ion-modal [isOpen]="isOpen2" (didDismiss)="isOpen2 = false">
+                <ng-template>
+                  <ion-datetime
                     formControlName="dueSince"
-                      presentation="date"
-                      
-                      (ionChange)="selectDate2($event)"
-                    ></ion-datetime>
-                  </ng-template>
-                </ion-modal>
+                    presentation="date"
+                    (ionChange)="selectDate2($event)"
+                  ></ion-datetime>
+                </ng-template>
+              </ion-modal>
             </ion-col>
           </ion-row>
 
@@ -746,7 +762,7 @@
           </ion-row>
         </ion-grid>
       </form>
-    </ion-card>  
+    </ion-card>
     <div class="domi-card"></div>
   </div>
 </ion-content>

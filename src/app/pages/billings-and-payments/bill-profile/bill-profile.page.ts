@@ -302,7 +302,7 @@ Notes : ${data.notes}
   isOpen2 = false;
 
   openPicker2() {
-    this.isOpen = true;
+    this.isOpen2 = true;
   }
 
   selectDate2(event: any) {

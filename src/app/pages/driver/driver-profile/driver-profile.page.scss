@@ -88,6 +88,28 @@
     }
   }
 }
+.button3 {
+  position: relative;
+  ion-button {
+    height: 52px;
+    width: 817px;
+    border-radius: 16px;
+    position: relative;
+    left: 3px;
+    top: 80px;
+    gap: 12px;
+    text-transform: none;
+    background-color: #4f8cff;
+    color: #ffffff;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    font-weight: -300; /* Regular */
+    line-height: 145%; /* 18px × 1.45 = ~26px */
+    letter-spacing: 0px;
+    text-align: center;
+  }
+}
 .button2 {
   position: relative;
   ion-button {
@@ -169,7 +191,7 @@ ion-card {
   width: 880px;
   height: 500px;
   position: relative;
-  top: 170px;
+  top: 180px;
   right: 80px;
   padding-top: 30%;
 
@@ -225,7 +247,29 @@ ion-card {
     color: #666;
     position: absolute;
     right: 13%;
-    top: 46%;
+    top: 40%;
+  }
+}
+.date-box2 {
+  background: #f5f6f8;
+  border-radius: 8px;
+  padding: 12px 14px;
+  width: 372px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 19px;
+  line-height: 150%;
+  font-size: 16px;
+  color: #333;
+  --placeholder-color: #aaa;
+  cursor: pointer;
+
+  ion-icon {
+    font-size: 18px;
+    color: #666;
+    position: absolute;
+    right: 13%;
+    top: 40%;
   }
 }
 .input {
@@ -525,7 +569,7 @@ ion-card {
 
   height: 390px;
   position: relative;
-  top: 240px;
+  top: 260px;
   right: 80px;
   padding-top: 30%;
 
@@ -809,14 +853,14 @@ ion-card {
   color: #888;
   position: absolute;
   right: 12%;
-  top: 48%;
+  top: 43%;
 }
 .upload-icon2 ion-icon {
   font-size: 20px;
   color: #888;
   position: absolute;
   right: 12%;
-  top: 48%;
+  top: 43%;
 }
 
 .upload-icon3 ion-icon {
@@ -824,13 +868,13 @@ ion-card {
   color: #888;
   position: absolute;
   right: 12%;
-  top: 48%;
+  top: 43%;
 }
 .monthly-card {
   width: 880px;
-  height: 450px;
+  height: 500px;
   position: relative;
-  top: 310px;
+  top: 340px;
   right: 80px;
   padding-top: 30%;
 
@@ -927,11 +971,191 @@ ion-card {
   left: 17px;
   bottom: 20px;
 }
+.error-container {
+  min-height: 28px; // validation aaye ya na aaye space reserve rahega
+  margin-top: -18px;
+}
+
+.danger {
+  color: #dc2626;
+  font-size: 11px;
+  font-weight: 400;
+  display: block;
+  line-height: 1.2;
+}
+/* =========================
+   Production Level Date Modal
+========================= */
+
+ion-modal {
+  --width: 420px;
+  --max-width: 95%;
+  --height: auto;
+  --border-radius: 24px;
+  --box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  --backdrop-opacity: 0.45;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content */
+ion-modal ion-content,
+ion-modal .ion-page,
+ion-modal ng-template {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* =========================
+   Datetime Main
+========================= */
+
+ion-datetime {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 18px;
+
+  /* Main Theme */
+  --background: #ffffff;
+  --title-color: #111827;
+  --title-font-size: 22px;
+
+  /* Header Buttons */
+  --wheel-highlight-background: transparent;
+
+  /* Calendar Colors */
+  --day-color: #1f2937;
+  --day-color-hover: #ffffff;
+  --day-color-focused: #ffffff;
+
+  --today-color: #2563eb;
+  --today-background: rgba(37, 99, 235, 0.12);
+
+  --background-rgb: 255, 255, 255;
+
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   Calendar Header
+========================= */
+
+ion-datetime::part(calendar-month-year) {
+  color: #111827;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Month Navigation Buttons */
+ion-datetime::part(calendar-next-prev) {
+  color: #2563eb;
+  border-radius: 12px;
+  transition: 0.2s ease;
+}
+
+ion-datetime::part(calendar-next-prev):hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+/* Week Names */
+ion-datetime::part(calendar-day-header) {
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   Days Styling
+========================= */
+
+ion-datetime::part(calendar-day) {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+ion-datetime::part(calendar-day):hover {
+  background: #f3f4f6;
+  transform: scale(1.05);
+}
+
+/* Selected Day */
+ion-datetime::part(calendar-day active) {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.3);
+}
+
+/* Today */
+ion-datetime::part(calendar-day today) {
+  border: 1px solid #2563eb;
+  font-weight: 600;
+}
+
+/* Disabled Dates */
+ion-datetime::part(calendar-day disabled) {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Footer Buttons
+========================= */
+
+ion-datetime::part(button) {
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 10px 18px;
+}
+
+/* Cancel Button */
+ion-datetime::part(cancel-button) {
+  color: #6b7280;
+}
+
+/* Confirm Button */
+ion-datetime::part(confirm-button) {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 576px) {
+  ion-modal {
+    --width: 95%;
+    --border-radius: 20px;
+  }
+
+  ion-datetime {
+    padding: 14px;
+  }
+
+  ion-datetime::part(calendar-day) {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+}
 
 @media only screen and (min-width: 1600px) {
   .driver-profile-container {
     width: 99%;
-    height: 2440px;
+    height: 2570px;
 
     // left: 20px;
     // padding-left: 120px;
@@ -956,7 +1180,7 @@ ion-card {
 
   ion-card {
     width: 105%;
-    height: 890px;
+    height: 930px;
   }
   .upload-box {
     width: 91%;
@@ -965,6 +1189,7 @@ ion-card {
     width: 96%;
   }
   .salary_configuration {
+    top: 7%;
     width: 105%;
   }
   .expense-container {
@@ -980,9 +1205,17 @@ ion-card {
   //   width: 100%;
   // }
   .monthly-card {
+    top: 13%;
     width: 105%;
   }
   .button2 {
+    ion-button {
+      width: 100%;
+      min-width: 400px;
+      top: 100px;
+    }
+  }
+  .button3 {
     ion-button {
       width: 100%;
       min-width: 400px;
@@ -993,7 +1226,7 @@ ion-card {
   .paid-btn {
     width: 100%;
     min-width: 400px;
-    top: 80px;
+    top: 100px;
   }
 }
 
@@ -1001,7 +1234,7 @@ ion-card {
 @media only screen and (max-width: 1599px) and (min-width: 1280px) {
   .driver-profile-container {
     width: 99%;
-    height: 2450px;
+    height: 2570px;
 
     // padding-left: 140px;
   }
@@ -1028,9 +1261,10 @@ ion-card {
   ion-card {
     width: 107%;
 
-    height: 890px;
+    height: 930px;
   }
   .salary_configuration {
+    top: 7%;
     width: 107%;
   }
 
@@ -1052,14 +1286,21 @@ ion-card {
     ion-button {
       width: 100%;
       min-width: 400px;
-      top: 80px;
+      top: 100px;
+    }
+  }
+  .button3 {
+    ion-button {
+      width: 100%;
+      min-width: 400px;
+      top: 60px;
     }
   }
   .generate-btn,
   .paid-btn {
     width: 100%;
     min-width: 400px;
-    top: 80px;
+    top: 100px;
   }
 }
 
@@ -1067,7 +1308,7 @@ ion-card {
 @media only screen and (max-width: 1279px) and (min-width: 768px) {
   .driver-profile-container {
     width: 99%;
-    height: 2450px;
+    height: 2550px;
   }
   .input {
     width: 91%;
@@ -1096,7 +1337,7 @@ ion-card {
 
   ion-card {
     width: 110%;
-    height: 890px;
+    height: 930px;
 
     // right: 0;
     // top: 60px;
@@ -1129,7 +1370,14 @@ ion-card {
     ion-button {
       width: 100%;
       min-width: 400px;
-      top: 80px;
+      top: 100px;
+    }
+  }
+  .button3 {
+    ion-button {
+      width: 100%;
+      min-width: 400px;
+      top: 60px;
     }
   }
   .generate-btn,
@@ -1145,7 +1393,7 @@ ion-card {
 @media only screen and (max-width: 1024px) and (min-width: 900px) {
   .driver-profile-container {
     width: 99.5%;
-    height: 2450px;
+    height: 2620px;
   }
   .input {
     width: 91%;
@@ -1169,19 +1417,22 @@ ion-card {
 
   ion-card {
     width: 109%;
-    height: 900px;
+    height: 930px;
 
     // right: 0;
     // top: 60px;
   }
   .salary_configuration {
     width: 109%;
+      top: 190px;
   }
   .expense-container {
     width: 109%;
+    top: 280px;
   }
   .monthly-card {
     width: 109%;
+    top: 370px;
   }
   .title-container {
     margin-left: 50;
@@ -1218,7 +1469,7 @@ ion-card {
   /* Outer container */
   .driver-profile-container {
     width: 99%;
-    height: 3020px;
+    height: 3250px;
     // padding: 10px;
     background: #f2f2f2;
     padding: 8px 10px;
@@ -1233,28 +1484,42 @@ ion-card {
   }
   .upload-icon ion-icon {
     right: 9%;
-    top: 55%;
+    top: 40%;
   }
   .upload-icon2 ion-icon {
     right: 9%;
-    top: 55%;
+    top: 40%;
   }
   .upload-icon3 ion-icon {
     position: fixed;
     right: 13%;
-    top: 60%;
+    top: 59.5%;
   }
+
 
   .input-count {
     width: 91%;
     margin-left: 16px;
+  }.danger {
+    
+   position:relative;
+   left: 21px;
   }
   .date-box {
     width: 91%;
     margin-left: 20px;
     ion-icon {
-      top: 55%;
+      top: 40%;
       right: 9%;
+    }
+  }
+  .date-box2 {
+    width: 91%;
+    margin-left: 20px;
+    ion-icon {
+      position: fixed;
+      top: 51%;
+      right: 13%;
     }
   }
   .align-left {
@@ -1275,26 +1540,28 @@ ion-card {
   /* Card */
   ion-card {
     width: 100%;
-    height: 1350px;
+    height: 1480px;
     position: static;
     margin: 10px 0;
     margin-top: 30px;
   }
   .salary_configuration {
     width: 100%;
+    height: 520px;
+    
     right: 0;
-    top: 80px;
+    top: 100px;
   }
   .expense-container {
     width: 100%;
     right: 0;
-    top: 140px;
+    top: 180px;
   }
   .monthly-card {
     width: 100%;
     height: 600px;
     right: 0;
-    top: 200px;
+    top: 270px;
   }
 
   /* Top button (My profile) */
@@ -1370,6 +1637,18 @@ ion-card {
       font-size: 15px;
     }
   }
+  .button3 {
+    top: 50px;
+    ion-button {
+      width: 100%;
+      min-width: 200px;
+      height: 48px;
+      top: 50%;
+      margin-top: 16px;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+  }
   .paid-btn {
     left: -40px;
   }
@@ -1393,28 +1672,28 @@ ion-card {
   .upload-icon3 ion-icon {
     position: fixed;
     right: 15%;
-    top: 60%;
+    top: 59.5%;
   }
 }
 @media only screen and (max-width: 467px) {
   .upload-icon3 ion-icon {
     position: fixed;
-    right: 16%;
-    top: 60%;
+    right: 15.5%;
+    top: 59.5%;
   }
 }
 @media only screen and (max-width: 367px) {
   .upload-icon3 ion-icon {
     position: fixed;
     right: 17%;
-    top: 60%;
+    top: 59.5%;
   }
 }
 @media only screen and (max-width: 267px) {
   .upload-icon3 ion-icon {
     position: fixed;
     right: 19%;
-    top: 60%;
+    top: 59.5%;
   }
 }
 

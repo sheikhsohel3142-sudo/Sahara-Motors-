@@ -110,12 +110,15 @@ export class DriverProfilePage implements OnInit {
         [Validators.required, Validators.pattern(/^[0-9]{10}$/)],
       ],
       emergencyContact: ['', Validators.pattern(/^[0-9]{10}$/)],
-      address: [''],
+      address: ['',Validators.required],
 
-      license: [null],
-      aadhaar: [null],
-      policeVerification: [null],
-      medicalCertificate: [null],
+      license: [null, Validators.required],
+
+      aadhaar: [null, Validators.required],
+
+      policeVerification: [null, Validators.required],
+
+      medicalCertificate: [null, Validators.required],
 
       joiningDate: ['', Validators.required],
       employmentType: [''],
@@ -125,7 +128,7 @@ export class DriverProfilePage implements OnInit {
 
     this.salaryForm = this.fb.group({
       monthlySalary: ['', [Validators.required, Validators.min(1)]],
-      salaryEffectiveFrom: ['', Validators.required],
+      advanceDate: ['', Validators.required],
       notesOptional: ['', Validators.required],
     });
 
@@ -218,6 +221,23 @@ export class DriverProfilePage implements OnInit {
     console.log(value);
     this.form.get('joiningDate')?.setValue(value);
     this.form.get('joiningDate')?.markAsTouched();
+
+    this.isOpen = false;
+  }
+
+    isOpen2 = false;
+
+  openPicker2() {
+    this.isOpen2 = true;
+  }
+
+  selectDate2(event: any) {
+    const value = event.detail.value;
+
+    // 🔥 IMPORTANT
+    console.log(value);
+    this.salaryForm.get('advanceDate')?.setValue(value);
+    this.salaryForm.get('advanceDate')?.markAsTouched();
 
     this.isOpen = false;
   }

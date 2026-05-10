@@ -38,7 +38,7 @@
 
 ion-button {
   position: absolute;
-  right: 2%;
+  right: 1.5%;
   top: 2%;
   width: 205px;
   height: 44px;
@@ -187,6 +187,25 @@ ion-button {
   letter-spacing: 0%;
   font-family: "Urbanist", sans-serif;
 }
+.school{
+  // border: 1px solid black;
+  display: flex;
+  justify-content: center;
+    img{
+
+    position: relative;
+    left: 9px;
+    top: -1px;
+    color: #0F172A;
+  }
+}
+.school-N{
+  // border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+
 
 /* ROWS */
 // .table-row {
@@ -211,8 +230,8 @@ ion-button {
   // grid-template-columns: 110px 1fr 1fr 0.5fr 0.5fr  0.5fr 295px;
   grid-template-columns:
     1fr /* S.no */
-    1.2fr /* Student Name */
-    1.2fr /* School */
+    1fr /* Student Name */
+    1.5fr /* School */
     1.9fr /* Assigned Bus */
     2.2fr /* Assigned Route */
     1.4fr /* Assigned Stop */

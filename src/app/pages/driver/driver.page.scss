@@ -35,7 +35,7 @@
 
 ion-button {
   position: absolute;
-  right: 2%;
+  right: 1.5%;
   top: 2%;
   width: 177px;
   height: 44px;
@@ -205,7 +205,7 @@ ion-button {
   //   1.2fr   /* Outstanding Advance */
   //   0.8fr     /* Status */
   //   0.3fr;  /* View */
-  grid-template-columns: 0.5fr 1fr 0.95fr 1.3fr 0.8fr 0.5fr 0.4fr;
+  grid-template-columns: 0.5fr 1fr 0.95fr 1.3fr 0.8fr 0.8fr 0.4fr;
 
   align-items: center;
   padding: 12px 16px;
@@ -229,7 +229,23 @@ ion-button {
 .active2 {
   padding-left: 6px;
 }
+.status{
+  // border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+.active{
+  // border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+  img{
 
+    position: relative;
+    left: 9px;
+    top: -1px;
+    color: #0F172A;
+  }
 .active {
   color: #16a34a;
   font-weight: 500;

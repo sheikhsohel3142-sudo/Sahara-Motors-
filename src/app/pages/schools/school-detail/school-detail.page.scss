@@ -86,6 +86,7 @@ ion-card {
 
     right: 11%;
     top: 2px;
+    bottom: 5%;
     transform: scale(0.7);
   }
 
@@ -226,7 +227,7 @@ ion-icon {
     color: #828282;
     position: absolute;
     right: 17%;
-    top: 40%;
+    top: 38%;
   }
 }
 
@@ -304,6 +305,112 @@ ion-icon {
 .right-side-column {
   position: relative;
   left: 25px;
+}
+.error-container {
+  min-height: 28px; // validation aaye ya na aaye space reserve rahega
+  margin-top: -18px;
+}
+
+.danger {
+  color:  #dc2626;
+  font-size: 11px;
+  font-weight: 400;
+  display: block;
+  line-height: 1.2;
+}
+.time-modal {
+  --width: 90%;
+  --max-width: 500px;
+  --height: auto;
+  --border-radius: 20px;
+  --backdrop-opacity: 0.45;
+  --box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+.time-modal::part(content) {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* ===== Inner Content ===== */
+
+.time-modal-content {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #fff;
+}
+
+/* ===== Section ===== */
+
+.time-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Label ===== */
+
+.time-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 12px;
+  letter-spacing: 0.2px;
+}
+
+/* ===== Picker Wrapper ===== */
+
+.time-picker-wrapper {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 10px;
+  transition: 0.25s ease;
+}
+
+.time-picker-wrapper:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ===== Datetime ===== */
+
+.time-picker-wrapper ion-datetime {
+  width: 100%;
+
+  --background: transparent;
+  --background-rgb: transparent;
+
+  --wheel-highlight-background: rgba(37, 99, 235, 0.08);
+
+  --wheel-fade-background-rgb: 248, 250, 252;
+
+  color: #0f172a;
+  border-radius: 14px;
+}
+
+/* ===== Divider ===== */
+
+.time-divider {
+  height: 1px;
+  background: #e2e8f0;
+}
+@media (max-width: 576px) {
+  .time-modal {
+    --width: 95%;
+    --border-radius: 16px;
+  }
+
+  .time-modal-content {
+    padding: 16px;
+    gap: 18px;
+  }
+
+  .time-label {
+    font-size: 14px;
+  }
 }
 
 @media only screen and (min-width: 1600px) {
@@ -498,7 +605,7 @@ ion-icon {
   ion-button {
     width: 100%;
     min-width: 400px;
-    top: 60px;
+    top: 30px;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 900px) {
@@ -571,6 +678,10 @@ ion-icon {
       left: 85%;
       top: 43%;
     }
+  }.danger {
+    
+   position:relative;
+   left: 21px;
   }
 
   .input-count {

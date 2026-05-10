@@ -13,313 +13,371 @@
           <h2>Driver Profile</h2>
         </div>
         <div class="status-container">
-          <!-- <ion-toggle color="success" [(ngModel)]="isActive"></ion-toggle> -->
-          <ion-toggle color="dark-green" (ngModel)]="isActive"
+          <!-- <ion-toggle class="success" [(ngModel)]="isActive"></ion-toggle> -->
+          <ion-toggle class="dark-green" (ngModel)]="isActive"
             ><span>Active</span></ion-toggle
           >
         </div>
 
         <ion-grid>
-          <ion-row>
-            <ion-col size="12" size-md="6">
-              <ion-label>Driver Name</ion-label>
-              <ion-input
-                placeholder="Eg: Michael"
-                formControlName="driverName"
-              ></ion-input>
-            </ion-col>
+  <ion-row>
+    <ion-col size="12" size-md="6">
+      <ion-label>Driver Name</ion-label>
 
-            <ion-col size="12" size-md="6" class="align-right-field">
-              <ion-label>Phone Number</ion-label>
-              <ion-input
-                type="tel"
-                formControlName="phoneNumber"
-                placeholder="Eg: 84579485**"
-              ></ion-input>
-            </ion-col>
+      <ion-input
+        placeholder="Eg: Michael"
+        formControlName="driverName"
+      ></ion-input>
 
-            <ion-col size="12" size-md="6">
-              <ion-label>Emergency Contact</ion-label>
-              <ion-input
-                type="tel"
-                formControlName="emergencyContact"
-                placeholder="Eg: 6379018899"
-              ></ion-input>
-            </ion-col>
+      <div class="error-container">
+        <ion-text
+          class="danger"
+          *ngIf="form.get('driverName')?.touched && form.get('driverName')?.errors"
+        >
+          Driver Name is required
+        </ion-text>
+      </div>
+    </ion-col>
 
-            <ion-col size="12" size-md="6" class="align-right-field">
-              <ion-label>Address</ion-label>
-              <ion-input
-                formControlName="address"
-                placeholder="Eg: No 389, New York..."
-              ></ion-input>
-            </ion-col>
+    <ion-col size="12" size-md="6" class="align-right-field">
+      <ion-label>Phone Number</ion-label>
 
-            <ion-col size="12" size-md="6">
-              <div class="upload-container">
-                <ion-label class="upload-ion-label">Driving License</ion-label>
+      <ion-input
+        type="tel"
+        formControlName="phoneNumber"
+        placeholder="Eg: 84579485**"
+      ></ion-input>
 
-                <div class="upload-box">
-                  <input
-                    type="file"
-                    #licenseInput
-                    hidden
-                    multiple
-                    formControlName="license"
-                    (change)="onFileSelected($event, 'license')"
-                  />
+      <div class="error-container">
+        <ion-text
+          class="danger"
+          *ngIf="form.get('phoneNumber')?.touched"
+        >
+          <span *ngIf="form.get('phoneNumber')?.hasError('required')">
+            Phone Number is required
+          </span>
 
-                  <div
-                    class="file-placeholder"
-                    *ngIf="!selectedFiles['license']?.length"
-                    (click)="licenseInput.click()"
-                  >
-                    Upload Driving License
-                  </div>
+          <span *ngIf="form.get('phoneNumber')?.hasError('pattern')">
+            Enter valid 10 digit number
+          </span>
+        </ion-text>
+      </div>
+    </ion-col>
 
-                  <div
-                    class="file-pill"
-                    *ngFor="let file of selectedFiles['license']; let i = index"
-                    (click)="licenseInput.click()"
-                  >
-                    <div class="file-name">{{ file.name }}</div>
+    <ion-col size="12" size-md="6">
+      <ion-label>Emergency Contact</ion-label>
 
-                    <ion-icon
-                      name="close-circle-outline"
-                      (click)="removeFile($event, 'license', i)"
-                    ></ion-icon>
-                  </div>
+      <ion-input
+        type="tel"
+        formControlName="emergencyContact"
+        placeholder="Eg: 6379018899"
+      ></ion-input>
 
-                  <div class="upload-icon" (click)="licenseInput.click()">
-                    <ion-icon name="add-circle-outline"></ion-icon>
-                  </div>
-                </div>
-              </div>
-            </ion-col>
+      <div class="error-container">
+        <ion-text
+          class="danger"
+          *ngIf="form.get('emergencyContact')?.touched &&
+          form.get('emergencyContact')?.hasError('pattern')"
+        >
+          Enter valid 10 digit number
+        </ion-text>
+      </div>
+    </ion-col>
 
-            <!-- <div class="align-row"> -->
-            <ion-col size="12" size-md="6" class="align-right-field">
-              <div class="upload-container">
-                <ion-label class="upload-ion-label"
-                  >Aadhaar / ID Proof</ion-label
-                >
+    <ion-col size="12" size-md="6" class="align-right-field">
+      <ion-label>Address</ion-label>
 
-                <div class="upload-box">
-                  <input
-                    type="file"
-                    #aadhaarInput
-                    hidden
-                    multiple
-                    formControlName="aadhaar"
-                    (change)="onFileSelected($event, 'aadhaar')"
-                  />
+      <ion-input
+        formControlName="address"
+        placeholder="Eg: No 389, New York..."
+      ></ion-input>
 
-                  <div
-                    class="file-placeholder"
-                    *ngIf="!selectedFiles['aadhaar']?.length"
-                    (click)="aadhaarInput.click()"
-                  >
-                    Upload Aadhaar / ID Proof
-                  </div>
+      <div class="error-container"></div>
+    </ion-col>
 
-                  <div
-                    class="file-pill"
-                    *ngFor="let file of selectedFiles['aadhaar']; let i = index"
-                    (click)="aadhaarInput.click()"
-                  >
-                    <div class="file-name">{{ file.name }}</div>
+    <ion-col size="12" size-md="6">
+      <div class="upload-container">
+        <ion-label class="upload-ion-label">
+          Driving License
+        </ion-label>
 
-                    <ion-icon
-                      name="close-circle-outline"
-                      (click)="removeFile($event, 'aadhaar', i)"
-                    ></ion-icon>
-                  </div>
+        <div class="upload-box">
+          <input
+            type="file"
+            #licenseInput
+            hidden
+            multiple
+            formControlName="license"
+            (change)="onFileSelected($event, 'license')"
+          />
 
-                  <div class="upload-icon2" (click)="aadhaarInput.click()">
-                    <ion-icon name="add-circle-outline"></ion-icon>
-                  </div>
-                </div>
-              </div>
-            </ion-col>
+          <div
+            class="file-placeholder"
+            *ngIf="!selectedFiles['license']?.length"
+            (click)="licenseInput.click()"
+          >
+            Upload Driving License
+          </div>
 
-            <!-- </div> -->
+          <div
+            class="file-pill"
+            *ngFor="let file of selectedFiles['license']; let i = index"
+            (click)="licenseInput.click()"
+          >
+            <div class="file-name">{{ file.name }}</div>
 
-            <ion-col size="12" size-md="6">
-              <div class="upload-container">
-                <ion-label class="upload-ion-label"
-                  >Police Verification</ion-label
-                >
+            <ion-icon
+              name="close-circle-outline"
+              (click)="removeFile($event, 'license', i)"
+            ></ion-icon>
+          </div>
 
-                <div class="upload-box">
-                  <input
-                    type="file"
-                    #policeInput
-                    hidden
-                    multiple
-                    formControlName="policeVerification"
-                    (change)="onFileSelected($event, 'policeVerification')"
-                  />
+          <div class="upload-icon" (click)="licenseInput.click()">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </div>
+        </div>
 
-                  <div
-                    class="file-placeholder"
-                    *ngIf="!selectedFiles['policeVerification']?.length"
-                    (click)="policeInput.click()"
-                  >
-                    Upload Police Verification
-                  </div>
+        <div class="error-container"></div>
+      </div>
+    </ion-col>
 
-                  <div
-                    class="file-pill"
-                    *ngFor="let file of selectedFiles['policeVerification']; let i = index"
-                    (click)="policeInput.click()"
-                  >
-                    <div class="file-name">{{ file.name }}</div>
+    <ion-col size="12" size-md="6" class="align-right-field">
+      <div class="upload-container">
+        <ion-label class="upload-ion-label">
+          Aadhaar / ID Proof
+        </ion-label>
 
-                    <ion-icon
-                      name="close-circle-outline"
-                      (click)="removeFile($event, 'policeVerification', i)"
-                    ></ion-icon>
-                  </div>
+        <div class="upload-box">
+          <input
+            type="file"
+            #aadhaarInput
+            hidden
+            multiple
+            formControlName="aadhaar"
+            (change)="onFileSelected($event, 'aadhaar')"
+          />
 
-                  <div class="upload-icon" (click)="policeInput.click()">
-                    <ion-icon name="add-circle-outline"></ion-icon>
-                  </div>
-                </div>
-              </div>
-            </ion-col>
-            <!-- <div class="align-row"> -->
-            <ion-col size="12" size-md="6" class="align-right-field">
-              <div class="upload-container">
-                <ion-label class="upload-ion-label"
-                  >Medical Certificate</ion-label
-                >
+          <div
+            class="file-placeholder"
+            *ngIf="!selectedFiles['aadhaar']?.length"
+            (click)="aadhaarInput.click()"
+          >
+            Upload Aadhaar / ID Proof
+          </div>
 
-                <div class="upload-box">
-                  <input
-                    type="file"
-                    #medicalInput
-                    hidden
-                    multiple
-                    formControlName="medicalCertificate"
-                    (change)="onFileSelected($event, 'medicalCertificate')"
-                  />
+          <div
+            class="file-pill"
+            *ngFor="let file of selectedFiles['aadhaar']; let i = index"
+            (click)="aadhaarInput.click()"
+          >
+            <div class="file-name">{{ file.name }}</div>
 
-                  <div
-                    class="file-placeholder"
-                    *ngIf="!selectedFiles['medicalCertificate']?.length"
-                    (click)="medicalInput.click()"
-                  >
-                    Upload Medical Certificate
-                  </div>
+            <ion-icon
+              name="close-circle-outline"
+              (click)="removeFile($event, 'aadhaar', i)"
+            ></ion-icon>
+          </div>
 
-                  <div
-                    class="file-pill"
-                    *ngFor="let file of selectedFiles['medicalCertificate']; let i = index"
-                    (click)="medicalInput.click()"
-                  >
-                    <div class="file-name">{{ file.name }}</div>
+          <div class="upload-icon2" (click)="aadhaarInput.click()">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </div>
+        </div>
 
-                    <ion-icon
-                      name="close-circle-outline"
-                      (click)="removeFile($event, 'medicalCertificate', i)"
-                    ></ion-icon>
-                  </div>
+        <div class="error-container"></div>
+      </div>
+    </ion-col>
 
-                  <div class="upload-icon3" (click)="medicalInput.click()">
-                    <ion-icon name="add-circle-outline"></ion-icon>
-                  </div>
-                </div>
-              </div>
-            </ion-col>
-            <!-- </div> -->
+    <ion-col size="12" size-md="6">
+      <div class="upload-container">
+        <ion-label class="upload-ion-label">
+          Police Verification
+        </ion-label>
 
-            <ion-col size="12" size-md="6">
-              <ion-label>
-                Date of Joining
-                <ion-text
-                  color="danger"
-                  *ngIf="form.get(
-                    
-                    
-                    'joiningDate')?.touched && form.get('joiningDate')?.errors"
-                >
-                  Date of Joining is required
-                </ion-text>
-              </ion-label>
+        <div class="upload-box">
+          <input
+            type="file"
+            #policeInput
+            hidden
+            multiple
+            formControlName="policeVerification"
+            (change)="onFileSelected($event, 'policeVerification')"
+          />
 
-              <!-- Custom Input -->
-              <div class="date-box" (click)="openPicker()">
-                <span>
-                  {{ form.get('joiningDate')?.value ?
-                  (form.get('joiningDate')?.value | date:'MM/dd/yyyy') :
-                  'mm/dd/yyyy' }}
-                </span>
+          <div
+            class="file-placeholder"
+            *ngIf="!selectedFiles['policeVerification']?.length"
+            (click)="policeInput.click()"
+          >
+            Upload Police Verification
+          </div>
 
-                <ion-icon name="calendar-clear-outline"></ion-icon>
-              </div>
+          <div
+            class="file-pill"
+            *ngFor="let file of selectedFiles['policeVerification']; let i = index"
+            (click)="policeInput.click()"
+          >
+            <div class="file-name">{{ file.name }}</div>
 
-              <!-- Date Picker -->
-              <ion-modal [isOpen]="isOpen" (didDismiss)="isOpen = false">
-                <ng-template>
-                  <ion-datetime
-                    presentation="date"
-                    formControlName="joiningDate"
-                    (ionChange)="selectDate($event)"
-                  ></ion-datetime>
-                </ng-template>
-              </ion-modal>
-            </ion-col>
+            <ion-icon
+              name="close-circle-outline"
+              (click)="removeFile($event, 'policeVerification', i)"
+            ></ion-icon>
+          </div>
 
-            <ion-col size="12" size-md="6" class="align-right-field">
-              <div class="file-container">
-                <ion-label>Employment Type</ion-label>
+          <div class="upload-icon" (click)="policeInput.click()">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </div>
+        </div>
 
-                <div class="input">
-                  <ion-select
-                    formControlName="employmentType"
-                    placeholder="Eg: Contract"
-                  >
-                    <ion-select-option value="Permanent"
-                      >Permanent</ion-select-option
-                    >
-                    <ion-select-option value="Contract"
-                      >Contract</ion-select-option
-                    >
-                    <ion-select-option value="Part Time"
-                      >Part Time</ion-select-option
-                    >
-                  </ion-select>
-                  <ion-icon class="down" name="chevron-down-outline"></ion-icon>
-                </div>
-              </div>
-            </ion-col>
+        <div class="error-container"></div>
+      </div>
+    </ion-col>
 
-            <ion-col size="12" size-md="6">
-              <ion-label>Assign Bus (Optional)</ion-label>
-              <div class="input">
-                <ion-select
-                  formControlName="assignBus"
-                  placeholder="Eg: TN31BD8429"
-                >
-                  <ion-select-option value="TN31BD8429"
-                    >TN31BD8429</ion-select-option
-                  >
-                  <ion-select-option value="10000">10000</ion-select-option>
-                </ion-select>
-                <ion-icon class="down" name="chevron-down-outline"></ion-icon>
-              </div>
-            </ion-col>
+    <ion-col size="12" size-md="6" class="align-right-field">
+      <div class="upload-container">
+        <ion-label class="upload-ion-label">
+          Medical Certificate
+        </ion-label>
 
-            <ion-col size="12" size-md="6" class="align-right-field">
-              <ion-label>Assign Route (Optional)</ion-label>
-              <ion-input
-                formControlName="assignRoute"
-                placeholder="Eg: Route 5"
-              ></ion-input>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-        <div class="button2">
+        <div class="upload-box">
+          <input
+            type="file"
+            #medicalInput
+            hidden
+            multiple
+            formControlName="medicalCertificate"
+            (change)="onFileSelected($event, 'medicalCertificate')"
+          />
+
+          <div
+            class="file-placeholder"
+            *ngIf="!selectedFiles['medicalCertificate']?.length"
+            (click)="medicalInput.click()"
+          >
+            Upload Medical Certificate
+          </div>
+
+          <div
+            class="file-pill"
+            *ngFor="let file of selectedFiles['medicalCertificate']; let i = index"
+            (click)="medicalInput.click()"
+          >
+            <div class="file-name">{{ file.name }}</div>
+
+            <ion-icon
+              name="close-circle-outline"
+              (click)="removeFile($event, 'medicalCertificate', i)"
+            ></ion-icon>
+          </div>
+
+          <div class="upload-icon3" (click)="medicalInput.click()">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </div>
+        </div>
+
+        <div class="error-container"></div>
+      </div>
+    </ion-col>
+
+    <ion-col size="12" size-md="6">
+      <ion-label>Date of Joining</ion-label>
+
+      <div class="date-box" (click)="openPicker()">
+        <span>
+          {{ form.get('joiningDate')?.value ?
+          (form.get('joiningDate')?.value | date:'MM/dd/yyyy') :
+          'mm/dd/yyyy' }}
+        </span>
+
+        <ion-icon name="calendar-clear-outline"></ion-icon>
+      </div>
+
+      <ion-modal [isOpen]="isOpen" (didDismiss)="isOpen = false">
+        <ng-template>
+          <ion-datetime
+            presentation="date"
+            formControlName="joiningDate"
+            (ionChange)="selectDate($event)"
+          ></ion-datetime>
+        </ng-template>
+      </ion-modal>
+
+      <div class="error-container">
+        <ion-text
+          class="danger"
+          *ngIf="form.get('joiningDate')?.touched &&
+          form.get('joiningDate')?.errors"
+        >
+          Date of Joining is required
+        </ion-text>
+      </div>
+    </ion-col>
+
+    <ion-col size="12" size-md="6" class="align-right-field">
+      <div class="file-container">
+        <ion-label>Employment Type</ion-label>
+
+        <div class="input">
+          <ion-select
+            formControlName="employmentType"
+            placeholder="Eg: Contract"
+          >
+            <ion-select-option value="Permanent">
+              Permanent
+            </ion-select-option>
+
+            <ion-select-option value="Contract">
+              Contract
+            </ion-select-option>
+
+            <ion-select-option value="Part Time">
+              Part Time
+            </ion-select-option>
+          </ion-select>
+
+          <ion-icon class="down" name="chevron-down-outline"></ion-icon>
+        </div>
+
+        <div class="error-container"></div>
+      </div>
+    </ion-col>
+
+    <ion-col size="12" size-md="6">
+      <ion-label>Assign Bus (Optional)</ion-label>
+
+      <div class="input">
+        <ion-select
+          formControlName="assignBus"
+          placeholder="Eg: TN31BD8429"
+        >
+          <ion-select-option value="TN31BD8429">
+            TN31BD8429
+          </ion-select-option>
+
+          <ion-select-option value="10000">
+            10000
+          </ion-select-option>
+        </ion-select>
+
+        <ion-icon class="down" name="chevron-down-outline"></ion-icon>
+      </div>
+
+      <div class="error-container"></div>
+    </ion-col>
+
+    <ion-col size="12" size-md="6" class="align-right-field">
+      <ion-label>Assign Route (Optional)</ion-label>
+
+      <ion-input
+        formControlName="assignRoute"
+        placeholder="Eg: Route 5"
+      ></ion-input>
+
+      <div class="error-container"></div>
+    </ion-col>
+  </ion-row>
+</ion-grid> 
+        <div class="button3">
           <ion-button
             fill="clear"
             (click)="driverProfile()"
@@ -338,32 +396,99 @@
         </div>
         <ion-grid>
           <ion-row>
+            <!-- Amount -->
             <ion-col size="12" size-md="6">
               <ion-label>Amount</ion-label>
+
               <ion-input
                 formControlName="monthlySalary"
                 placeholder="Eg: $ 45.00"
+                type="number"
               >
               </ion-input>
+
+              <div
+                class="error-container"
+                *ngIf="
+          salaryForm.get('monthlySalary')?.touched &&
+          salaryForm.get('monthlySalary')?.invalid
+        "
+              >
+                <small
+                  class="danger"
+                  *ngIf="salaryForm.get('monthlySalary')?.errors?.['required']"
+                >
+                  Amount is required
+                </small>
+
+                <small
+                  class="danger"
+                  *ngIf="salaryForm.get('monthlySalary')?.errors?.['min']"
+                >
+                  Amount must be greater than 0
+                </small>
+              </div>
             </ion-col>
 
+            <!-- Advance Date -->
             <ion-col size="12" size-md="6">
-              <ion-label>Advance Date</ion-label>
-              <ion-input
-                formControlName="salaryEffectiveFrom"
-                type="data"
-                placeholder="Eg: 30/12/2025"
-              >
-              </ion-input>
+              <ion-label class="special-label">Advance Date</ion-label>
+
+              <!-- Custom Input -->
+              <div class="date-box2" (click)="openPicker2()">
+                <span>
+                  {{ salaryForm.get('advanceDate')?.value ?
+                  (salaryForm.get('advanceDate')?.value | date:'MM/dd/yyyy') :
+                  'mm/dd/yyyy' }}
+                </span>
+
+                <ion-icon name="calendar-clear-outline"></ion-icon>
+              </div>
+
+              <!-- Date Picker -->
+              <ion-modal [isOpen]="isOpen2" (didDismiss)="isOpen2 = false">
+                <ng-template>
+                  <ion-datetime
+                    formControlName="advanceDate"
+                    presentation="date"
+                    (ionChange)="selectDate2($event)"
+                  ></ion-datetime>
+                </ng-template>
+              </ion-modal>
+              <div class="error-container">
+                <ion-text
+                  class="danger"
+                  *ngIf="salaryForm.get('advanceDate')?.touched && salaryForm.get('advanceDate')?.errors"
+                >
+                  Advance Date is required
+                </ion-text>
+              </div>
             </ion-col>
 
+            <!-- Reason -->
             <ion-col size="12" size-md="6">
               <ion-label>Reason</ion-label>
+
               <ion-input
                 formControlName="notesOptional"
                 placeholder="Eg: New Tyre has been changed"
               >
               </ion-input>
+
+              <div
+                class="error-container"
+                *ngIf="
+          salaryForm.get('notesOptional')?.touched &&
+          salaryForm.get('notesOptional')?.invalid
+        "
+              >
+                <small
+                  class="danger"
+                  *ngIf="salaryForm.get('notesOptional')?.errors?.['required']"
+                >
+                  Reason is required
+                </small>
+              </div>
             </ion-col>
           </ion-row>
         </ion-grid>

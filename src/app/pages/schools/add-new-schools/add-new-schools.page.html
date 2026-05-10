@@ -20,31 +20,23 @@
               <!-- LEFT COLUMN -->
               <ion-col size="12" size-md="6">
                 <ion-col size="12">
-                  <ion-label
-                    >School Name
-                    <ion-text
-                      color="danger"
-                      *ngIf="schoolForm.get('schoolName')?.touched && schoolForm.get('schoolName')?.invalid"
-                    >
-                      School name is required
-                    </ion-text>
-                  </ion-label>
+                  <ion-label>School Name </ion-label>
                   <ion-input
                     placeholder="Eg: SRV Marticulation Higher Sec School"
                     formControlName="schoolName"
                   ></ion-input>
+                  <div class="error-container">
+                    <ion-text
+                      class="danger"
+                      *ngIf="schoolForm.get('schoolName')?.touched && schoolForm.get('schoolName')?.invalid"
+                    >
+                      School name is required
+                    </ion-text>
+                  </div>
                 </ion-col>
 
                 <ion-col size="12">
-                  <ion-label
-                    >Affiliation Board
-                    <ion-text
-                      color="danger"
-                      *ngIf="schoolForm.get('affiliationBoard')?.touched && schoolForm.get('affiliationBoard')?.invalid"
-                    >
-                      Please select board
-                    </ion-text>
-                  </ion-label>
+                  <ion-label>Affiliation Board </ion-label>
                   <div class="input">
                     <ion-select
                       formControlName="affiliationBoard"
@@ -56,6 +48,18 @@
                         >State Board</ion-select-option
                       >
                     </ion-select>
+                      <ion-icon
+                      
+                      name="chevron-down-outline"
+                    ></ion-icon>
+                  </div>
+                  <div class="error-container">
+                    <ion-text
+                      class="danger"
+                      *ngIf="schoolForm.get('affiliationBoard')?.touched && schoolForm.get('affiliationBoard')?.invalid"
+                    >
+                      Please select board
+                    </ion-text>
                   </div>
                 </ion-col>
 
@@ -65,55 +69,56 @@
                     placeholder="Eg:Triplicane,Opp LIC Bus Stop"
                     formControlName="address2"
                   ></ion-input>
+                  <div class="error-container"></div>
                 </ion-col>
 
                 <ion-col size="12">
-                  <ion-label
-                    >State
-                    <ion-text
-                      color="danger"
-                      *ngIf="schoolForm.get('state')?.touched && schoolForm.get('state')?.invalid"
-                    >
-                      State is required
-                    </ion-text>
-                  </ion-label>
+                  <ion-label>State </ion-label>
                   <ion-input
                     placeholder="Eg:Jharkhand"
                     formControlName="state"
                   ></ion-input>
+                  <div class="error-container">
+                    <ion-text
+                      class="danger"
+                      *ngIf="schoolForm.get('state')?.touched && schoolForm.get('state')?.invalid"
+                    >
+                      State is required
+                    </ion-text>
+                  </div>
                 </ion-col>
 
                 <ion-col size="12">
-                  <ion-label
-                    >Primary Contact Name
-                    <ion-text
-                      color="danger"
-                      *ngIf="schoolForm.get('primaryContactName')?.touched && schoolForm.get('primaryContactName')?.invalid"
-                    >
-                      Contact name is required
-                    </ion-text>
-                  </ion-label>
+                  <ion-label>Primary Contact Name </ion-label>
                   <ion-input
                     placeholder="Russel"
                     formControlName="primaryContactName"
                   ></ion-input>
+                  <div class="error-container">
+                    <ion-text
+                      class="danger"
+                      *ngIf="schoolForm.get('primaryContactName')?.touched && schoolForm.get('primaryContactName')?.invalid"
+                    >
+                      Contact name is required
+                    </ion-text>
+                  </div>
                 </ion-col>
 
                 <ion-col size="12">
-                  <ion-label
-                    >Email
-                    <ion-text
-                      color="danger"
-                      *ngIf="schoolForm.get('email')?.touched && schoolForm.get('email')?.invalid"
-                    >
-                      Enter valid email
-                    </ion-text>
-                  </ion-label>
+                  <ion-label>Email </ion-label>
                   <ion-input
                     type="email"
                     placeholder="Eg: ripleyenterpraises@gmail.com"
                     formControlName="email"
                   ></ion-input>
+                  <div class="error-container">
+                    <ion-text
+                      class="danger"
+                      *ngIf="schoolForm.get('email')?.touched && schoolForm.get('email')?.invalid"
+                    >
+                      Enter valid email
+                    </ion-text>
+                  </div>
                 </ion-col>
 
                 <ion-col size="12">
@@ -142,10 +147,10 @@
                     <span>
                       {{ schoolForm.value.startTime && schoolForm.value.endTime
                       ? (formatTime(schoolForm.value.startTime) + ' - ' +
-                      formatTime(schoolForm.value.endTime)) : '09:00 AM - 04:30PM' }}
+                      formatTime(schoolForm.value.endTime)) : '09:00 AM-04:30PM' }}
                     </span>
-                   <div class="icon-container">
-                    <ion-icon name="time-outline"></ion-icon>
+                    <div class="icon-container">
+                      <ion-icon name="time-outline"></ion-icon>
                     </div>
                   </div>
 
@@ -153,19 +158,37 @@
                   <ion-modal
                     [isOpen]="isTimeOpen"
                     (didDismiss)="onModalClose()"
+                    class="time-modal"
                   >
                     <ng-template>
-                      <ion-label>Start Time</ion-label>
-                      <ion-datetime
-                        presentation="time"
-                        (ionChange)="selectStartTime($event)"
-                      ></ion-datetime>
+                      <div class="time-modal-content">
+                        <!-- Start Time -->
+                        <div class="time-section">
+                          <ion-label class="time-label">Start Time</ion-label>
 
-                      <ion-label>End Time</ion-label>
-                      <ion-datetime
-                        presentation="time"
-                        (ionChange)="selectEndTime($event)"
-                      ></ion-datetime>
+                          <div class="time-picker-wrapper">
+                            <ion-datetime
+                              presentation="time"
+                              (ionChange)="selectStartTime($event)"
+                            ></ion-datetime>
+                          </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="time-divider"></div>
+
+                        <!-- End Time -->
+                        <div class="time-section">
+                          <ion-label class="time-label">End Time</ion-label>
+
+                          <div class="time-picker-wrapper">
+                            <ion-datetime
+                              presentation="time"
+                              (ionChange)="selectEndTime($event)"
+                            ></ion-datetime>
+                          </div>
+                        </div>
+                      </div>
                     </ng-template>
                   </ion-modal>
                 </ion-col>
@@ -174,15 +197,7 @@
               <!-- RIGHT COLUMN -->
               <ion-col size="12" size-md="6">
                 <ion-col size="12" class="right-side">
-                  <ion-label
-                    >School Type
-                    <ion-text
-                      color="danger"
-                      *ngIf="schoolForm.get('schoolType')?.touched && schoolForm.get('schoolType')?.invalid"
-                    >
-                      Select school type
-                    </ion-text>
-                  </ion-label>
+                  <ion-label>School Type </ion-label>
                   <div class="input">
                     <ion-select
                       formControlName="schoolType"
@@ -198,85 +213,89 @@
                         >Higher Secondary</ion-select-option
                       >
                     </ion-select>
+                      <ion-icon
+                      class="down"
+                      name="chevron-down-outline"
+                    ></ion-icon>
+                  </div>
+                  <div class="error-container">
+                    <ion-text
+                      class="danger"
+                      *ngIf="schoolForm.get('schoolType')?.touched && schoolForm.get('schoolType')?.invalid"
+                    >
+                      Select school type
+                    </ion-text>
                   </div>
                 </ion-col>
 
                 <ion-col size="12" class="right-side">
-                  <ion-label
-                    >Address Line 1
-                    <ion-text
-                      color="danger"
-                      *ngIf="schoolForm.get('address1')?.touched && schoolForm.get('address1')?.invalid"
-                    >
-                      Address is required
-                    </ion-text>
-                  </ion-label>
+                  <ion-label>Address Line 1 </ion-label>
                   <ion-input
                     placeholder="Eg: Redwood Building..."
                     formControlName="address1"
                   ></ion-input>
+                  <div class="error-container">
+                    <ion-text
+                      class="danger"
+                      *ngIf="schoolForm.get('address1')?.touched && schoolForm.get('address1')?.invalid"
+                    >
+                      Address is required
+                    </ion-text>
+                  </div>
                 </ion-col>
 
                 <ion-col size="12" class="right-side">
-                  <ion-label
-                    >City
-                    <ion-text
-                      color="danger"
-                      *ngIf="schoolForm.get('city')?.touched && schoolForm.get('city')?.invalid"
-                    >
-                      City is required
-                    </ion-text>
-                  </ion-label>
+                  <ion-label>City </ion-label>
                   <ion-input
                     placeholder="Eg: Delhi"
                     formControlName="city"
                   ></ion-input>
+                  <div class="error-container">
+                    <ion-text
+                      class="danger"
+                      *ngIf="schoolForm.get('city')?.touched && schoolForm.get('city')?.invalid"
+                    >
+                      City is required
+                    </ion-text>
+                  </div>
                 </ion-col>
 
                 <ion-col size="12" class="right-side">
-                  <ion-label
-                    >Postal Code
-                    <ion-text
-                      color="danger"
-                      *ngIf="schoolForm.get('postalCode')?.touched && schoolForm.get('postalCode')?.invalid"
-                    >
-                      Enter valid 6 digit PIN code
-                    </ion-text>
-                  </ion-label>
+                  <ion-label>Postal Code </ion-label>
                   <ion-input
                     type="number"
                     placeholder="Eg: 349086"
                     formControlName="postalCode"
                   ></ion-input>
+                  <div class="error-container">
+                    <ion-text
+                      class="danger"
+                      *ngIf="schoolForm.get('postalCode')?.touched && schoolForm.get('postalCode')?.invalid"
+                    >
+                      Enter valid 6 digit PIN code
+                    </ion-text>
+                  </div>
                 </ion-col>
 
                 <ion-col size="12" class="right-side">
-                  <ion-label
-                    >Contact Phone
-                    <ion-text
-                      color="danger"
-                      *ngIf="schoolForm.get('contactPhone')?.touched && schoolForm.get('contactPhone')?.invalid"
-                    >
-                      Enter valid 10 digit number
-                    </ion-text>
-                  </ion-label>
+                  <ion-label>Contact Phone </ion-label>
                   <ion-input
                     type="tel"
                     placeholder="Eg: 9629371***"
                     formControlName="contactPhone"
                   ></ion-input>
+                  <div class="error-container">
+                    <ion-text
+                      class="danger"
+                      *ngIf="schoolForm.get('contactPhone')?.touched && schoolForm.get('contactPhone')?.invalid"
+                    >
+                      Enter valid 10 digit number
+                    </ion-text>
+                  </div>
                 </ion-col>
 
                 <ion-col size="12" class="right-side">
-                  <ion-label
-                    >Operating Days
-                    <ion-text
-                      color="danger"
-                      *ngIf="schoolForm.get('operatingDays')?.touched && schoolForm.get('operatingDays')?.invalid"
-                    >
-                      Select operating days
-                    </ion-text>
-                  </ion-label>
+                  <ion-label>Operating Days </ion-label>
                   <div class="input">
                     <ion-select
                       formControlName="operatingDays"
@@ -289,6 +308,14 @@
                         >Monday - Saturday</ion-select-option
                       >
                     </ion-select>
+                  </div>
+                  <div class="error-container">
+                    <ion-text
+                      class="danger"
+                      *ngIf="schoolForm.get('operatingDays')?.touched && schoolForm.get('operatingDays')?.invalid"
+                    >
+                      Select operating days
+                    </ion-text>
                   </div>
                 </ion-col>
               </ion-col>

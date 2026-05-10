@@ -12,165 +12,182 @@
           <div class="header-container">
             <h2>Generate bills</h2>
           </div>
-          <ion-grid>
-            <ion-row>
-              <!-- Bus Registration -->
-              <ion-col size="12" size-md="6">
-                <ion-label
-                  >billing Month
-                  <ion-text
-                    color="danger"
-                    *ngIf="genrateBills.get('billingMonth')?.touched && genrateBills.get('billingMonth')?.invalid"
-                  >
-                    <small>Billing month is required</small>
-                  </ion-text>
-                </ion-label>
+         <ion-grid>
+  <ion-row>
+    <!-- Billing Month -->
+    <ion-col size="12" size-md="6">
+      <ion-label>billing Month</ion-label>
 
-                <div class="input">
-                  <ion-select
-                    formControlName="billingMonth"
-                    placeholder="December"
-                  >
-                    <ion-select-option
-                      *ngFor="let fuel of fuelTypes"
-                      [value]="fuel"
-                    >
-                      {{fuel}}
-                    </ion-select-option>
-                  </ion-select>
-                  <ion-icon class="down" name="chevron-down-outline"></ion-icon>
-                </div>
-              </ion-col>
+      <div class="input">
+        <ion-select
+          formControlName="billingMonth"
+          placeholder="December"
+        >
+          <ion-select-option
+            *ngFor="let fuel of fuelTypes"
+            [value]="fuel"
+          >
+            {{fuel}}
+          </ion-select-option>
+        </ion-select>
 
-              <!-- Seating Capacity -->
-              <ion-col size="12" size-md="6" class="align-right-field">
-                <ion-label
-                  >School
-                  <ion-text
-                    color="danger"
-                    *ngIf="genrateBills.get('school')?.touched && genrateBills.get('school')?.invalid"
-                  >
-                    <small>School is required</small>
-                  </ion-text>
-                </ion-label>
+        <ion-icon class="down" name="chevron-down-outline"></ion-icon>
+      </div>
 
-                <div class="input">
-                  <ion-select formControlName="school" placeholder="Eg:ARLM">
-                    <ion-select-option
-                      *ngFor="let fuel of fuelTypes"
-                      [value]="fuel"
-                    >
-                      {{fuel}}
-                    </ion-select-option>
-                  </ion-select>
-                  <ion-icon class="down" name="chevron-down-outline"></ion-icon>
-                </div>
-              </ion-col>
-              <ion-col size="12" size-md="6" class="InAcStu">
-                <ion-label>Include Active Students</ion-label>
-                <div class="setting-box">
-                  <div class="toggle">
-                    <span>{{genrateBills.value.receiveNotice}}</span>
-                    <div class="toggle-container">
-                    <ion-toggle
-                      [checked]="isChecked('includeActiveStudents')"
-                      (ionChange)="toggleChange($event,'includeActiveStudents')"
-                    >
-                    </ion-toggle>
-                    </div>
-                  </div>
-                </div>
-              </ion-col>
-              <ion-col size="12" size-md="6" class="align-right-field">
-                <ion-label>Include Paused Students</ion-label>
-                <div class="setting-box">
-                  <div class="toggle">
-                    <span>{{genrateBills.value.disableNotice}}</span>
-                    <div class="toggle-container">
-                    <ion-toggle
-                      [checked]="isChecked('includePausedStudents')"
-                      (ionChange)="toggleChange($event,'disableNotice')"
-                    >
-                    </ion-toggle>
-                    </div>
-                  </div>
-                </div>
-              </ion-col>
+      <div class="error-container">
+        <ion-text
+          color="danger"
+          *ngIf="genrateBills.get('billingMonth')?.touched && genrateBills.get('billingMonth')?.invalid"
+        >
+          <small>Billing month is required</small>
+        </ion-text>
+      </div>
+    </ion-col>
 
-              <ion-col class="align-left" size="12" size-md="6">
-                <div class="input-count">
-                  <ion-label
-                    >Total Students
-                    <ion-text
-                      color="danger"
-                      *ngIf="genrateBills.get('totalStudents')?.touched && genrateBills.get('totalStudents')?.invalid"
-                    >
-                      <small
-                        *ngIf="genrateBills.get('totalStudents')?.errors?.['required']"
-                      >
-                        Total students is required
-                      </small>
+    <!-- School -->
+    <ion-col size="12" size-md="6" class="align-right-field">
+      <ion-label>School</ion-label>
 
-                      <small
-                        *ngIf="genrateBills.get('totalStudents')?.errors?.['min']"
-                      >
-                        Minimum should be 1
-                      </small>
+      <div class="input">
+        <ion-select formControlName="school" placeholder="Eg:ARLM">
+          <ion-select-option
+            *ngFor="let fuel of fuelTypes"
+            [value]="fuel"
+          >
+            {{fuel}}
+          </ion-select-option>
+        </ion-select>
 
-                      <small
-                        *ngIf="genrateBills.get('totalStudents')?.errors?.['pattern']"
-                      >
-                        Only numbers allowed
-                      </small>
-                    </ion-text>
-                  </ion-label>
-                  <ion-input
-                    type="number"
-                    prefix="$"
-                    formControlName="totalStudents"
-                  >
-                  </ion-input>
-                </div>
-              </ion-col>
+        <ion-icon class="down" name="chevron-down-outline"></ion-icon>
+      </div>
 
-              <ion-col size="12" size-md="6" class="align-right-field">
-                <div class="input-count">
-                  <ion-label
-                    >Total Bill Amount
+      <div class="error-container">
+        <ion-text
+          color="danger"
+          *ngIf="genrateBills.get('school')?.touched && genrateBills.get('school')?.invalid"
+        >
+          <small>School is required</small>
+        </ion-text>
+      </div>
+    </ion-col>
 
-                    <ion-text
-                      color="danger"
-                      *ngIf="genrateBills.get('totalBillAmount')?.touched && genrateBills.get('totalBillAmount')?.invalid"
-                    >
-                      <small
-                        *ngIf="genrateBills.get('totalBillAmount')?.errors?.['required']"
-                      >
-                        Amount is required
-                      </small>
+    <!-- Include Active Students -->
+    <ion-col size="12" size-md="6" class="InAcStu">
+      <ion-label>Include Active Students</ion-label>
 
-                      <small
-                        *ngIf="genrateBills.get('totalBillAmount')?.errors?.['min']"
-                      >
-                        Cannot be negative
-                      </small>
+      <div class="setting-box">
+        <div class="toggle">
+          <span>{{genrateBills.value.receiveNotice}}</span>
 
-                      <small
-                        *ngIf="genrateBills.get('totalBillAmount')?.errors?.['pattern']"
-                      >
-                        Enter valid amount (max 2 decimals)
-                      </small>
-                    </ion-text>
-                  </ion-label>
-                  <ion-input
-                    type="number"
-                    prefix="$"
-                    formControlName="totalBillAmount"
-                  >
-                  </ion-input>
-                </div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
+          <div class="toggle-container">
+            <ion-toggle
+              [checked]="isChecked('includeActiveStudents')"
+              (ionChange)="toggleChange($event,'includeActiveStudents')"
+            >
+            </ion-toggle>
+          </div>
+        </div>
+      </div>
+    </ion-col>
+
+    <!-- Include Paused Students -->
+    <ion-col size="12" size-md="6" class="align-right-field">
+      <ion-label>Include Paused Students</ion-label>
+
+      <div class="setting-box">
+        <div class="toggle">
+          <span>{{genrateBills.value.disableNotice}}</span>
+
+          <div class="toggle-container">
+            <ion-toggle
+              [checked]="isChecked('includePausedStudents')"
+              (ionChange)="toggleChange($event,'disableNotice')"
+            >
+            </ion-toggle>
+          </div>
+        </div>
+      </div>
+    </ion-col>
+
+    <!-- Total Students -->
+    <ion-col class="align-left" size="12" size-md="6">
+      <ion-label>Total Students</ion-label>
+
+      <div class="input-count">
+        <ion-input
+          type="number"
+          prefix="$"
+          formControlName="totalStudents"
+        >
+        </ion-input>
+      </div>
+
+      <div class="error-container">
+        <ion-text
+          color="danger"
+          *ngIf="genrateBills.get('totalStudents')?.touched && genrateBills.get('totalStudents')?.invalid"
+        >
+          <small
+            *ngIf="genrateBills.get('totalStudents')?.errors?.['required']"
+          >
+            Total students is required
+          </small>
+
+          <small
+            *ngIf="genrateBills.get('totalStudents')?.errors?.['min']"
+          >
+            Minimum should be 1
+          </small>
+
+          <small
+            *ngIf="genrateBills.get('totalStudents')?.errors?.['pattern']"
+          >
+            Only numbers allowed
+          </small>
+        </ion-text>
+      </div>
+    </ion-col>
+
+    <!-- Total Bill Amount -->
+    <ion-col size="12" size-md="6" class="align-right-field">
+      <ion-label>Total Bill Amount</ion-label>
+
+      <div class="input-count">
+        <ion-input
+          type="number"
+          prefix="$"
+          formControlName="totalBillAmount"
+        >
+        </ion-input>
+      </div>
+
+      <div class="error-container">
+        <ion-text
+          color="danger"
+          *ngIf="genrateBills.get('totalBillAmount')?.touched && genrateBills.get('totalBillAmount')?.invalid"
+        >
+          <small
+            *ngIf="genrateBills.get('totalBillAmount')?.errors?.['required']"
+          >
+            Amount is required
+          </small>
+
+          <small
+            *ngIf="genrateBills.get('totalBillAmount')?.errors?.['min']"
+          >
+            Cannot be negative
+          </small>
+
+          <small
+            *ngIf="genrateBills.get('totalBillAmount')?.errors?.['pattern']"
+          >
+            Enter valid amount (max 2 decimals)
+          </small>
+        </ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 
           <!-- Confirm Button -->
           <ion-button

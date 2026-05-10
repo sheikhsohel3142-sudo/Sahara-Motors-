@@ -16,35 +16,38 @@
                   <!-- Name -->
 
                   <ion-item class="profile-item">
-                    <ion-label position="stacked"
-                      >Name
+                    <ion-label position="stacked">Name </ion-label>
+                    <ion-input formControlName="name"> </ion-input>
+                    <div class="error-container">
                       <span
                         class="danger"
                         *ngIf="profileForm.get('name')?.touched && profileForm.get('name')?.errors"
                         >Name is required</span
                       >
-                    </ion-label>
-                    <ion-input formControlName="name"></ion-input>
+                    </div>
                   </ion-item>
 
                   <!-- Address -->
                   <ion-item class="profile-item">
                     <ion-label position="stacked"
                       >Registered Address
+                    </ion-label>
+                    <ion-input formControlName="address"></ion-input>
+                    <div class="error-container">
                       <span
                         class="danger"
                         *ngIf="profileForm.get('address')?.touched && profileForm.get('address')?.errors"
                       >
                         Address is required
                       </span>
-                    </ion-label>
-                    <ion-input formControlName="address"></ion-input>
+                    </div>
                   </ion-item>
 
                   <!-- Email -->
                   <ion-item class="profile-item">
-                    <ion-label position="stacked"
-                      >Email
+                    <ion-label position="stacked">Email </ion-label>
+                    <ion-input type="email" formControlName="email"></ion-input>
+                    <div class="error-container">
                       <span
                         class="danger"
                         *ngIf="profileForm.get('email')?.touched && profileForm.get('email')?.errors"
@@ -58,22 +61,23 @@
                           >Please enter a valid email address</span
                         >
                       </span>
-                    </ion-label>
-                    <ion-input type="email" formControlName="email"></ion-input>
+                    </div>
                   </ion-item>
 
                   <!-- Bank Details -->
                   <ion-item class="profile-item">
                     <ion-label position="stacked"
                       >Bank Account Details
+                    </ion-label>
+                    <ion-input formControlName="bankDetails"></ion-input>
+                    <div class="error-container">
                       <span
                         class="danger"
                         *ngIf="profileForm.get('bankDetails')?.touched && profileForm.get('bankDetails')?.errors"
                       >
                         Bank details are required
                       </span>
-                    </ion-label>
-                    <ion-input formControlName="bankDetails"></ion-input>
+                    </div>
                   </ion-item>
                   <!-- <ion-text
                     color="danger"
@@ -84,16 +88,16 @@
 
                   <!-- Currency -->
                   <ion-item class="profile-item">
-                    <ion-label position="stacked"
-                      >Currency
+                    <ion-label position="stacked">Currency </ion-label>
+                    <ion-input formControlName="currency"></ion-input>
+                    <div class="error-container">
                       <span
                         class="danger"
                         *ngIf="profileForm.get('currency')?.touched && profileForm.get('currency')?.errors"
                       >
                         Please select currency
                       </span>
-                    </ion-label>
-                    <ion-input formControlName="currency"></ion-input>
+                    </div>
                   </ion-item>
                 </ion-list>
               </ion-col>
@@ -103,71 +107,87 @@
                 <ion-list lines="none">
                   <!-- Phone -->
                   <ion-item class="profile-item">
-                    <ion-label position="stacked"
-                      >Contact Phone Number
+                    <ion-label position="stacked">
+                      Contact Phone Number
+                    </ion-label>
+
+                    <ion-input type="tel" formControlName="phone"></ion-input>
+
+                    <div class="error-container">
+                      <!-- Required -->
                       <span
                         class="danger"
-                        *ngIf="profileForm.get('phone')?.touched && profileForm.get('phone')?.errors"
+                        *ngIf=" profileForm.get('phone')?.touched &&profileForm.get('phone')?.errors?.['required']"
                       >
-                        Enter a valid phone number
-                      </span>                    </ion-label>
-                    <ion-input type="tel" formControlName="phone"></ion-input>
+                        Phone number is required
+                      </span>
+
+                      <!-- Pattern -->
+                      <span
+                        class="danger"
+                        *ngIf="profileForm.get('phone')?.touched &&profileForm.get('phone')?.errors?.['pattern']"
+                      >
+                        Enter a valid 10-digit phone number
+                      </span>
+                    </div>
                   </ion-item>
 
                   <!-- Primary Contact -->
                   <ion-item class="profile-item">
                     <ion-label position="stacked"
                       >Primary Contact Name
+                    </ion-label>
+                    <ion-input formControlName="primaryContact"></ion-input>
+                    <div class="error-container">
                       <span
                         class="danger"
                         *ngIf="profileForm.get('primaryContact')?.touched && profileForm.get('primaryContact')?.errors"
                       >
-                       Enter a valid phone number
+                        Primary contact is required
                       </span>
-                    </ion-label>
-                    <ion-input formControlName="primaryContact"></ion-input>
+                    </div>
                   </ion-item>
 
                   <!-- GST -->
                   <ion-item class="profile-item">
-                    <ion-label position="stacked"
-                      >Tax / GST Number
+                    <ion-label position="stacked">Tax / GST Number </ion-label>
+                    <ion-input formControlName="gst"></ion-input>
+                    <div class="error-container">
                       <span
                         class="danger"
                         *ngIf="profileForm.get('gst')?.touched && profileForm.get('gst')?.errors"
                       >
                         Please enter a valid GST number
                       </span>
-                    </ion-label>
-                    <ion-input formControlName="gst"></ion-input>
+                    </div>
                   </ion-item>
 
                   <!-- Time Zone -->
                   <ion-item class="profile-item">
-                    <ion-label position="stacked"
-                      >Time Zone
+                    <ion-label position="stacked">Time Zone </ion-label>
+                    <ion-input formControlName="timeZone"></ion-input>
+                    <div class="error-container">
                       <span
                         class="danger"
                         *ngIf="profileForm.get('timeZone')?.touched && profileForm.get('timeZone')?.errors"
                       >
                         Please select a time zone
                       </span>
-                    </ion-label>
-                    <ion-input formControlName="timeZone"></ion-input>
+                    </div>
                   </ion-item>
 
                   <!-- Postal Code -->
                   <ion-item class="profile-item">
-                    <ion-label position="stacked"
-                      >Postal Code
+                    <ion-label position="stacked">Postal Code </ion-label>
+                    <ion-input formControlName="postalCode"></ion-input>
+                    <div class="error-container">
                       <span
                         class="danger"
                         *ngIf="profileForm.get('postalCode')?.touched && profileForm.get('postalCode')?.errors"
                       >
                         Please enter a valid 6-digit postal code
                       </span>
-                    </ion-label>
-                    <ion-input formControlName="postalCode"></ion-input>
+                    </div>
                   </ion-item>
                 </ion-list>
               </ion-col>
