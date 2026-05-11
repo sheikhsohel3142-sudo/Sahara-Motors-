@@ -710,8 +710,8 @@ ion-datetime::part(confirm-button) {
     width: 91%;
     margin-left: 20px;
     ion-icon {
-      right: 9.5%;
-      top: 58%;
+      right: 9%;
+      top: 49.5%;
     }
   }
   .upload-box {
@@ -723,10 +723,12 @@ ion-datetime::part(confirm-button) {
     margin-bottom: 25px;
   }
   .upload-icon ion-icon {
-    right: 10%;
+    right: 9%;
+    top: 35%;
   }
   .upload-icon2 ion-icon {
-    right: 10%;
+    right: 9%;
+    top: 35%;
   }.danger {
     
    position:relative;
