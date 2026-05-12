@@ -57,8 +57,8 @@ ion-card {
   line-height: 150%;
   font-size: 16px;
   color: #333;
-  --placeholder-color: #0f172abf;
-  --padding-start: 25px;
+  --placeholder-color: #0F172ABF;
+  --padding-start: 20px;
   font-family: "Space Grotesk", sans-serif;
 
   ion-select::part(icon) {
@@ -209,8 +209,8 @@ ion-icon {
     width: 100%;
   }
   ion-select {
-    padding-left: 25px;
-    --placeholder-color: #0f172abf;
+    padding-left: 20px;
+    --placeholder-color: #0F172ABF;
   }
 
   ion-select::part(icon) {

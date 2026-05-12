@@ -110,8 +110,10 @@ ion-grid {
   line-height: 150%;
   font-size: 16px;
   color: #333;
-  --placeholder-color: #aaa;
+  --placeholder-color: #9ca3af;
+  --padding-start: 20px;
 }
+
 
 /* Remove default ion-item line */
 ion-item::part(native) {

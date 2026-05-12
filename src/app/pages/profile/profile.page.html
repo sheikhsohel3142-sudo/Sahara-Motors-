@@ -17,7 +17,8 @@
 
                   <ion-item class="profile-item">
                     <ion-label position="stacked">Name </ion-label>
-                    <ion-input formControlName="name"> </ion-input>
+                    <ion-input formControlName="name"
+                      placeholder="Ripley Transports"> </ion-input>
                     <div class="error-container">
                       <span
                         class="danger"
@@ -32,7 +33,8 @@
                     <ion-label position="stacked"
                       >Registered Address
                     </ion-label>
-                    <ion-input formControlName="address"></ion-input>
+                    <ion-input formControlName="address"
+                    placeholder="Main Street"></ion-input>
                     <div class="error-container">
                       <span
                         class="danger"
@@ -46,7 +48,8 @@
                   <!-- Email -->
                   <ion-item class="profile-item">
                     <ion-label position="stacked">Email </ion-label>
-                    <ion-input type="email" formControlName="email"></ion-input>
+                    <ion-input type="email" formControlName="email"
+                    placeholder="ripleyenterpraises@gmail.com"></ion-input>
                     <div class="error-container">
                       <span
                         class="danger"
@@ -69,7 +72,8 @@
                     <ion-label position="stacked"
                       >Bank Account Details
                     </ion-label>
-                    <ion-input formControlName="bankDetails"></ion-input>
+                    <ion-input formControlName="bankDetails"
+                    placeholder="ripleyenterpraises@gmail.com"></ion-input>
                     <div class="error-container">
                       <span
                         class="danger"
@@ -89,7 +93,8 @@
                   <!-- Currency -->
                   <ion-item class="profile-item">
                     <ion-label position="stacked">Currency </ion-label>
-                    <ion-input formControlName="currency"></ion-input>
+                    <ion-input formControlName="currency"
+                    placeholder="ripleyenterpraises@gmail.com"></ion-input>
                     <div class="error-container">
                       <span
                         class="danger"
@@ -111,7 +116,8 @@
                       Contact Phone Number
                     </ion-label>
 
-                    <ion-input type="tel" formControlName="phone"></ion-input>
+                    <ion-input type="tel" formControlName="phone"
+                    placeholder="96293 73567"></ion-input>
 
                     <div class="error-container">
                       <!-- Required -->
@@ -137,8 +143,10 @@
                     <ion-label position="stacked"
                       >Primary Contact Name
                     </ion-label>
-                    <ion-input formControlName="primaryContact"></ion-input>
-                    <div class="error-container">
+                    <ion-input formControlName="primaryContact"
+                    placeholder="349 086"></ion-input>
+                    <div class="error-container"
+                    >
                       <span
                         class="danger"
                         *ngIf="profileForm.get('primaryContact')?.touched && profileForm.get('primaryContact')?.errors"
@@ -151,7 +159,8 @@
                   <!-- GST -->
                   <ion-item class="profile-item">
                     <ion-label position="stacked">Tax / GST Number </ion-label>
-                    <ion-input formControlName="gst"></ion-input>
+                    <ion-input formControlName="gst"
+                    placeholder="43747134791"></ion-input>
                     <div class="error-container">
                       <span
                         class="danger"
@@ -165,7 +174,8 @@
                   <!-- Time Zone -->
                   <ion-item class="profile-item">
                     <ion-label position="stacked">Time Zone </ion-label>
-                    <ion-input formControlName="timeZone"></ion-input>
+                    <ion-input formControlName="timeZone"
+                    placeholder="349 086"></ion-input>
                     <div class="error-container">
                       <span
                         class="danger"
@@ -179,7 +189,8 @@
                   <!-- Postal Code -->
                   <ion-item class="profile-item">
                     <ion-label position="stacked">Postal Code </ion-label>
-                    <ion-input formControlName="postalCode"></ion-input>
+                    <ion-input formControlName="postalCode"
+                    placeholder="349 086"></ion-input>
                     <div class="error-container">
                       <span
                         class="danger"

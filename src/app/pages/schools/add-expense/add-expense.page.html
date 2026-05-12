@@ -45,12 +45,27 @@
             <ion-col class="align-right-field" size="12" size-md="6">
               <ion-label>Expense Date</ion-label>
 
-              <ion-input
-                formControlName="expenseDate"
-                type="date"
-                placeholder="Eg: 30/12/2025"
-              >
-              </ion-input>
+              <!-- Custom Input -->
+              <div class="date-box" (click)="openPicker()">
+                <span>
+                  {{ addExpense.get('expenseDate')?.value ?
+                  (addExpense.get('expenseDate')?.value |
+                  date:'MM/dd/yyyy') : 'mm/dd/yyyy' }}
+                </span>
+
+                <ion-icon name="calendar-clear-outline"></ion-icon>
+              </div>
+
+              <!-- Date Picker -->
+              <ion-modal [isOpen]="isOpen" (didDismiss)="isOpen = false">
+                <ng-template>
+                  <ion-datetime
+                    formControlName="expenseDate"
+                    presentation="date"
+                    (ionChange)="selectDate($event)"
+                  ></ion-datetime>
+                </ng-template>
+              </ion-modal>
 
               <div class="error-container">
                 <ion-text

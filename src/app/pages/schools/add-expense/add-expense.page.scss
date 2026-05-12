@@ -82,7 +82,7 @@ ion-card {
   font-size: 16px;
   color: #333;
   --placeholder-color: #0f172abf;
-  --padding-start: 25px;
+  --padding-start: 20px;
   font-family: "Space Grotesk", sans-serif;
 
   ion-select::part(icon) {
@@ -190,7 +190,7 @@ ion-button {
     width: 100%;
   }
   ion-select {
-    padding-left: 25px;
+    padding-left: 20px;
     --placeholder-color: #0f172abf;
   }
 
@@ -273,17 +273,203 @@ ion-button {
   right: 11%;
   top: 43%;
 }
+.date-box {
+  background: #f5f6f8;
+  border-radius: 8px;
+  padding: 12px 14px;
+  width: 372px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 19px;
+  line-height: 150%;
+  font-size: 16px;
+  color: #333;
+  --placeholder-color: #aaa;
+  cursor: pointer;
+  ion-icon {
+    font-size: 18px;
+    color: #666;
+    position: absolute;
+    right: 13%;
+    top: 46%;
+  }
+}
 .error-container {
   min-height: 18px; // validation aaye ya na aaye space reserve rahega
   margin-top: -19px;
 }
 
 .danger {
-  color:  #dc2626;
+  color: #dc2626;
   font-size: 11px;
   font-weight: 400;
   display: block;
   line-height: 1.2;
+}
+
+ion-modal {
+  --width: 420px;
+  --max-width: 95%;
+  --height: auto;
+  --border-radius: 24px;
+  --box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  --backdrop-opacity: 0.45;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content */
+ion-modal ion-content,
+ion-modal .ion-page,
+ion-modal ng-template {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* =========================
+   Datetime Main
+========================= */
+
+ion-datetime {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 18px;
+
+  /* Main Theme */
+  --background: #ffffff;
+  --title-color: #111827;
+  --title-font-size: 22px;
+
+  /* Header Buttons */
+  --wheel-highlight-background: transparent;
+
+  /* Calendar Colors */
+  --day-color: #1f2937;
+  --day-color-hover: #ffffff;
+  --day-color-focused: #ffffff;
+
+  --today-color: #2563eb;
+  --today-background: rgba(37, 99, 235, 0.12);
+
+  --background-rgb: 255, 255, 255;
+
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   Calendar Header
+========================= */
+
+ion-datetime::part(calendar-month-year) {
+  color: #111827;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* Month Navigation Buttons */
+ion-datetime::part(calendar-next-prev) {
+  color: #2563eb;
+  border-radius: 12px;
+  transition: 0.2s ease;
+}
+
+ion-datetime::part(calendar-next-prev):hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+/* Week Names */
+ion-datetime::part(calendar-day-header) {
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   Days Styling
+========================= */
+
+ion-datetime::part(calendar-day) {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+ion-datetime::part(calendar-day):hover {
+  background: #f3f4f6;
+  transform: scale(1.05);
+}
+
+/* Selected Day */
+ion-datetime::part(calendar-day active) {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.3);
+}
+
+/* Today */
+ion-datetime::part(calendar-day today) {
+  border: 1px solid #2563eb;
+  font-weight: 600;
+}
+
+/* Disabled Dates */
+ion-datetime::part(calendar-day disabled) {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Footer Buttons
+========================= */
+
+ion-datetime::part(button) {
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 10px 18px;
+}
+
+/* Cancel Button */
+ion-datetime::part(cancel-button) {
+  color: #6b7280;
+}
+
+/* Confirm Button */
+ion-datetime::part(confirm-button) {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 576px) {
+  ion-modal {
+    --width: 95%;
+    --border-radius: 20px;
+  }
+
+  ion-datetime {
+    padding: 14px;
+  }
+
+  ion-datetime::part(calendar-day) {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
 }
 
 @media only screen and (min-width: 1600px) {
@@ -299,6 +485,9 @@ ion-button {
     left: 30px;
   }
   .input {
+    width: 91%;
+  }
+  .date-box {
     width: 91%;
   }
   .upload-container {
@@ -333,6 +522,9 @@ ion-button {
     // padding-left: 140px;
   }
   .input {
+    width: 91%;
+  }
+  .date-box {
     width: 91%;
   }
 
@@ -370,6 +562,9 @@ ion-button {
     height: 880px;
   }
   .input {
+    width: 91%;
+  }
+  .date-box {
     width: 91%;
   }
 
@@ -417,6 +612,12 @@ ion-button {
     height: 1000px;
   }
   .input {
+    width: 91%;
+  }
+  .date-box {
+    width: 91%;
+  }
+  .date-box {
     width: 91%;
   }
 
@@ -471,6 +672,14 @@ ion-button {
     width: 91%;
     margin-left: 20px;
   }
+  .date-box {
+    width: 91%;
+    margin-left: 21px;
+    ion-icon {
+      right: 8%;
+      top: 41.5%;
+    }
+  }
 
   /* Card */
   ion-card {
@@ -497,10 +706,10 @@ ion-button {
     width: 91%;
     margin-left: 20px;
     margin-bottom: 18px;
-  }.danger {
-    
-   position:relative;
-   left: 21px;
+  }
+  .danger {
+    position: relative;
+    left: 21px;
   }
   /* Top button (My profile) */
   .title-container {

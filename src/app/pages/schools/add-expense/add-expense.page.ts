@@ -7,7 +7,24 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonCol, IonSelectOption, IonIcon, IonGrid, IonRow, IonCard, IonInput, IonSelect, IonText, IonLabel } from '@ionic/angular/standalone';
+import {
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+  IonButton,
+  IonCol,
+  IonSelectOption,
+  IonIcon,
+  IonGrid,
+  IonRow,
+  IonCard,
+  IonInput,
+  IonSelect,
+  IonText,
+  IonLabel,
+  IonModal,
+} from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -15,7 +32,9 @@ import { RouterLink } from '@angular/router';
   templateUrl: './add-expense.page.html',
   styleUrls: ['./add-expense.page.scss'],
   standalone: true,
-  imports: [IonLabel, 
+  imports: [
+    IonModal,
+    IonLabel,
     IonInput,
     IonButton,
     IonIcon,
@@ -31,12 +50,12 @@ import { RouterLink } from '@angular/router';
     IonSelectOption,
     RouterLink,
     IonSelect,
-    IonText
-],
+    IonText,
+  ],
 })
 export class AddExpensePage implements OnInit {
   addExpense!: FormGroup;
-  selectedFile:any;
+  selectedFile: any;
 
   fuelTypes = ['Petrol', 'Diesel', 'CNG', 'Electric'];
 
@@ -69,16 +88,32 @@ export class AddExpensePage implements OnInit {
     }
   }
 
-
   onFileSelected(event: any) {
-  const file = event.target.files[0];
-  if (file) {
-    this.selectedFile = file;
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedFile = file;
+    }
   }
-}
 
-removeFile(event: Event) {
-  event.stopPropagation();
-  this.selectedFile = null;
-}
+  removeFile(event: Event) {
+    event.stopPropagation();
+    this.selectedFile = null;
+  }
+
+  isOpen = false;
+
+  openPicker() {
+    this.isOpen = true;
+  }
+
+  selectDate(event: any) {
+    const value = event.detail.value;
+
+    // 🔥 IMPORTANT
+    console.log(value);
+    this.addExpense.get('expenseDate')?.setValue(value);
+    this.addExpense.get('expenseDate')?.markAsTouched();
+
+    this.isOpen = false;
+  }
 }
