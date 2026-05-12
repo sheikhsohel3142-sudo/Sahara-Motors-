@@ -17,16 +17,14 @@ import {
   IonInput,
   IonToggle,
 
-  IonSelect,
-
-} from '@ionic/angular/standalone';
+  IonSelect, IonCard, IonIcon, IonButton, IonModal } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-configration',
   templateUrl: './configration.page.html',
   styleUrls: ['./configration.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonModal, IonButton, IonIcon, IonCard, 
   
     IonToggle,
     IonInput,
