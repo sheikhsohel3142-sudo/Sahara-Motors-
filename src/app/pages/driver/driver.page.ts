@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton } from '@ionic/angular/standalone';
+import { IonContent,IonButton } from '@ionic/angular/standalone';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './driver.page.html',
   styleUrls: ['./driver.page.scss'],
   standalone: true,
-  imports: [IonButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, RouterLink]
+  imports: [IonButton, IonContent,CommonModule, FormsModule, RouterLink]
 })
 export class DriverPage implements OnInit {
  schools = [

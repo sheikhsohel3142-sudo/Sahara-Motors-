@@ -9,17 +9,12 @@ import {
 } from '@angular/forms';
 import {
   IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
   IonIcon,
   IonCard,
   IonGrid,
   IonRow,
   IonCol,
   IonButton,
-  IonSelectOption,
-  IonSelect,
   IonInput, IonModal, IonText, IonDatetime } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 
@@ -47,9 +42,7 @@ import { RouterLink } from '@angular/router';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterLink,
-    IonSelect,
-    IonSelectOption,
+    RouterLink
   ],
 })
 export class AddAdvancePage implements OnInit {

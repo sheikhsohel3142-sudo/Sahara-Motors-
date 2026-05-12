@@ -9,9 +9,6 @@ import {
 } from '@angular/forms';
 import {
   IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
   IonButton,
   IonInput,
   IonIcon,
@@ -21,7 +18,6 @@ import {
   IonGrid,
   IonSelectOption,
   IonSelect,
-  IonItem,
   IonLabel,
   IonText,
   IonToggle,
@@ -42,7 +38,6 @@ import jsPDF from 'jspdf';
     IonToggle,
     IonText,
     IonLabel,
-    IonItem,
     IonInput,
     IonButton,
     IonIcon,

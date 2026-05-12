@@ -9,9 +9,6 @@ import {
 } from '@angular/forms';
 import {
   IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
   IonGrid,
   IonRow,
   IonCol,
@@ -51,8 +48,6 @@ import { RouterLink } from '@angular/router';
     IonCol,
     IonRow,
     IonContent,
-    IonTitle,
-    IonHeader,
     IonContent,
     IonGrid,
     CommonModule,

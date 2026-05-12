@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, NgIf} from '@angular/common';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonRow, IonCol, IonLabel, IonItem, IonButton, IonInput, IonList, IonText } from '@ionic/angular/standalone';
+import { IonContent,  IonCard, IonGrid, IonRow, IonCol, IonLabel, IonItem, IonButton, IonInput, IonList } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader,IonTitle, IonToolbar, CommonModule, FormsModule, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonGrid, IonRow, IonCol, IonLabel, IonItem, IonButton, IonInput, IonList, ReactiveFormsModule, NgIf, IonText]
+  imports: [IonContent, CommonModule, FormsModule, IonCard, IonGrid, IonRow, IonCol, IonLabel, IonItem, IonButton, IonInput, IonList, ReactiveFormsModule, NgIf]
 })
 export class ProfilePage implements OnInit {
 isInvalid(arg0: string): any {

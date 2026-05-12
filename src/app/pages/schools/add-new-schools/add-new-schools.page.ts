@@ -10,24 +10,17 @@ import {
 import {
   IonGrid,
   IonContent,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
-  IonCardContent,
   IonRow,
   IonCol,
   IonLabel,
   IonSelectOption,
   IonButton,
   IonCard,
-  IonList,
-  IonItem,
+
   IonInput,
   IonSelect,
   IonIcon,
   IonText,
-  IonButtons,
-  IonBackButton,
   IonModal, IonDatetime } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 
@@ -38,22 +31,17 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [IonDatetime, 
     IonModal,
-    IonBackButton,
-    IonButtons,
+ 
     IonText,
     IonIcon,
     IonInput,
-    IonItem,
-    IonList,
+    
     IonCard,
     IonButton,
     IonLabel,
     IonCol,
     IonRow,
-    IonCardContent,
-    IonCardSubtitle,
-    IonCardTitle,
-    IonCardHeader,
+  
     IonContent,
     IonGrid,
     CommonModule,

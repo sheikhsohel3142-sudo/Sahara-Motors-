@@ -3,15 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
   IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
   IonButton,
   IonIcon,
   IonInput,
-  IonSelect,
-  IonSelectOption,
-  IonItem,
 } from '@ionic/angular/standalone';
 import { Router, RouterLink } from '@angular/router';
 
@@ -21,19 +15,13 @@ import { Router, RouterLink } from '@angular/router';
   styleUrls: ['./billings-and-payments.page.scss'],
   standalone: true,
   imports: [
-    IonItem,
     IonInput,
     IonIcon,
     IonButton,
     IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
     CommonModule,
     FormsModule,
     RouterLink,
-    IonSelect,
-    IonSelectOption,
   ],
 })
 export class BillingsAndPaymentsPage implements OnInit {

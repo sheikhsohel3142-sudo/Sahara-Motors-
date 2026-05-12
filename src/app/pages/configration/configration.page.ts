@@ -10,24 +10,15 @@ import {
 } from '@angular/forms';
 import {
   IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
   IonGrid,
   IonRow,
   IonCol,
   IonSelectOption,
-  IonButton,
-  IonCard,
   IonInput,
   IonToggle,
-  IonLabel,
+
   IonSelect,
-  IonAlert,
-  IonIcon,
-  IonModal,
-  IonItem,
-  IonList,
+
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -36,23 +27,13 @@ import {
   styleUrls: ['./configration.page.scss'],
   standalone: true,
   imports: [
-    IonList,
-    IonItem,
-    IonModal,
-    IonIcon,
-    IonAlert,
-    IonLabel,
+  
     IonToggle,
     IonInput,
-    IonCard,
-    IonButton,
     IonCol,
     IonRow,
     IonGrid,
     IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
     CommonModule,
     FormsModule,
     IonSelectOption,

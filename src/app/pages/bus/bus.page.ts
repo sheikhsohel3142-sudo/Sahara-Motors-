@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {
-  IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
-  IonButton, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonButton } from '@ionic/angular/standalone';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -14,16 +9,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './bus.page.html',
   styleUrls: ['./bus.page.scss'],
   standalone: true,
-  imports: [IonIcon, 
-    IonButton,
-    IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
-    CommonModule,
-    FormsModule,
-    RouterLink
-  ],
+  imports: [IonButton, IonContent, CommonModule, FormsModule, RouterLink],
 })
 export class BusPage implements OnInit {
   schools = [

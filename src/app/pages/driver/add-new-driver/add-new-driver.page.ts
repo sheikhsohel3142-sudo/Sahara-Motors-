@@ -9,9 +9,6 @@ import {
 } from '@angular/forms';
 import {
   IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
   IonCard,
   IonGrid,
   IonCol,
@@ -26,15 +23,7 @@ import {
   IonModal,
   IonDatetime,
 } from '@ionic/angular/standalone';
-import { Router, RouterLink } from '@angular/router';
-import {
-  text,
-  chevronBackOutline,
-  closeCircleOutline,
-  addCircleOutline,
-  calendarClearOutline,
-  chevronDownOutline,
-} from 'ionicons/icons';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-add-new-driver',
@@ -56,9 +45,6 @@ import {
     IonCol,
     IonButton,
     IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
     CommonModule,
     FormsModule,
     IonSelectOption,

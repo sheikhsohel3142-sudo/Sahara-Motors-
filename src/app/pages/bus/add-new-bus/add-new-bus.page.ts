@@ -9,27 +9,18 @@ import {
 } from '@angular/forms';
 import {
   IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
   IonCard,
-  IonCardTitle,
-  IonCardContent,
   IonGrid,
   IonRow,
   IonCol,
   IonSelectOption,
-  IonDatetimeButton,
   IonModal,
   IonButton,
-  IonCardHeader,
   IonIcon,
   IonInput,
   IonSelect,
-  IonItem,
   IonText,
   IonDatetime, IonLabel } from '@ionic/angular/standalone';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-add-new-bus',
@@ -39,7 +30,6 @@ import { RouterLink } from '@angular/router';
   imports: [IonLabel, 
     IonDatetime,
     IonText,
-    IonItem,
     IonInput,
     IonButton,
     IonIcon,
@@ -53,7 +43,6 @@ import { RouterLink } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     IonSelectOption,
-    RouterLink,
     IonSelect,
     IonModal,
   ],

@@ -9,9 +9,6 @@ import {
 } from '@angular/forms';
 import {
   IonContent,
-  IonHeader,
-  IonTitle,
-  IonToolbar,
   IonButton,
   IonCol,
   IonIcon,
@@ -21,9 +18,7 @@ import {
   IonCard,
   IonSelect,
   IonInput,
-  IonItem,
   IonLabel,
-  IonTabButton,
   IonText,
   IonToggle,
   IonModal, IonDatetime } from '@ionic/angular/standalone';
@@ -38,9 +33,7 @@ import { Router } from '@angular/router';
     IonModal,
     IonToggle,
     IonText,
-    IonTabButton,
     IonLabel,
-    IonItem,
     IonInput,
     IonCard,
     IonGrid,
@@ -49,9 +42,7 @@ import { Router } from '@angular/router';
     IonCol,
     IonButton,
     IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
+  
     CommonModule,
     FormsModule,
     IonSelectOption,

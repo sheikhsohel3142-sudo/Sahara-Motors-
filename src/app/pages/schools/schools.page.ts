@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IonContent, IonButton, IonCardContent, IonCard, IonLabel, IonList, IonRouterOutlet } from "@ionic/angular/standalone";
+import { FormsModule} from '@angular/forms';
+import { IonContent, IonButton} from "@ionic/angular/standalone";
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './schools.page.html',
   styleUrls: ['./schools.page.scss'],
   standalone: true,
-  imports: [IonRouterOutlet, IonList, IonLabel, IonCard, IonCardContent, IonContent, CommonModule, FormsModule,IonButton, FormsModule, RouterLink,]
+  imports: [ IonContent, CommonModule, FormsModule,IonButton, FormsModule, RouterLink,]
 })
 export class SchoolsPage implements OnInit {
     schools = [
