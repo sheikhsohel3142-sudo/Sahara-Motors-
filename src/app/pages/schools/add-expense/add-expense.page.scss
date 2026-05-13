@@ -675,9 +675,12 @@ ion-datetime::part(confirm-button) {
   .date-box {
     width: 91%;
     margin-left: 21px;
+    position:relative;
     ion-icon {
-      right: 8%;
-      top: 41.5%;
+     
+      right:6%;
+      top: 32.5%;
+  
     }
   }
 
