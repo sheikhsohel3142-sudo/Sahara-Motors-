@@ -1,22 +1,41 @@
 
 .title-container {
   position: relative;
-  top: 20px;
-  right: 85px;
-  width: 76px;
-  height: 48px;
+  top: 13px;
+  right: 90px;
+  width: 100px;
+  height: 45px;
   border-radius: 8px;
   padding: 5px;
   padding-right: 8px;
+  cursor: pointer;
 
   background-color: #b3cbf9;
   div {
     position: relative;
-    font-family: "Urbanist", sans-serif;
-    font-weight: 500;
-    top: 10px;
-    left: 16px;
-    font-style: 16px;
+
+    top: 2px;
+    left: 19px;
+
+    font-size: 17px;
+
+    .name {
+      position: relative;
+      font-size: 16px;
+      font-family: "Urbanist", sans-serif;
+      font-weight: 500;
+      line-height: 145%;
+      white-space: 0%;
+      top: 4px;
+      right: -8px;
+    }
+    ion-icon {
+      transform: scale(1.3);
+      position: relative;
+      top: 5px;
+      right: 5px;
+      color: #000000;
+    }
   }
 }
 .align-right-field {

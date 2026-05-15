@@ -21,6 +21,7 @@ import {
   IonSelect,
   IonText,
   IonDatetime, IonLabel } from '@ionic/angular/standalone';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-add-new-bus',
@@ -45,6 +46,7 @@ import {
     IonSelectOption,
     IonSelect,
     IonModal,
+    RouterLink
   ],
 })
 export class AddNewBusPage implements OnInit {
