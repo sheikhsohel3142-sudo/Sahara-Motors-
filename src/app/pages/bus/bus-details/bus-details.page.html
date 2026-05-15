@@ -1,9 +1,12 @@
 <ion-content mode="ios">
   <!-- <div class="root-container"> -->
   <div class="bus-details-container">
-    <div class="title-container">
-      <div><ion-icon name="chevron-back-outline"></ion-icon>Bus</div>
-    </div>
+   <div class="title-container">
+        <div routerLink="/admin/bus">
+          <ion-icon name="chevron-back-outline"></ion-icon
+          ><span class="name">Bus</span>
+        </div>
+      </div>
     <ion-card class="bus-details">
       <form [formGroup]="busForm">
         <div class="status-container">

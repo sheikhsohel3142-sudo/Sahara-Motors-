@@ -22,7 +22,7 @@ import {
   IonText,
   IonToggle,
   IonModal, IonDatetime } from '@ionic/angular/standalone';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-bus-details',
@@ -48,6 +48,7 @@ import { Router } from '@angular/router';
     IonSelectOption,
     ReactiveFormsModule,
     IonSelect,
+    RouterLink
   ],
 })
 export class BusDetailsPage implements OnInit {

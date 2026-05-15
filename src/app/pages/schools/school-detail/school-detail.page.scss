@@ -177,8 +177,8 @@ ion-button {
 .title-container {
   position: relative;
   top: 20px;
-  right: 85px;
-  width: 135px;
+  right: 78px;
+  width: 130px;
   height: 45px;
   border-radius: 8px;
   padding: 5px;
@@ -189,9 +189,9 @@ ion-button {
     position: relative;
     font-family: "Urbanist", sans-serif;
     font-weight: 500;
-    top: 2px;
+    top: 1px;
     left: 25px;
-    font-style: 16px;
+    font-size: 16px;
     cursor: pointer;
     P {
       position: relative;
@@ -206,7 +206,7 @@ ion-icon {
   position: relative;
 
   right: 10px;
-  top: 2px;
+  top: 4px;
 }
 .date-box {
   background: #f5f6f8;
