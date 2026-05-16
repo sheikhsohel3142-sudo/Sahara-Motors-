@@ -90,7 +90,7 @@ ion-card {
   background: #ffffff;
   border-radius: 12px;
   padding: 24px 32px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
   ion-grid {
     position: relative;
     top: 35px;
@@ -734,11 +734,11 @@ ion-datetime::part(confirm-button) {
   }
   .upload-icon ion-icon {
     right: 9%;
-    top: 35%;
+    top: 40%;
   }
   .upload-icon2 ion-icon {
     right: 9%;
-    top: 35%;
+    top: 40%;
   }.danger {
     
    position:relative;
