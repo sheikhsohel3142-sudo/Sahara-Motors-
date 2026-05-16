@@ -80,6 +80,10 @@ ion-card {
     }
   }
 }
+ion-grid{
+  position: relative;
+  top: 12px;
+}
 .add-new-bus-container ion-input {
   background: #f5f6f8;
   border-radius: 8px;

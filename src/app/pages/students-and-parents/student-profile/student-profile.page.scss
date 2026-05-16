@@ -103,7 +103,7 @@ ion-card {
   background: #ffffff;
   border-radius: 12px;
   padding: 24px 32px;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
   ion-grid {
     position: relative;
     top: 20px;
@@ -111,6 +111,10 @@ ion-card {
       margin-bottom: 10px;
     }
   }
+}
+ion-grid{
+  position: relative;
+  top: 12px;
 }
 .student-profile-container ion-input {
   background: #f5f6f8;
