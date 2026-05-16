@@ -1609,7 +1609,7 @@ ion-datetime::part(confirm-button) {
   // }
   ion-card {
     width: 100%;
-    height: 790px;
+    height: 850px;
     position: static;
     margin: 10px 0;
     margin-top: 30px;
@@ -1643,6 +1643,7 @@ ion-datetime::part(confirm-button) {
   /* 🔥 GRID → SINGLE COLUMN */
   ion-grid {
     display: block;
+    margin-top: 26px;
   }
 
   ion-row {
@@ -1698,7 +1699,7 @@ ion-datetime::part(confirm-button) {
   }
   .payment-recording {
     width: 100%;
-    height: 1050px;
+    height: 1100px;
     position: static;
     margin: 10px 0;
     margin-top: 30px;
@@ -1706,7 +1707,7 @@ ion-datetime::part(confirm-button) {
   }
   .after-record {
     width: 100%;
-    height: 1100px;
+    height: 1150px;
     position: static;
     margin: 10px 0;
     margin-top: 30px;
@@ -1722,7 +1723,7 @@ ion-datetime::part(confirm-button) {
   .due-and-reminder-managment {
     width: 107%;
     width: 100%;
-    height: 400px;
+    height: 450px;
     position: static;
     margin: 10px 0;
     margin-top: 30px;
