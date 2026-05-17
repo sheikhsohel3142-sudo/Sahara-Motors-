@@ -49,8 +49,8 @@
               <div class="date-box" (click)="openPicker()">
                 <span>
                   {{ addExpense.get('expenseDate')?.value ?
-                  (addExpense.get('expenseDate')?.value |
-                  date:'MM/dd/yyyy') : 'mm/dd/yyyy' }}
+                  (addExpense.get('expenseDate')?.value | date:'MM/dd/yyyy') :
+                  'mm/dd/yyyy' }}
                 </span>
 
                 <ion-icon name="calendar-clear-outline"></ion-icon>

@@ -18,12 +18,14 @@
     font-size: 16px;
   }
 }
+
 .profile-container {
   background: #f2f2f2;
   // width: 910px;
   height: 885px;
   position: relative;
   top: 10px;
+  
 
   // right: 100px;
   border-radius: 14px;
@@ -131,7 +133,7 @@ ion-button {
   position: relative;
   right: 86px;
   top: 30px;
-  // box-sizing: border-box;
+   box-sizing: border-box;
 
   border: 1px solid #ffffff;
 }
@@ -439,6 +441,7 @@ ion-button {
   // min-width: 250px;
 
   .profile-container {
+    width: 100%;
     overflow-x: auto; /* 🔥 scroll yaha shift kiya */
     -webkit-overflow-scrolling: touch;
   }
@@ -449,8 +452,7 @@ ion-button {
 
   /* 🔥 Header + Body same width */
   .table-container,
-  .head-container,
-  .table-card {
+  .head-container {
     min-width: 900px;
     /* jitne columns ho us hisaab se */
   }
@@ -481,6 +483,8 @@ ion-button {
     top: 3%;
   }
 }
+
+
 @media (max-width: 680px) {
   // dono equal width lenge
   // min-width: 250px;
@@ -492,8 +496,7 @@ ion-button {
 
   /* 🔥 Header + Body same width */
   .table-container,
-  .head-container,
-  .table-card {
+  .head-container {
     min-width: 900px; /* jitne columns ho us hisaab se */
   }
 
@@ -529,8 +532,7 @@ ion-button {
 
   /* 🔥 Header + Body same width */
   .table-container,
-  .head-container,
-  .table-card {
+  .head-container {
     min-width: 900px; /* jitne columns ho us hisaab se */
   }
 
@@ -566,8 +568,7 @@ ion-button {
 
   /* 🔥 Header + Body same width */
   .table-container,
-  .head-container,
-  .table-card {
+  .head-container {
     min-width: 900px; /* jitne columns ho us hisaab se */
   }
 
@@ -604,9 +605,8 @@ ion-button {
 
   /* 🔥 Header + Body same width */
   .table-container,
-  .head-container,
-  .table-card {
-    min-width: 850px; /* jitne columns ho us hisaab se */
+  .head-containe{
+    min-width: 900px; /* jitne columns ho us hisaab se */
   }
 
   /* 🔥 Header row */

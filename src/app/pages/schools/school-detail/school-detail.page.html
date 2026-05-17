@@ -46,8 +46,10 @@
                         class="down"
                         name="chevron-down-outline"
                       ></ion-icon>
-                      <ion-select formControlName="affiliationBoard"
-                      placeholder="Eg:CBSE,Stateboard...">
+                      <ion-select
+                        formControlName="affiliationBoard"
+                        placeholder="Eg:CBSE,Stateboard..."
+                      >
                         <ion-select-option value="CBSE">CBSE</ion-select-option>
                         <ion-select-option value="ICSE">ICSE</ion-select-option>
                         <ion-select-option value="State Board">
@@ -71,15 +73,15 @@
                       placeholder="Eg:Triplicane,Opp LIC Bus Stop"
                       formControlName="address2"
                     ></ion-input>
-                    <div class="error-container">
-                      
-                    </div>
+                    <div class="error-container"></div>
                   </ion-item>
 
                   <ion-item lines="none">
                     <ion-label position="stacked">State</ion-label>
-                    <ion-input formControlName="state"
-                    placeholder="Eg:Jharkhand"></ion-input>
+                    <ion-input
+                      formControlName="state"
+                      placeholder="Eg:Jharkhand"
+                    ></ion-input>
                     <div class="error-container">
                       <ion-text class="danger" *ngIf="isInvalid('state')">
                         State is required
@@ -91,8 +93,10 @@
                     <ion-label position="stacked"
                       >Primary Contact Name</ion-label
                     >
-                    <ion-input formControlName="primaryContactName"
-                    placeholder="Russel"></ion-input>
+                    <ion-input
+                      formControlName="primaryContactName"
+                      placeholder="Russel"
+                    ></ion-input>
                     <div class="error-container">
                       <ion-text
                         class="danger"
@@ -105,8 +109,11 @@
 
                   <ion-item lines="none">
                     <ion-label position="stacked">Email</ion-label>
-                    <ion-input type="email" formControlName="email"
-                     placeholder="Eg: ripleyenterpraises@gmail.com"></ion-input>
+                    <ion-input
+                      type="email"
+                      formControlName="email"
+                      placeholder="Eg: ripleyenterpraises@gmail.com"
+                    ></ion-input>
                     <div class="error-container">
                       <ion-text
                         class="danger"
@@ -135,49 +142,48 @@
                         {{ schoolForm.value.startTime &&
                         schoolForm.value.endTime ?
                         (formatTime(schoolForm.value.startTime) + ' - ' +
-                        formatTime(schoolForm.value.endTime)) : '09:00 AM - 04:30PM' }}
+                        formatTime(schoolForm.value.endTime)) : '09:00 AM -
+                        04:30PM' }}
                       </span>
 
                       <ion-icon name="time-outline"></ion-icon>
                     </div>
                     <ion-modal
-  [isOpen]="isTimeOpen"
-  (didDismiss)="onModalClose()"
-  class="time-modal"
->
-  <ng-template>
-    <div class="time-modal-content">
+                      [isOpen]="isTimeOpen"
+                      (didDismiss)="onModalClose()"
+                      class="time-modal"
+                    >
+                      <ng-template>
+                        <div class="time-modal-content">
+                          <!-- Start Time -->
+                          <div class="time-section">
+                            <ion-label class="time-label">Start Time</ion-label>
 
-      <!-- Start Time -->
-      <div class="time-section">
-        <ion-label class="time-label">Start Time</ion-label>
+                            <div class="time-picker-wrapper">
+                              <ion-datetime
+                                presentation="time"
+                                (ionChange)="selectStartTime($event)"
+                              ></ion-datetime>
+                            </div>
+                          </div>
 
-        <div class="time-picker-wrapper">
-          <ion-datetime
-            presentation="time"
-            (ionChange)="selectStartTime($event)"
-          ></ion-datetime>
-        </div>
-      </div>
+                          <!-- Divider -->
+                          <div class="time-divider"></div>
 
-      <!-- Divider -->
-      <div class="time-divider"></div>
+                          <!-- End Time -->
+                          <div class="time-section">
+                            <ion-label class="time-label">End Time</ion-label>
 
-      <!-- End Time -->
-      <div class="time-section">
-        <ion-label class="time-label">End Time</ion-label>
-
-        <div class="time-picker-wrapper">
-          <ion-datetime
-            presentation="time"
-            (ionChange)="selectEndTime($event)"
-          ></ion-datetime>
-        </div>
-      </div>
-
-    </div>
-  </ng-template>
-</ion-modal>
+                            <div class="time-picker-wrapper">
+                              <ion-datetime
+                                presentation="time"
+                                (ionChange)="selectEndTime($event)"
+                              ></ion-datetime>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ion-modal>
 
                     <!-- <ion-modal
                       [isOpen]="isTimeOpen"
@@ -237,8 +243,10 @@
                         name="chevron-down-outline"
                       ></ion-icon>
 
-                      <ion-select formControlName="schoolType"
-                       placeholder="Eg: Primary, Higher Secondary...">
+                      <ion-select
+                        formControlName="schoolType"
+                        placeholder="Eg: Primary, Higher Secondary..."
+                      >
                         <ion-select-option value="Primary">
                           Primary
                         </ion-select-option>
@@ -261,8 +269,10 @@
 
                   <ion-item lines="none">
                     <ion-label position="stacked">Address Line 1</ion-label>
-                    <ion-input formControlName="address1"
-                     placeholder="Eg: Redwood Building..."></ion-input>
+                    <ion-input
+                      formControlName="address1"
+                      placeholder="Eg: Redwood Building..."
+                    ></ion-input>
                     <div class="error-container">
                       <ion-text class="danger" *ngIf="isInvalid('address1')">
                         Address is required
@@ -272,8 +282,10 @@
 
                   <ion-item lines="none">
                     <ion-label position="stacked">City</ion-label>
-                    <ion-input formControlName="city"
-                      placeholder="Eg: Delhi"></ion-input>
+                    <ion-input
+                      formControlName="city"
+                      placeholder="Eg: Delhi"
+                    ></ion-input>
                     <div class="error-container">
                       <ion-text class="danger" *ngIf="isInvalid('city')">
                         City is required
@@ -346,8 +358,10 @@
                         name="chevron-down-outline"
                       ></ion-icon>
 
-                      <ion-select formControlName="operatingDays"
-                       placeholder="Eg: Monday-Friday">
+                      <ion-select
+                        formControlName="operatingDays"
+                        placeholder="Eg: Monday-Friday"
+                      >
                         <ion-select-option value="Mon-Fri">
                           Monday - Friday
                         </ion-select-option>

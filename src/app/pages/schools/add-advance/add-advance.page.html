@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
   <div class="add-advance">
     <div class="title-container">
-      <div routerLink="/admin/bus">
+      <div routerLink="/admin/driver">
         <ion-icon name="chevron-back-outline"></ion-icon>Add Advance
       </div>
     </div>
@@ -11,75 +11,76 @@
           <h2>Add Advance</h2>
         </div>
         <ion-grid>
-  <ion-row>
-    <!-- Amount -->
-    <ion-col size="12" size-md="6">
-      <label>Amount</label>
+          <ion-row>
+            <!-- Amount -->
+            <ion-col size="12" size-md="6">
+              <label>Amount</label>
 
-      <ion-input formControlName="amount" placeholder="Eg: $ 45.00">
-      </ion-input>
+              <ion-input formControlName="amount" placeholder="Eg: $ 45.00">
+              </ion-input>
 
-      <div class="error-container">
-        <ion-text class="danger" *ngIf="isInvalid('amount')">
-          Amount is required
-        </ion-text>
-      </div>
-    </ion-col>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('amount')">
+                  Amount is required
+                </ion-text>
+              </div>
+            </ion-col>
 
-    <!-- Advance Date -->
-    <ion-col class="align-right-field" size="12" size-md="6">
-      <label>Advance Date</label>
+            <!-- Advance Date -->
+            <ion-col class="align-right-field" size="12" size-md="6">
+              <label>Advance Date</label>
 
-      <!-- Custom Input -->
-      <div class="date-box" (click)="openPicker()">
-        <span>
-          {{ busForm.get('expenseDate')?.value ?
-          (busForm.get('expenseDate')?.value | date:'MM/dd/yyyy') :
-          'mm/dd/yyyy' }}
-        </span>
+              <!-- Custom Input -->
+              <div class="date-box" (click)="openPicker()">
+                <span>
+                  {{ busForm.get('expenseDate')?.value ?
+                  (busForm.get('expenseDate')?.value | date:'MM/dd/yyyy') :
+                  'mm/dd/yyyy' }}
+                </span>
 
-        <ion-icon name="calendar-clear-outline"></ion-icon>
-      </div>
+                <ion-icon name="calendar-clear-outline"></ion-icon>
+              </div>
 
-      <div class="error-container">
-        <ion-text class="danger" *ngIf="isInvalid('expenseDate')">
-          Advance Date is required
-        </ion-text>
-      </div>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('expenseDate')">
+                  Advance Date is required
+                </ion-text>
+              </div>
 
-      <!-- Date Picker -->
-      <ion-modal [isOpen]="isOpen" (didDismiss)="isOpen = false">
-        <ng-template>
-          <ion-datetime
-            formControlName="expenseDate"
-            presentation="date"
-            (ionChange)="selectDate($event)"
-          ></ion-datetime>
-        </ng-template>
-      </ion-modal>
-    </ion-col>
+              <!-- Date Picker -->
+              <ion-modal [isOpen]="isOpen" (didDismiss)="isOpen = false">
+                <ng-template>
+                  <ion-datetime
+                    formControlName="expenseDate"
+                    presentation="date"
+                    (ionChange)="selectDate($event)"
+                  ></ion-datetime>
+                </ng-template>
+              </ion-modal>
+            </ion-col>
 
-    <!-- Reason -->
-    <ion-col class="align-right-field" size="12" size-md="6">
-      <label>Reason</label>
+            <!-- Reason -->
+            <ion-col size="12" size-md="6">
+              <label>Reason</label>
 
-      <ion-input
-        formControlName="notesOptional"
-        placeholder="Eg: New Tyre has been changed"
-      >
-      </ion-input>
+              <ion-input
+                formControlName="notesOptional"
+                placeholder="Eg: New Tyre has been changed"
+              >
+              </ion-input>
 
-      <div class="error-container">
-        <ion-text class="danger" *ngIf="isInvalid('notesOptional')">
-          Reason is required
-        </ion-text>
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+              <div class="error-container">
+                <ion-text class="danger" *ngIf="isInvalid('notesOptional')">
+                  Reason is required
+                </ion-text>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
         <!-- Confirm Button -->
         <ion-button
+          fill="clear"
           expand="block"
           [disabled]="busForm.invalid"
           class="confirm-btn"

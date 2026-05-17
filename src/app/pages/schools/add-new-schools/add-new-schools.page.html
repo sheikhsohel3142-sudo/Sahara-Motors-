@@ -48,10 +48,7 @@
                         >State Board</ion-select-option
                       >
                     </ion-select>
-                      <ion-icon
-                      
-                      name="chevron-down-outline"
-                    ></ion-icon>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
                   </div>
                   <div class="error-container">
                     <ion-text
@@ -147,7 +144,8 @@
                     <span>
                       {{ schoolForm.value.startTime && schoolForm.value.endTime
                       ? (formatTime(schoolForm.value.startTime) + ' - ' +
-                      formatTime(schoolForm.value.endTime)) : '09:00 AM-04:30PM' }}
+                      formatTime(schoolForm.value.endTime)) : '09:00 AM-04:30PM'
+                      }}
                     </span>
                     <div class="icon-container">
                       <ion-icon name="time-outline"></ion-icon>
@@ -213,7 +211,7 @@
                         >Higher Secondary</ion-select-option
                       >
                     </ion-select>
-                      <ion-icon
+                    <ion-icon
                       class="down"
                       name="chevron-down-outline"
                     ></ion-icon>

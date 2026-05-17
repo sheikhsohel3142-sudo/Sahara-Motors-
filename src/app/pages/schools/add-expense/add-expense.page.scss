@@ -504,13 +504,13 @@ ion-datetime::part(confirm-button) {
 
   ion-card {
     width: 105%;
-    height: 650px;
+    height: 550px;
   }
 
   ion-button {
     width: 100%;
     min-width: 400px;
-    margin-top: 20px;
+     margin-top: -35px;
   }
 }
 
@@ -536,7 +536,7 @@ ion-datetime::part(confirm-button) {
   ion-card {
     width: 107%;
 
-    height: 650px;
+    height: 550px;
   }
   .upload-container {
     width: 100%;
@@ -552,7 +552,7 @@ ion-datetime::part(confirm-button) {
   ion-button {
     width: 100%;
     min-width: 400px;
-    margin-top: 20px;
+      margin-top: -35px;
   }
 }
 
@@ -575,7 +575,7 @@ ion-datetime::part(confirm-button) {
 
   ion-card {
     width: 108%;
-    height: 650px;
+    height: 550px;
 
     // right: 0;
     // top: 60px;
@@ -604,7 +604,7 @@ ion-datetime::part(confirm-button) {
   ion-button {
     width: 100%;
     min-width: 400px;
-    margin-top: 20px;
+    margin-top: -35px;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 900px) {
@@ -628,7 +628,7 @@ ion-datetime::part(confirm-button) {
 
   ion-card {
     width: 107%;
-    height: 650px;
+    height: 550px;
 
     // right: 0;
     // top: 60px;
@@ -657,7 +657,7 @@ ion-datetime::part(confirm-button) {
   ion-button {
     width: 100%;
     min-width: 400px;
-    margin-top: 20px;
+      margin-top: -35px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -688,7 +688,7 @@ ion-datetime::part(confirm-button) {
   /* Card */
   ion-card {
     width: 100%;
-    height: 800px;
+    height: 780px;
     position: static;
     margin: 10px 0;
     margin-top: 30px;
@@ -779,7 +779,7 @@ ion-datetime::part(confirm-button) {
     width: 100%;
     min-width: 200px;
     height: 48px;
-    margin-top: -36px;
+    margin-top: -46px;
     border-radius: 10px;
     font-size: 15px;
   }
