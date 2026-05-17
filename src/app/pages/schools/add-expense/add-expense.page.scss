@@ -63,16 +63,13 @@ ion-card {
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
   ion-grid {
     position: relative;
-    top: 50px;
+    top: 30px;
     ion-col {
       margin-bottom: 10px;
     }
   }
 }
-ion-grid{
-  position: relative;
-  top: 12px;
-}
+
 
 .add-advance-container ion-input {
   background: #f5f6f8;
@@ -674,11 +671,11 @@ ion-datetime::part(confirm-button) {
   }
   .input {
     width: 91%;
-    margin-left: 20px;
+    margin-left: 18px;
   }
   .date-box {
     width: 91%;
-    margin-left: 21px;
+    margin-left: 18px;
     position:relative;
     ion-icon {
      
@@ -757,11 +754,14 @@ ion-datetime::part(confirm-button) {
   .add-advance-container {
     margin-bottom: 12px;
   }
+  .header-container{
+    right: 10px;
+  }
 
   .add-advance-container ion-label {
     font-size: 13px;
     margin-bottom: 4px;
-    margin-left: 20px;
+    margin-left: 18px;
   }
 
   .add-advance-container ion-input {
@@ -771,7 +771,7 @@ ion-datetime::part(confirm-button) {
     font-size: 14px;
     padding: 10px;
     border-radius: 8px;
-    margin-left: 20px;
+    margin-left: 18px;
   }
 
   /* Button */
@@ -779,7 +779,7 @@ ion-datetime::part(confirm-button) {
     width: 100%;
     min-width: 200px;
     height: 48px;
-    margin-top: -16px;
+    margin-top: -36px;
     border-radius: 10px;
     font-size: 15px;
   }

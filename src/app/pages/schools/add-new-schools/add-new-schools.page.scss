@@ -479,22 +479,22 @@ ion-icon {
   }
   .input {
     width: 91%;
-    margin-left: 21px;
+   
   }
   .date-box {
     width: 91%;
-    margin-left: 21px;
+    
  
   }.danger {
     
    position:relative;
-   left: 21px;
+   left: 2px;
   }
 
   /* Card */
   ion-card {
     min-width: 300px;
-    height: 1580px;
+    height: 1550px;
     margin: 5px;
     padding: 16px;
     border-radius: 12px;
@@ -519,7 +519,8 @@ ion-icon {
   /* 🔥 GRID → SINGLE COLUMN */
   ion-grid {
     display: block;
-    margin: 30px auto;
+    top: 18px;
+    left: 15px;
   }
 
   ion-row {
@@ -546,7 +547,7 @@ ion-icon {
   .add-new-schools ion-label {
     font-size: 13px;
     margin-bottom: 4px;
-    margin-left: 21px;
+   
   }
 
   .add-new-schools ion-input {
@@ -556,7 +557,6 @@ ion-icon {
     font-size: 14px;
     padding: 10px;
     border-radius: 8px;
-    margin-left: 21px;
   }
 
   /* Button */
@@ -564,7 +564,7 @@ ion-icon {
     width: 100%;
     min-width: 200px;
     height: 48px;
-    margin-top: -16px;
+    margin-top: 40px;
     border-radius: 10px;
     font-size: 15px;
   }

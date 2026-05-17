@@ -91,10 +91,10 @@ ion-card {
   background: #ffffff;
   border-radius: 12px;
   padding: 24px 32px;
-   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0);
   ion-grid {
     position: relative;
-    top: 30px;
+    top: 33px;
     left: 5px;
     ion-col {
       margin-bottom: 10px;
@@ -133,6 +133,14 @@ ion-card {
   color: #8a8a8a;
   margin-bottom: -4px;
 }
+.add-new-driver-container label {
+  font-size: 14px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  color: #8a8a8a;
+  margin-bottom: -4px;
+}
+
 ion-button {
   height: 52px;
   width: 821px;
@@ -246,14 +254,13 @@ ion-button {
     top: 48%;
   }
 }
-.special-label{
+.special-label {
   font-size: 14px;
   font-weight: 500;
   color: #555;
   display: block;
   margin-bottom: 6px;
   margin-top: 23px;
- 
 }
 
 .date-box {
@@ -269,6 +276,9 @@ ion-button {
   color: #333;
   --placeholder-color: #aaa;
   cursor: pointer;
+  span{
+    color: #0f172abf;
+  }
 
   ion-icon {
     font-size: 18px;
@@ -353,7 +363,7 @@ ion-button {
 }
 
 .danger {
-  color:  #dc2626;
+  color: #dc2626;
   font-size: 11px;
   font-weight: 400;
   display: block;
@@ -717,19 +727,36 @@ ion-datetime::part(confirm-button) {
   }
   .input {
     width: 91%;
-    margin-left: 20px;
+    margin-left: 16px;
   }
+  #DL {
+    margin-bottom: 15px;
+  }
+  #AD {
+    margin-bottom: 15px;
+  }
+  #ET {
+   position: relative;
+   bottom: 10px;
+  }
+ 
   .date-box {
     width: 91%;
-    margin-left: 20px;
+    margin-left: 16px;
+    
+   
     ion-icon {
       right: 9%;
-      top: 49.5%;
+      top: 39%;
     }
+  }
+  .add-new-driver-container label{
+    margin-top: -2px;
+    margin-left: 20px;
   }
   .upload-box {
     width: 100%;
-    margin-left: 20px;
+    margin-left: 16px;
   }
   .upload-container {
     width: 91%;
@@ -742,17 +769,17 @@ ion-datetime::part(confirm-button) {
   .upload-icon2 ion-icon {
     right: 9%;
     top: 40%;
-  }.danger {
-    
-   position:relative;
-   left: 21px;
+  }
+  .danger {
+    position: relative;
+    left: 21px;
   }
   .upload-icon3 {
     position: relative;
     bottom: 10px;
-    right: 10px;
+    right: 1px;
     ion-icon {
-      right: 10%;
+      right: 8%;
     }
   }
 
@@ -808,7 +835,7 @@ ion-datetime::part(confirm-button) {
   .add-new-driver-container ion-label {
     font-size: 13px;
     margin-bottom: 4px;
-    margin-left: 20px;
+    margin-left: 16px;
   }
 
   .add-new-driver-container ion-input {
@@ -818,7 +845,7 @@ ion-datetime::part(confirm-button) {
     font-size: 14px;
     padding: 10px;
     border-radius: 8px;
-    margin-left: 20px;
+    margin-left: 16px;
   }
 
   /* Button */

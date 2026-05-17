@@ -105,16 +105,13 @@
    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
   ion-grid {
     position: relative;
-    top: 50px;
+    top: 33px;
     ion-col {
       margin-bottom: 10px;
     }
   }
 }
-ion-grid{
-  position: relative;
-  top: 12px;
-}
+
 .bus-details-container ion-input {
   background: #f5f6f8;
   border-radius: 8px;
