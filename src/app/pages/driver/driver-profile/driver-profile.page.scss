@@ -198,7 +198,7 @@ ion-grid{
   width: 880px;
   height: 500px;
   position: relative;
-  top: 180px;
+  top: 150px;
   right: 80px;
   padding-top: 30%;
 
@@ -206,11 +206,11 @@ ion-grid{
   background: #ffffff;
   border-radius: 12px;
   padding: 24px 32px;
-  box-shadow: 0 12px 30px rgba(178, 176, 176, 0.1);
+   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0);
 
   ion-grid {
     position: relative;
-    top: 50px;
+    top: 33px;
 
     ion-col {
       margin-bottom: 10px;
@@ -576,7 +576,7 @@ ion-grid{
 
   height: 390px;
   position: relative;
-  top: 260px;
+  top: 210px;
   right: 80px;
   padding-top: 30%;
 
@@ -585,7 +585,7 @@ ion-grid{
 
   border-radius: 12px;
   padding: 24px 32px;
-  box-shadow: 0 12px 30px rgba(253, 251, 251, 0);
+   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0);
 }
 
 .button {
@@ -881,7 +881,7 @@ ion-grid{
   width: 880px;
   height: 500px;
   position: relative;
-  top: 340px;
+  top: 270px;
   right: 80px;
   padding-top: 30%;
 
@@ -889,10 +889,11 @@ ion-grid{
   background: #ffffff;
   border-radius: 12px;
   padding: 24px 32px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0);
   ion-grid {
     position: relative;
     top: 50px;
+    right: 15px;
     ion-col {
       margin-bottom: 10px;
     }
@@ -1162,7 +1163,7 @@ ion-datetime::part(confirm-button) {
 @media only screen and (min-width: 1600px) {
   .driver-profile-container {
     width: 99%;
-    height: 2570px;
+   height: 2490px;
 
     // left: 20px;
     // padding-left: 120px;
@@ -1196,7 +1197,7 @@ ion-datetime::part(confirm-button) {
     width: 96%;
   }
   .salary_configuration {
-    top: 7%;
+
     width: 105%;
   }
   .expense-container {
@@ -1212,7 +1213,7 @@ ion-datetime::part(confirm-button) {
   //   width: 100%;
   // }
   .monthly-card {
-    top: 13%;
+   
     width: 105%;
   }
   .button2 {
@@ -1241,7 +1242,7 @@ ion-datetime::part(confirm-button) {
 @media only screen and (max-width: 1599px) and (min-width: 1280px) {
   .driver-profile-container {
     width: 99%;
-    height: 2570px;
+  height: 2490px;
 
     // padding-left: 140px;
   }
@@ -1271,7 +1272,7 @@ ion-datetime::part(confirm-button) {
     height: 930px;
   }
   .salary_configuration {
-    top: 7%;
+  
     width: 107%;
   }
 
@@ -1315,7 +1316,7 @@ ion-datetime::part(confirm-button) {
 @media only screen and (max-width: 1279px) and (min-width: 768px) {
   .driver-profile-container {
     width: 99%;
-    height: 2550px;
+    height: 2490px;
   }
   .input {
     width: 91%;
@@ -1400,7 +1401,7 @@ ion-datetime::part(confirm-button) {
 @media only screen and (max-width: 1024px) and (min-width: 900px) {
   .driver-profile-container {
     width: 99.5%;
-    height: 2620px;
+    height: 2490px;
   }
   .input {
     width: 91%;
@@ -1431,15 +1432,15 @@ ion-datetime::part(confirm-button) {
   }
   .salary_configuration {
     width: 108.5%;
-      top: 190px;
+      
   }
   .expense-container {
     width: 108.5%;
-    top: 280px;
+   
   }
   .monthly-card {
     width: 108.5%;
-    top: 370px;
+    
   }
   .title-container {
     margin-left: 50;
@@ -1476,7 +1477,7 @@ ion-datetime::part(confirm-button) {
   /* Outer container */
   .driver-profile-container {
     width: 99%;
-    height: 3300px;
+    height: 3190px;
     // padding: 10px;
     background: #f2f2f2;
     padding: 8px 10px;
@@ -1534,6 +1535,10 @@ ion-datetime::part(confirm-button) {
       right: 13%;
     }
   }
+  #Ad{
+    position: relative;
+    top: 8px;
+  }
   .align-left {
     left: 0;
   }
@@ -1562,18 +1567,18 @@ ion-datetime::part(confirm-button) {
     height: 520px;
     
     right: 0;
-    top: 100px;
+    top: 75px;
   }
   .expense-container {
     width: 100%;
     right: 0;
-    top: 180px;
+    top: 135px;
   }
   .monthly-card {
     width: 100%;
     height: 600px;
     right: 0;
-    top: 270px;
+    top: 195px;
   }
 
   /* Top button (My profile) */

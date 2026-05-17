@@ -70,16 +70,13 @@ ion-card {
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
   ion-grid {
     position: relative;
-    top: 20px;
+    top: 10px;
     ion-col {
       margin-bottom: 10px;
     }
   }
 }
-ion-grid{
-  position: relative;
-  top: 12px;
-}
+
 .genrate-bill-container ion-input {
   background: #f5f6f8;
   border-radius: 8px;
@@ -684,6 +681,7 @@ label {
     margin-top: -16px;
     border-radius: 10px;
     font-size: 15px;
+    margin-left: 10px;
   }
 
   /* Remove extra spacing issue */

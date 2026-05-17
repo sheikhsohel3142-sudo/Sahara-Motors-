@@ -113,16 +113,13 @@ ion-card {
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
   ion-grid {
     position: relative;
-    top: 30px;
+    top: 10px;
     ion-col {
       margin-bottom: 10px;
     }
   }
 }
-ion-grid{
-  position: relative;
-  top: 12px;
-}
+
 .bill-profile-container ion-input {
   background: #f5f6f8;
   border-radius: 8px;
@@ -405,7 +402,7 @@ ion-grid{
   width: 880px;
   height: 350px;
   position: relative;
-  top: 160px;
+  top: 150px;
   right: 80px;
   padding-top: 30%;
 
@@ -416,7 +413,7 @@ ion-grid{
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
   ion-grid {
     position: relative;
-    top: 20px;
+    top: 10px;
     ion-col {
       margin-bottom: 10px;
     }
@@ -427,7 +424,7 @@ ion-grid{
   width: 880px;
   height: 8700px;
   position: relative;
-  top: 220px;
+  top: 210px;
   right: 80px;
   padding-top: 30%;
 
@@ -453,7 +450,7 @@ ion-grid{
   width: 880px;
   height: 350px;
   position: relative;
-  top: 280px;
+  top: 270px;
   right: 80px;
   padding-top: 30%;
 
@@ -464,7 +461,7 @@ ion-grid{
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
   ion-grid {
     position: relative;
-    top: 20px;
+    top: -15px;
     ion-col {
       margin-bottom: 10px;
     }
@@ -680,7 +677,7 @@ ion-grid{
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
   ion-grid {
     position: relative;
-    top: 20px;
+    top: 10px;
     ion-col {
       margin-bottom: 10px;
     }
@@ -1696,8 +1693,10 @@ ion-datetime::part(confirm-button) {
     width: 100%;
     height: 790px;
     position: static;
-    margin: 10px 0;
-    margin-top: 30px;
+    margin: 25px 0;
+    
+
+
 
     height: auto;
   }
@@ -1705,8 +1704,8 @@ ion-datetime::part(confirm-button) {
     width: 100%;
     height: 1100px;
     position: static;
-    margin: 10px 0;
-    margin-top: 30px;
+    margin: 15px 0;
+   
     // height: 900px;
   }
   .after-record {
@@ -1714,14 +1713,14 @@ ion-datetime::part(confirm-button) {
     height: 1150px;
     position: static;
     margin: 10px 0;
-    margin-top: 30px;
+  
   }
   .payment-history {
     width: 100%;
     height: 350px;
     position: static;
-    margin: 10px 0;
-    margin-top: 30px;
+    margin: 25px 0;
+   
     // height: auto;
   }
   .due-and-reminder-managment {
@@ -1730,7 +1729,7 @@ ion-datetime::part(confirm-button) {
     height: 450px;
     position: static;
     margin: 10px 0;
-    margin-top: 30px;
+   
     // height: 5500px;
   }
 
