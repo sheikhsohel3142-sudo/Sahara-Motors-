@@ -185,7 +185,7 @@ ion-button {
     color: #666;
     position: absolute;
     right: 13%;
-    top: 45%;
+    top: 40%;
   }
 }
 
@@ -447,13 +447,13 @@ ion-datetime::part(confirm-button) {
 
   ion-card {
     width: 105%;
-    height: 600px;
-  }
+     height: 570px;
+  } 
 
   ion-button {
     width: 100%;
     min-width: 400px;
-    top: 60px;
+    top: 45px;
   }
 }
 
@@ -481,7 +481,7 @@ ion-datetime::part(confirm-button) {
 
   ion-card {
     width: 107%;
-    height: 600px;
+    height: 570px;
   }
 
   .add-new-bus-container ion-input {
@@ -491,7 +491,7 @@ ion-datetime::part(confirm-button) {
   ion-button {
     width: 100%;
     min-width: 400px;
-    top: 60px;
+    top: 45px;
   }
 }
 
@@ -518,7 +518,7 @@ ion-datetime::part(confirm-button) {
 
   ion-card {
     width: 109%;
-    height: 600px;
+    height: 570px;
 
     // right: 0;
     // top: 60px;
@@ -541,7 +541,7 @@ ion-datetime::part(confirm-button) {
   ion-button {
     width: 100%;
     min-width: 400px;
-    top: 60px;
+    top: 45px;
   }
 }
 @media only screen and (max-width: 1094px) and (min-width: 900px) {
@@ -565,7 +565,7 @@ ion-datetime::part(confirm-button) {
 
   ion-card {
     width: 108.5%;
-    height: 600px;
+     height: 570px;
 
     // right: 0;
     // top: 60px;
@@ -588,7 +588,7 @@ ion-datetime::part(confirm-button) {
   ion-button {
     width: 100%;
     min-width: 400px;
-    top: 60px;
+    top: 45px;
   }
 }
 @media only screen and (max-width: 767px) {
