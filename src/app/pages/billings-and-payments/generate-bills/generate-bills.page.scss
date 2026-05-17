@@ -67,7 +67,7 @@ ion-card {
   background: #ffffff;
   border-radius: 12px;
   padding: 24px 32px;
-  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0);
   ion-grid {
     position: relative;
     top: 10px;
@@ -316,7 +316,7 @@ label {
   align-items: center;
   padding: 10px 0;
 }
-.InAcStu{
+.InAcStu {
   margin-bottom: 25px;
 }
 // .toggle {
@@ -405,7 +405,7 @@ label {
 }
 
 .danger {
-  color:  #dc2626;
+  color: #dc2626;
   font-size: 11px;
   font-weight: 400;
   display: block;
@@ -465,7 +465,7 @@ label {
   ion-card {
     width: 107%;
 
-      height: 550px;
+    height: 550px;
   }
 
   .genrate-bill-container ion-input {
@@ -498,7 +498,7 @@ label {
   ion-card {
     width: 108%;
     // height: 1050px;
-      height: 550px;
+    height: 550px;
 
     // right: 0;
     // top: 60px;
@@ -541,7 +541,7 @@ label {
 
   ion-card {
     width: 107%;
-      height: 550px;
+    height: 550px;
 
     // right: 0;
     // top: 60px;
@@ -581,12 +581,11 @@ label {
     margin-left: 20px;
   }
   .input-count {
-   
+  }
 
-  }.danger {
-    
-   position:relative;
-   left: 21px;
+  .danger {
+    position: relative;
+    left: 21px;
   }
   .setting-box {
     width: 91%;
@@ -669,9 +668,8 @@ label {
     font-size: 14px;
     padding: 10px;
     border-radius: 8px;
-     margin-left: 20px;
+    margin-left: 20px;
   }
-  
 
   /* Button */
   ion-button {
