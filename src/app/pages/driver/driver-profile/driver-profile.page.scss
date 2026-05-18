@@ -31,7 +31,7 @@
   background: #f2f2f2;
   // background: #9b9595;
   width: 910px;
-  height: 2380px;
+  height: 2300px;
   // height: 950px;
   position: relative;
   top: 10px;
@@ -177,7 +177,7 @@ label{
 }
 ion-card {
   width: 880px;
-  height: 841px;
+  height: 836px;
   position: relative;
   top: 90px;
   right: 80px;
@@ -203,7 +203,7 @@ ion-grid{
 
 .salary_configuration {
   width: 880px;
-  height: 500px;
+  height: 460px;
   position: relative;
   top: 150px;
   right: 80px;
@@ -890,7 +890,7 @@ label{
 }
 .monthly-card {
   width: 880px;
-  height: 500px;
+  height: 445px;
   position: relative;
   top: 270px;
   right: 80px;
@@ -1174,7 +1174,7 @@ ion-datetime::part(confirm-button) {
 @media only screen and (min-width: 1600px) {
   .driver-profile-container {
     width: 99%;
-   height: 2490px;
+    height: 2390px;
 
     // left: 20px;
     // padding-left: 120px;
@@ -1234,7 +1234,7 @@ ion-datetime::part(confirm-button) {
     ion-button {
       width: 100%;
       min-width: 400px;
-      top: 100px;
+      top: 60px;
     }
   }
   .button3 {
@@ -1248,7 +1248,7 @@ ion-datetime::part(confirm-button) {
   .paid-btn {
     width: 100%;
     min-width: 400px;
-    top: 100px;
+    top: 85px;
   }
 }
 
@@ -1256,7 +1256,7 @@ ion-datetime::part(confirm-button) {
 @media only screen and (max-width: 1599px) and (min-width: 1280px) {
   .driver-profile-container {
     width: 99%;
-  height: 2490px;
+  height: 2390px;
 
     // padding-left: 140px;
   }
@@ -1311,7 +1311,7 @@ ion-datetime::part(confirm-button) {
     ion-button {
       width: 100%;
       min-width: 400px;
-      top: 100px;
+      top: 60px;
     }
   }
   .button3 {
@@ -1325,7 +1325,7 @@ ion-datetime::part(confirm-button) {
   .paid-btn {
     width: 100%;
     min-width: 400px;
-    top: 100px;
+    top: 85px;
   }
 }
 
@@ -1333,7 +1333,7 @@ ion-datetime::part(confirm-button) {
 @media only screen and (max-width: 1279px) and (min-width: 768px) {
   .driver-profile-container {
     width: 99%;
-    height: 2490px;
+    height: 2390px;
   }
   .input {
     width: 91%;
@@ -1398,7 +1398,7 @@ ion-datetime::part(confirm-button) {
     ion-button {
       width: 100%;
       min-width: 400px;
-      top: 100px;
+      top: 60px;
     }
   }
   .button3 {
@@ -1414,15 +1414,15 @@ ion-datetime::part(confirm-button) {
     max-width: 400px; // max limit rakho
     min-width: unset; // remove fixed min width
     height: 48px;
-    margin-top: 16px;
+    margin-top: -16px;
   }
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 900px) {
   .driver-profile-container {
     width: 99.5%;
-    height: 2490px;
-  }
+    height: 2390px;
+  } 
   .input {
     width: 91%;
   }
@@ -1484,7 +1484,7 @@ ion-datetime::part(confirm-button) {
     ion-button {
       width: 100%;
       min-width: 400px;
-      top: 80px;
+      top: 60px;
     }
   }
   .generate-btn,
@@ -1493,7 +1493,7 @@ ion-datetime::part(confirm-button) {
     max-width: 500px; // max limit rakho
     min-width: unset; // remove fixed min width
     height: 48px;
-    margin-top: 16px;
+    margin-top: -16px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -1580,7 +1580,7 @@ ion-datetime::part(confirm-button) {
   /* Card */
   ion-card {
     width: 100%;
-    height: 1500px;
+    height: 1470px;
     position: static;
     margin: 10px 0;
     margin-top: 30px;
@@ -1692,9 +1692,11 @@ ion-datetime::part(confirm-button) {
   }
   .paid-btn {
     left: -40px;
+  
   }
   .generate-btn {
     left: -40px;
+   
   }
 
   /* Remove extra spacing issue */

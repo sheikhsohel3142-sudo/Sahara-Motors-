@@ -76,7 +76,7 @@
 .bus-details-container {
   background: #f2f2f2;
   // width: 1910px;
-  height: 2550px;
+  height: 2535px;
   position: relative;
   top: 10px;
   left: 0px;
@@ -91,7 +91,7 @@
 .bus-details {
   // border: 2px solid black;
   width: 880px;
-  height: 900px;
+  height: 920px;
   position: relative;
   top: 90px;
   right: 80px;
@@ -245,7 +245,7 @@
     position: relative;
 
     right: 16px;
-    top: 2px;
+    top: 1px;
   }
 
   ion-select {
@@ -818,8 +818,8 @@
   font-size: 20px;
   color: #888;
   position: absolute;
-  right: 56%;
-  top: 46.5%;
+  right: 57%;
+  top: 44%;
 }
 .main-wrapper {
   display: flex;
@@ -1154,6 +1154,7 @@ ion-datetime::part(confirm-button) {
 
   .bus-details {
     width: 109%;
+   
    
 
     // right: 0;
