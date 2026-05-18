@@ -50,14 +50,14 @@ ion-card {
   padding: 18px;
   border-radius: 12px;
   margin-bottom: 18px;
-   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.00);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0);
   // width: 860px;
   position: relative;
   top: 30px;
   right: 70px;
   height: 1500;
 }
-ion-grid{
+ion-grid {
   position: relative;
   top: 12px;
 }
@@ -348,7 +348,6 @@ ion-button {
     width: 99%;
     height: 1750px;
 
-
     // left: 20px;
     // padding-left: 120px;
   }
@@ -391,7 +390,6 @@ ion-button {
   .configration-container {
     width: 99%;
     height: 1750px;
-    
 
     // padding-left: 140px;
   }
@@ -426,7 +424,7 @@ ion-button {
     width: 100%;
     min-width: 400px;
     top: 30px;
-     right: 60px;
+    right: 60px;
   }
 }
 
@@ -435,7 +433,6 @@ ion-button {
   .configration-container {
     width: 99%;
     height: 1750px;
-   
   }
   .input {
     width: 91%;
@@ -491,7 +488,7 @@ ion-button {
 @media only screen and (max-width: 1024px) and (min-width: 900px) {
   .configration-container {
     width: 99.5%;
-  height: 1750px;
+    height: 1750px;
   }
   .input {
     width: 91%;
@@ -541,7 +538,8 @@ ion-button {
   /* Outer container */
   .configration-container {
     width: 99%;
-   
+    height: min-content;
+
     // padding: 10px;
 
     padding: 8px 10px;
@@ -550,22 +548,19 @@ ion-button {
     opacity: 1;
     pointer-events: auto;
 
-
     --width: 90%;
     --max-width: 500px;
     --height: auto;
     --border-radius: 12px;
-    align-items: center !important;   /* 🔥 main fix */
-  justify-content: center !important; /* horizontal center */
-
+    align-items: center !important; /* 🔥 main fix */
+    justify-content: center !important; /* horizontal center */
   }
   ion-modal.unsaved-modal::part(content) {
-  position: absolute;
-  top: 40%;
-  // left: -10%;
-  transform: translate(-50%, -50%); /* 🔥 perfect center */
-}
-
+    position: absolute;
+    top: 40%;
+    // left: -10%;
+    transform: translate(-50%, -50%); /* 🔥 perfect center */
+  }
 
   /* 🔥 Backdrop bhi auto hide */
   ion-modal.unsaved-modal:not(.modal-present)::part(backdrop) {
@@ -671,12 +666,12 @@ ion-button {
   //   border-radius: 10px;
   //   font-size: 15px;
   // }
-    ion-button {
+  ion-button {
     width: 90%;
     min-width: 100px;
     // top: 60px;
     // right: 50px;
-     left: 20px;
+    left: 20px;
   }
 
   //   /* Remove extra spacing issue */
