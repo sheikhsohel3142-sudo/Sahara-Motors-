@@ -18,6 +18,30 @@
     left: 10px;
   }
 }
+#AMR{
+  margin-top: 20px;
+}
+#ESO{
+  margin-top: 20px;
+}
+#PDGP{
+  margin-top: 20px;
+}
+#LFA{
+  margin-top: 20px;
+}
+#AGI{
+  margin-top: 20px;
+}
+#ARCR{
+  margin-top: 20px;
+}
+#RCN{
+  margin-top: 20px;
+}
+#MA{
+  margin-top: 20px;
+}
 
 .configration-container {
   background: #f2f2f2;
@@ -59,7 +83,7 @@ ion-card {
 }
 ion-grid {
   position: relative;
-  top: 12px;
+  top: 30px;
 }
 
 ion-card h2 {
@@ -75,6 +99,8 @@ ion-card h2 {
 
   border-bottom: 1px solid #e5e3dc;
 }
+
+
 
 .setting-box {
   background: #f8fafc;
@@ -94,6 +120,8 @@ label {
   letter-spacing: 0%;
   color: #828282;
   font-family: "Space Grotesk", sans-serif;
+  position: relative;
+  bottom: 7px;
 }
 
 .update-btn {
@@ -346,7 +374,7 @@ ion-button {
 @media only screen and (min-width: 1600px) {
   .configration-container {
     width: 99%;
-    height: 1750px;
+    height: 1815px;
 
     // left: 20px;
     // padding-left: 120px;
@@ -374,13 +402,13 @@ ion-button {
 
   ion-card {
     width: 104%;
-    height: 300px;
+    height: 305px;
   }
 
   ion-button {
     width: 100%;
     min-width: 400px;
-    top: 30px;
+    top: 50px;
     right: 60px;
   }
 }
@@ -389,7 +417,7 @@ ion-button {
 @media only screen and (max-width: 1599px) and (min-width: 1280px) {
   .configration-container {
     width: 99%;
-    height: 1750px;
+    height: 1815px;
 
     // padding-left: 140px;
   }
@@ -413,7 +441,7 @@ ion-button {
   ion-card {
     width: 107%;
 
-    height: 300px;
+    height: 305px;
   }
 
   .configration-container ion-input {
@@ -423,7 +451,7 @@ ion-button {
   ion-button {
     width: 100%;
     min-width: 400px;
-    top: 30px;
+    top: 50px;
     right: 60px;
   }
 }
@@ -432,7 +460,7 @@ ion-button {
 @media only screen and (max-width: 1279px) and (min-width: 768px) {
   .configration-container {
     width: 99%;
-    height: 1750px;
+    height: 1815px;
   }
   .input {
     width: 91%;
@@ -458,7 +486,7 @@ ion-button {
 
   ion-card {
     width: 108%;
-    height: 300px;
+    height: 305px;
 
     // right: 0;
     // top: 60px;
@@ -481,14 +509,14 @@ ion-button {
   ion-button {
     width: 100%;
     min-width: 400px;
-    top: 30px;
+    top: 50px;
     right: 50px;
   }
 }
 @media only screen and (max-width: 1024px) and (min-width: 900px) {
   .configration-container {
     width: 99.5%;
-    height: 1750px;
+    height: 1815px;
   }
   .input {
     width: 91%;
@@ -506,7 +534,7 @@ ion-button {
 
   ion-card {
     width: 107%;
-    height: 300px;
+    height: 305px;
 
     // right: 0;
     // top: 60px;
@@ -529,7 +557,7 @@ ion-button {
   ion-button {
     width: 100%;
     min-width: 400px;
-    top: 30px;
+    top: 50px;
     right: 50px;
   }
 }
@@ -538,7 +566,7 @@ ion-button {
   /* Outer container */
   .configration-container {
     width: 99%;
-    height: min-content;
+    height: 2740px;
 
     // padding: 10px;
 
@@ -569,15 +597,18 @@ ion-button {
 
   .input {
     width: 91%;
+     margin-bottom: 35px;
   }
 
   .dropdown-input {
     width: 91%;
     margin-left: 20px;
+     margin-bottom: 35px;
   }
   .setting-box {
     width: 91%;
     margin-left: 20px;
+     margin-bottom: 35px;
   }
   /* Card */
   //  ion-card {
@@ -614,7 +645,7 @@ ion-button {
   //   /* 🔥 GRID → SINGLE COLUMN */
   ion-grid {
     display: block;
-    margin-top: 30px;
+   
   }
 
   ion-row {
@@ -625,16 +656,19 @@ ion-button {
   ion-col {
     width: 100%;
     padding: 0;
+   
   }
 
   /* Remove right side shift */
   .right-side {
     left: 0;
     margin-left: 20px;
+   
   }
   .left-side {
     left: 0;
     margin-left: 20px;
+   
   }
   /* Form fields */
   .configration-container {
@@ -655,6 +689,7 @@ ion-button {
     padding: 10px;
     border-radius: 8px;
     margin-left: 25px;
+   
   }
 
   //   /* Button */
@@ -669,7 +704,7 @@ ion-button {
   ion-button {
     width: 90%;
     min-width: 100px;
-    // top: 60px;
+     top: 35px;
     // right: 50px;
     left: 20px;
   }
